@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UniDock 为 NUIST 新生整理入学前后最常用的信息入口与生活资源，帮你更快完成适应与连接。">
+  <meta name="theme-color" content="#f6f7fb">
+  <title>UniDock | 新生信息与资源入口</title>
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/pages.css">
+  <link rel="stylesheet" href="./assets/css/animations.css">
+</head>
+<body>
+  <div class="site-background" aria-hidden="true">
+    <div class="site-background__mesh"></div>
+    <div class="site-background__orb site-background__orb--one"></div>
+    <div class="site-background__orb site-background__orb--two"></div>
+    <div class="site-background__orb site-background__orb--three"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="./index.html" aria-label="UniDock">
+        <span class="brand__mark">U</span>
+        <span class="brand__text">
+          <strong>UniDock</strong>
+          <span data-i18n="header.subline">NUIST Freshman Hub</span>
+        </span>
+      </a>
+
+      <div class="lang-switch" data-i18n-aria-label="header.languageLabel" aria-label="语言切换">
+        <svg class="lang-switch__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z" />
+          <path d="M4.5 9H19.5" />
+          <path d="M4.5 15H19.5" />
+          <path d="M12 3C14.2386 5.18991 15.5 8.07785 15.5 12C15.5 15.9221 14.2386 18.8101 12 21C9.76142 18.8101 8.5 15.9221 8.5 12C8.5 8.07785 9.76142 5.18991 12 3Z" />
+        </svg>
+        <div class="lang-switch__buttons">
+          <button class="lang-switch__button is-active" type="button" data-lang-switch="zh">中</button>
+          <button class="lang-switch__button" type="button" data-lang-switch="en">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <span class="eyebrow" data-i18n="hero.eyebrow">NUIST 新生入学支持</span>
+          <h1 data-i18n="hero.title">连接新生信息、校园资源与入学支持</h1>
+          <p class="hero__subtitle" data-i18n="hero.subtitle">UniDock 为 NUIST 新生整理入学前后最常用的信息入口与生活资源，帮你更快完成适应与连接。</p>
+
+          <div class="hero__actions">
+            <a class="button button--primary" href="#core-entry" data-i18n="hero.primary">开始查看</a>
+            <a class="button button--secondary" href="./wechat-add.html" data-i18n="hero.secondary">联系负责人</a>
+          </div>
+
+          <div class="hero__pills">
+            <span class="hero-pill" data-i18n="hero.pills.0">高频入口集中整理</span>
+            <span class="hero-pill" data-i18n="hero.pills.1">覆盖入学前后关键阶段</span>
+            <span class="hero-pill" data-i18n="hero.pills.2">联系支持更直接</span>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="hero__halo"></div>
+          <div class="hero__orbit hero__orbit--outer"></div>
+          <div class="hero__orbit hero__orbit--inner"></div>
+
+          <div class="hero__visual-layout">
+            <div class="hero-floating hero-floating--top">
+              <span data-i18n="hero.floatTop">报道准备</span>
+            </div>
+
+            <div class="hero-panel">
+              <div class="hero-panel__heading">
+                <span class="hero-panel__tag" data-i18n="hero.panelTag">精选入口</span>
+                <h2 class="hero-panel__title" data-i18n="hero.panelTitle">你需要的入口，更快抵达</h2>
+                <p class="hero-panel__subtitle" data-i18n="hero.panelSubtitle">从报道准备到校园生活，先看这些高频内容。</p>
+              </div>
+            </div>
+
+            <div class="hero__visual-lower">
+              <div class="hero-floating hero-floating--bottom">
+                <span data-i18n="hero.floatBottom">地图 / 系统 / 联系方式</span>
+              </div>
+
+              <div class="hero-panel__list">
+                <div class="hero-panel__item">
+                  <span class="hero-panel__index">01</span>
+                  <div class="hero-panel__copy">
+                    <strong data-i18n="hero.panelItems.0.title">报道准备</strong>
+                    <span data-i18n="hero.panelItems.0.meta">流程与材料</span>
+                  </div>
+                </div>
+                <div class="hero-panel__item">
+                  <span class="hero-panel__index">02</span>
+                  <div class="hero-panel__copy">
+                    <strong data-i18n="hero.panelItems.1.title">生活资源</strong>
+                    <span data-i18n="hero.panelItems.1.meta">寝室与流量卡</span>
+                  </div>
+                </div>
+                <div class="hero-panel__item">
+                  <span class="hero-panel__index">03</span>
+                  <div class="hero-panel__copy">
+                    <strong data-i18n="hero.panelItems.2.title">校内导航</strong>
+                    <span data-i18n="hero.panelItems.2.meta">地图与官网入口</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--compact" id="core-entry">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <span class="eyebrow" data-i18n="core.eyebrow">核心入口</span>
+          <h2 data-i18n="core.title">把高频入口放在同一处</h2>
+          <p data-i18n="core.subtitle">减少来回搜索，优先处理入学前后最常用的事项。</p>
+        </div>
+
+        <div class="entry-grid">
+          <a class="entry-card" href="#" data-reveal data-delay="0">
+            <div class="entry-card__top">
+              <span class="entry-card__index">01</span>
+              <span class="entry-card__arrow" aria-hidden="true">→</span>
+            </div>
+            <h3 data-i18n="core.cards.0.title">校园流量卡</h3>
+            <p data-i18n="core.cards.0.desc">快速了解适合新生办理的校园通信方案。</p>
+            <span class="entry-card__hint" data-i18n="core.cards.0.hint">查看入口</span>
+          </a>
+
+          <a class="entry-card" href="#" data-reveal data-delay="60">
+            <div class="entry-card__top">
+              <span class="entry-card__index">02</span>
+              <span class="entry-card__arrow" aria-hidden="true">→</span>
+            </div>
+            <h3 data-i18n="core.cards.1.title">寝室用具</h3>
+            <p data-i18n="core.cards.1.desc">整理入住宿舍前常见的物品准备方向。</p>
+            <span class="entry-card__hint" data-i18n="core.cards.1.hint">查看入口</span>
+          </a>
+
+          <a class="entry-card" href="./campus-map-redirect.html" data-reveal data-delay="120">
+            <div class="entry-card__top">
+              <span class="entry-card__index">03</span>
+              <span class="entry-card__arrow" aria-hidden="true">↗</span>
+            </div>
+            <h3 data-i18n="core.cards.2.title">校园地图</h3>
+            <p data-i18n="core.cards.2.desc">提前熟悉教学区、生活区和常用办事地点。</p>
+            <span class="entry-card__hint" data-i18n="core.cards.2.hint">站外打开</span>
+          </a>
+
+          <a class="entry-card" href="./official-site-redirect.html" data-reveal data-delay="180">
+            <div class="entry-card__top">
+              <span class="entry-card__index">04</span>
+              <span class="entry-card__arrow" aria-hidden="true">↗</span>
+            </div>
+            <h3 data-i18n="core.cards.3.title">校园官网入口</h3>
+            <p data-i18n="core.cards.3.desc">查看学校官方通知、公告与综合信息。</p>
+            <span class="entry-card__hint" data-i18n="core.cards.3.hint">站外打开</span>
+          </a>
+
+          <a class="entry-card" href="./xinshengbikan.html" data-reveal data-delay="240">
+            <div class="entry-card__top">
+              <span class="entry-card__index">05</span>
+              <span class="entry-card__arrow" aria-hidden="true">→</span>
+            </div>
+            <h3 data-i18n="core.cards.4.title">新生必看</h3>
+            <p data-i18n="core.cards.4.desc">把报道、准备与避坑内容集中放在一个入口。</p>
+            <span class="entry-card__hint" data-i18n="core.cards.4.hint">进入查看</span>
+          </a>
+
+          <a class="entry-card" href="./wechat-add.html" data-reveal data-delay="300">
+            <div class="entry-card__top">
+              <span class="entry-card__index">06</span>
+              <span class="entry-card__arrow" aria-hidden="true">→</span>
+            </div>
+            <h3 data-i18n="core.cards.5.title">联系方式</h3>
+            <p data-i18n="core.cards.5.desc">遇到具体问题时，直接找到对应负责人员。</p>
+            <span class="entry-card__hint" data-i18n="core.cards.5.hint">立即联系</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="container">
+        <div class="section-heading section-heading--center" data-reveal>
+          <span class="eyebrow" data-i18n="why.eyebrow">Why UniDock</span>
+          <h2 data-i18n="why.title">把需要的信息整理清楚，而不是堆得更多</h2>
+          <p data-i18n="why.subtitle">UniDock 只做一件事：把新生真正会反复用到的入口与资源集中起来，减少遗漏和重复查找。</p>
+        </div>
+
+        <div class="why-grid">
+          <article class="value-card" data-reveal data-delay="0">
+            <span class="value-card__index">01</span>
+            <h3 data-i18n="why.items.0.title">不用四处找信息</h3>
+            <p data-i18n="why.items.0.desc">把高频入口放在同一页，减少群聊、帖子和搜索之间来回切换。</p>
+          </article>
+
+          <article class="value-card" data-reveal data-delay="70">
+            <span class="value-card__index">02</span>
+            <h3 data-i18n="why.items.1.title">新生入口集中整理</h3>
+            <p data-i18n="why.items.1.desc">从报道前准备到校内导航，先把最常用的内容整理完整。</p>
+          </article>
+
+          <article class="value-card" data-reveal data-delay="140">
+            <span class="value-card__index">03</span>
+            <h3 data-i18n="why.items.2.title">降低信息差</h3>
+            <p data-i18n="why.items.2.desc">让第一次接触校园信息的新生，也能快速知道下一步该看什么。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="freshman-guide">
+      <div class="container">
+        <div class="guide-shell">
+          <div class="guide-intro" data-reveal>
+            <span class="eyebrow" data-i18n="guide.eyebrow">新生必看</span>
+            <h2 data-i18n="guide.title">按实际阶段进入，不必一次看完所有内容</h2>
+            <p data-i18n="guide.subtitle">把最容易遗漏的环节拆成四个清晰入口，帮助你按顺序推进准备与适应。</p>
+          </div>
+
+          <div class="guide-list">
+            <a class="guide-item" href="./baodaoquanliucheng.html" data-reveal data-delay="20">
+              <span class="guide-item__index">01</span>
+              <div class="guide-item__body">
+                <h3 data-i18n="guide.items.0.title">报道全流程</h3>
+                <p data-i18n="guide.items.0.desc">按时间顺序梳理报到当天需要完成的关键步骤。</p>
+              </div>
+              <span class="guide-item__arrow" aria-hidden="true">→</span>
+            </a>
+
+            <a class="guide-item" href="./xingqianzhunbei.html" data-reveal data-delay="80">
+              <span class="guide-item__index">02</span>
+              <div class="guide-item__body">
+                <h3 data-i18n="guide.items.1.title">行前准备清单</h3>
+                <p data-i18n="guide.items.1.desc">把证件、生活用品和常见准备项提前整理好。</p>
+              </div>
+              <span class="guide-item__arrow" aria-hidden="true">→</span>
+            </a>
+
+            <a class="guide-item" href="./xinshengbikeng.html" data-reveal data-delay="140">
+              <span class="guide-item__index">03</span>
+              <div class="guide-item__body">
+                <h3 data-i18n="guide.items.2.title">新生避坑提示</h3>
+                <p data-i18n="guide.items.2.desc">提前了解常见误区，减少时间和精力浪费。</p>
+              </div>
+              <span class="guide-item__arrow" aria-hidden="true">→</span>
+            </a>
+
+            <a class="guide-item" href="./xiaoyuanxitongdaohang.html" data-reveal data-delay="200">
+              <span class="guide-item__index">04</span>
+              <div class="guide-item__body">
+                <h3 data-i18n="guide.items.3.title">校内系统导航</h3>
+                <p data-i18n="guide.items.3.desc">快速找到课程、事务与校园服务相关系统入口。</p>
+              </div>
+              <span class="guide-item__arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--compact">
+      <div class="container">
+        <div class="cta-banner" data-reveal>
+          <div class="cta-banner__copy">
+            <span class="eyebrow" data-i18n="cta.eyebrow">进一步帮助</span>
+            <h2 data-i18n="cta.title">还有问题没有解决？</h2>
+            <p data-i18n="cta.desc">你可以通过本站负责人员联系方式，获取进一步帮助。</p>
+          </div>
+          <a class="button button--primary button--wide" href="./wechat-add.html" data-i18n="cta.button">添加联系方式</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__brand">
+        <span class="brand__mark brand__mark--footer">U</span>
+        <div class="site-footer__copy">
+          <strong>UniDock</strong>
+          <p data-i18n="footer.desc">为 NUIST 新生整理信息入口、校园资源与联系支持。</p>
+        </div>
+      </div>
+      <p class="site-footer__meta" data-i18n="footer.note">一个克制、清晰、可直接使用的新生首页入口。</p>
+    </div>
+  </footer>
+
+  <script src="./assets/js/language.js" defer></script>
+  <script src="./assets/js/main.js" defer></script>
+</body>
+</html>
