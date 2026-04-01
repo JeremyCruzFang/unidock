@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UniDock 为你分发校园流量卡与寝室用具相关入口。">
+  <meta name="theme-color" content="#f6f7fb">
+  <title>UniDock | 选择生活资源入口</title>
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/pages.css">
+  <link rel="stylesheet" href="./assets/css/animations.css">
+</head>
+<body class="redirect-page">
+  <div class="site-background" aria-hidden="true">
+    <div class="site-background__mesh"></div>
+    <div class="site-background__orb site-background__orb--one"></div>
+    <div class="site-background__orb site-background__orb--two"></div>
+    <div class="site-background__orb site-background__orb--three"></div>
+  </div>
+
+  <main class="redirect-main">
+    <div class="container redirect-shell">
+      <a class="redirect-back" href="./index.html">返回首页</a>
+
+      <section class="redirect-stage redirect-stage--choice" aria-labelledby="redirect-title">
+        <div class="redirect-stage__glow" aria-hidden="true"></div>
+
+        <div class="redirect-icon" aria-hidden="true">
+          <span class="redirect-icon__ring redirect-icon__ring--outer"></span>
+          <span class="redirect-icon__ring redirect-icon__ring--inner"></span>
+          <span class="redirect-icon__mark">U</span>
+        </div>
+
+        <span class="eyebrow redirect-stage__eyebrow">资源选择</span>
+        <h1 id="redirect-title" class="redirect-stage__title">选择你要前往的生活资源</h1>
+        <p class="redirect-stage__subtitle">先选择当前最需要查看的资源方向，再继续进入对应入口。</p>
+
+        <div class="choice-grid">
+          <a class="choice-card choice-card--primary" href="./index.html#campus-sim-card">
+            <span class="choice-card__label">主入口</span>
+            <h2 class="choice-card__title">校园流量卡</h2>
+            <p class="choice-card__desc">返回首页并定位到校园流量卡入口，继续查看当前对应链接。</p>
+            <span class="choice-card__meta">进入资源</span>
+          </a>
+
+          <a class="choice-card" href="./index.html#dorm-essentials">
+            <span class="choice-card__label">次入口</span>
+            <h2 class="choice-card__title">寝室用具</h2>
+            <p class="choice-card__desc">返回首页并定位到寝室用具入口，继续查看当前对应链接。</p>
+            <span class="choice-card__meta">进入资源</span>
+          </a>
+        </div>
+
+        <div class="redirect-actions redirect-actions--choice">
+          <a class="button button--secondary" href="./index.html">返回首页</a>
+        </div>
+      </section>
+
+      <p class="redirect-brand">UniDock</p>
+    </div>
+  </main>
+
+  <script src="./assets/js/main.js" defer></script>
+</body>
+</html>
