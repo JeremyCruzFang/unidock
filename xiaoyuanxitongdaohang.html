@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="查看 UniDock 整理的校内系统导航入口，更快找到统一入口、信息门户及常用校园应用。">
+  <meta name="theme-color" content="#f6f7fb">
+  <title>UniDock | 校内系统导航</title>
+  <link rel="icon" href="./favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/pages.css">
+  <link rel="stylesheet" href="./assets/css/animations.css">
+</head>
+<body data-page="systems">
+  <div class="site-background" aria-hidden="true">
+    <div class="site-background__mesh"></div>
+    <div class="site-background__orb site-background__orb--one"></div>
+    <div class="site-background__orb site-background__orb--two"></div>
+    <div class="site-background__orb site-background__orb--three"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <div class="subpage-header__group">
+        <a class="subpage-back" href="./index.html">
+          <span aria-hidden="true">←</span>
+          <span data-i18n="subpage.back">返回首页</span>
+        </a>
+        <a class="brand" href="./index.html" aria-label="UniDock">
+          <span class="brand__mark">U</span>
+          <span class="brand__text">
+            <strong>UniDock</strong>
+            <span data-i18n="header.subline">NUIST Freshman Hub</span>
+          </span>
+        </a>
+      </div>
+
+      <div class="lang-switch" data-i18n-aria-label="header.languageLabel" aria-label="语言切换">
+        <svg class="lang-switch__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z" />
+          <path d="M4.5 9H19.5" />
+          <path d="M4.5 15H19.5" />
+          <path d="M12 3C14.2386 5.18991 15.5 8.07785 15.5 12C15.5 15.9221 14.2386 18.8101 12 21C9.76142 18.8101 8.5 15.9221 8.5 12C8.5 8.07785 9.76142 5.18991 12 3Z" />
+        </svg>
+        <div class="lang-switch__buttons">
+          <button class="lang-switch__button is-active" type="button" data-lang-switch="zh">中</button>
+          <button class="lang-switch__button" type="button" data-lang-switch="en">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="subpage-main">
+    <section class="section section--compact">
+      <div class="container">
+        <div class="detail-shell">
+          <section class="detail-intro" data-reveal>
+            <span class="eyebrow" data-i18n="systemsPage.hero.eyebrow">校内系统</span>
+            <h1 data-i18n="systemsPage.hero.title">校内系统导航</h1>
+            <p data-i18n="systemsPage.hero.subtitle">把入学后常用的系统和应用入口先整理清楚，减少重复查找和切换成本。</p>
+          </section>
+
+          <section class="content-panel" data-reveal data-delay="40">
+            <div class="content-panel__header">
+              <span class="content-panel__eyebrow" data-i18n="systemsPage.grid.eyebrow">System Cards</span>
+              <h2 data-i18n="systemsPage.grid.title">常用系统与应用</h2>
+              <p data-i18n="systemsPage.grid.subtitle">有外部链接的卡片可直接打开，无链接的项目保留为统一的信息卡片，便于你先建立使用清单。</p>
+            </div>
+
+            <div class="system-grid">
+              <a class="system-card system-card--link" href="https://client.vpn.nuist.edu.cn" target="_blank" rel="noopener noreferrer" data-reveal data-delay="0">
+                <div class="system-card__head">
+                  <span class="system-card__badge" data-i18n="systemsPage.cards.0.badge">网页入口</span>
+                  <span class="system-card__arrow" aria-hidden="true">→</span>
+                </div>
+                <h3 data-i18n="systemsPage.cards.0.title">统一入口</h3>
+                <p data-i18n="systemsPage.cards.0.desc">统一访问相关校园应用入口</p>
+                <span class="system-card__meta" data-i18n="systemsPage.cards.0.meta">进入</span>
+              </a>
+
+              <a class="system-card system-card--link" href="https://authserver.nuist.edu.cn/authserver/login" target="_blank" rel="noopener noreferrer" data-reveal data-delay="40">
+                <div class="system-card__head">
+                  <span class="system-card__badge" data-i18n="systemsPage.cards.1.badge">网页入口</span>
+                  <span class="system-card__arrow" aria-hidden="true">→</span>
+                </div>
+                <h3 data-i18n="systemsPage.cards.1.title">信息门户</h3>
+                <p data-i18n="systemsPage.cards.1.desc">身份认证、教务相关入口</p>
+                <span class="system-card__meta" data-i18n="systemsPage.cards.1.meta">进入</span>
+              </a>
+
+              <article class="system-card" data-reveal data-delay="80">
+                <div class="system-card__head">
+                  <span class="system-card__badge" data-i18n="systemsPage.cards.2.badge">校内应用</span>
+                </div>
+                <h3 data-i18n="systemsPage.cards.2.title">学习通</h3>
+                <p data-i18n="systemsPage.cards.2.desc">课程资料、签到、作业平台</p>
+                <span class="system-card__meta" data-i18n="systemsPage.cards.2.meta">课程常用</span>
+              </article>
+
+              <article class="system-card" data-reveal data-delay="120">
+                <div class="system-card__head">
+                  <span class="system-card__badge" data-i18n="systemsPage.cards.3.badge">校内应用</span>
+                </div>
+                <h3 data-i18n="systemsPage.cards.3.title">企业微信</h3>
+                <p data-i18n="systemsPage.cards.3.desc">通知与沟通</p>
+                <span class="system-card__meta" data-i18n="systemsPage.cards.3.meta">沟通必备</span>
+              </article>
+
+              <article class="system-card" data-reveal data-delay="160">
+                <div class="system-card__head">
+                  <span class="system-card__badge" data-i18n="systemsPage.cards.4.badge">校内应用</span>
+                </div>
+                <h3 data-i18n="systemsPage.cards.4.title">趣智校园</h3>
+                <p data-i18n="systemsPage.cards.4.desc">洗澡、饮水</p>
+                <span class="system-card__meta" data-i18n="systemsPage.cards.4.meta">生活服务</span>
+              </article>
+
+              <article class="system-card" data-reveal data-delay="200">
+                <div class="system-card__head">
+                  <span class="system-card__badge" data-i18n="systemsPage.cards.5.badge">校内应用</span>
+                </div>
+                <h3 data-i18n="systemsPage.cards.5.title">胖乖生活</h3>
+                <p data-i18n="systemsPage.cards.5.desc">洗衣</p>
+                <span class="system-card__meta" data-i18n="systemsPage.cards.5.meta">生活服务</span>
+              </article>
+
+              <article class="system-card" data-reveal data-delay="240">
+                <div class="system-card__head">
+                  <span class="system-card__badge" data-i18n="systemsPage.cards.6.badge">校内应用</span>
+                </div>
+                <h3 data-i18n="systemsPage.cards.6.title">闪动校园Pro</h3>
+                <p data-i18n="systemsPage.cards.6.desc">校园跑</p>
+                <span class="system-card__meta" data-i18n="systemsPage.cards.6.meta">体测相关</span>
+              </article>
+
+              <article class="system-card" data-reveal data-delay="280">
+                <div class="system-card__head">
+                  <span class="system-card__badge" data-i18n="systemsPage.cards.7.badge">校内应用</span>
+                </div>
+                <h3 data-i18n="systemsPage.cards.7.title">PU口袋校园</h3>
+                <p data-i18n="systemsPage.cards.7.desc">学时系统</p>
+                <span class="system-card__meta" data-i18n="systemsPage.cards.7.meta">活动与学时</span>
+              </article>
+            </div>
+
+            <div class="soft-note soft-note--center">
+              <span class="soft-note__label" data-i18n="systemsPage.note.label">UniDock优势</span>
+              <p data-i18n="systemsPage.note.text">整合关键系统入口，减少信息查找成本。</p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__brand">
+        <span class="brand__mark brand__mark--footer">U</span>
+        <div class="site-footer__copy">
+          <strong>UniDock</strong>
+          <p data-i18n="footer.desc">为 NUIST 新生整理信息入口、校园资源与联系支持。</p>
+        </div>
+      </div>
+      <p class="site-footer__meta" data-i18n="footer.note">一个克制、清晰、可直接使用的新生首页入口。</p>
+    </div>
+  </footer>
+
+  <script src="./assets/js/language.js" defer></script>
+  <script src="./assets/js/main.js" defer></script>
+</body>
+</html>
