@@ -144,6 +144,82 @@
     window.addEventListener("pagehide", stopTimer, { once: true });
   }
 
+  function copyToClipboard(value) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(value);
+    }
+
+    return new Promise(function (resolve, reject) {
+      const input = document.createElement("textarea");
+
+      input.value = value;
+      input.setAttribute("readonly", "");
+      input.style.position = "fixed";
+      input.style.top = "0";
+      input.style.left = "0";
+      input.style.opacity = "0";
+
+      document.body.appendChild(input);
+      input.focus();
+      input.select();
+
+      try {
+        const successful = document.execCommand("copy");
+        document.body.removeChild(input);
+
+        if (successful) {
+          resolve();
+          return;
+        }
+      } catch (error) {
+        document.body.removeChild(input);
+        reject(error);
+        return;
+      }
+
+      reject(new Error("copy failed"));
+    });
+  }
+
+  function initCopyButtons() {
+    const copyButtons = document.querySelectorAll("[data-copy-value]");
+
+    if (!copyButtons.length) {
+      return;
+    }
+
+    copyButtons.forEach(function (button) {
+      const defaultLabel = button.getAttribute("data-copy-default") || button.textContent.trim();
+      const successLabel = button.getAttribute("data-copy-success") || defaultLabel;
+      let resetTimer = 0;
+
+      button.addEventListener("click", function () {
+        const value = button.getAttribute("data-copy-value");
+
+        if (!value) {
+          return;
+        }
+
+        copyToClipboard(value)
+          .then(function () {
+            window.clearTimeout(resetTimer);
+            button.textContent = successLabel;
+            button.classList.add("is-copied");
+
+            resetTimer = window.setTimeout(function () {
+              button.textContent = defaultLabel;
+              button.classList.remove("is-copied");
+            }, 1600);
+          })
+          .catch(function () {
+            window.clearTimeout(resetTimer);
+            button.textContent = defaultLabel;
+            button.classList.remove("is-copied");
+          });
+      });
+    });
+  }
+
   function markPageReady() {
     window.requestAnimationFrame(function () {
       document.body.classList.add("page-is-ready");
@@ -155,5 +231,6 @@
     initReveal();
     initHeaderState();
     initRedirectPage();
+    initCopyButtons();
   });
 })();

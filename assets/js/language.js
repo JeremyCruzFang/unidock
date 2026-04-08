@@ -24,6 +24,10 @@
         title: "UniDock | 校内系统导航",
         description: "查看 UniDock 整理的校内系统导航入口，更快找到统一入口、信息门户及常用校园应用。"
       },
+      contactMeta: {
+        title: "UniDock | 联系负责人",
+        description: "联系 UniDock 负责人，快速复制手机号、微信号或邮箱，处理报道流程、行前准备、校园资源与基础使用问题。"
+      },
       header: {
         subline: "NUIST Freshman Hub",
         languageLabel: "语言切换"
@@ -273,6 +277,10 @@
       systemsMeta: {
         title: "UniDock | Campus Systems Guide",
         description: "Review UniDock's campus system guide to quickly find the unified portal, info portal, and commonly used campus apps."
+      },
+      contactMeta: {
+        title: "UniDock | Contact Leads",
+        description: "Contact UniDock leads directly and quickly copy phone numbers, WeChat IDs, or email addresses for help."
       },
       header: {
         subline: "NUIST Freshman Hub",
