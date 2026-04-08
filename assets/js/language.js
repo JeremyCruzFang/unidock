@@ -1,11 +1,20 @@
 (function () {
   const STORAGE_KEY = "unidock-language";
   const defaultLang = "zh";
+
   const translations = {
     zh: {
       meta: {
         title: "UniDock | 新生信息与资源入口",
         description: "UniDock 为 NUIST 新生整理入学前后最常用的信息入口与生活资源，帮你更快完成适应与连接。"
+      },
+      arrivalMeta: {
+        title: "UniDock | 报道全流程",
+        description: "查看 UniDock 整理的报道全流程，从出发到完成报到，按阶段完成关键步骤。"
+      },
+      checklistMeta: {
+        title: "UniDock | 行前准备清单",
+        description: "查看 UniDock 整理的行前准备清单，出发前完成关键准备，减少入校后的遗漏与返工。"
       },
       pitfallsMeta: {
         title: "UniDock | 新生避坑提示",
@@ -249,6 +258,14 @@
         title: "UniDock | Freshman Information and Resource Hub",
         description: "UniDock brings together the most useful pre-arrival and campus-life links for NUIST freshmen, helping them adapt and connect faster."
       },
+      arrivalMeta: {
+        title: "UniDock | Arrival Process",
+        description: "Review UniDock's arrival process page and complete the key steps from departure to final check-in."
+      },
+      checklistMeta: {
+        title: "UniDock | Pre-Departure Checklist",
+        description: "Review UniDock's pre-departure checklist and finish the key preparation before arriving on campus."
+      },
       pitfallsMeta: {
         title: "UniDock | Freshman Pitfalls",
         description: "Review UniDock's freshman pitfalls and study-life notes to prepare the key basics before arriving on campus."
@@ -376,43 +393,6 @@
           eyebrow: "Freshman Notes",
           title: "Freshman Pitfalls",
           subtitle: "Clarify the most commonly overlooked points before arrival, and line up the basics of study and campus life early."
-        },
-        sections: {
-          pitfalls: {
-            eyebrow: "Section A",
-            title: "Freshman Pitfalls",
-            subtitle: "Start by avoiding the most common judgment errors, missed notices, and daily-life issues in your first stage on campus.",
-            items: [
-              "Do not treat university as a stage to completely relax. Course difficulty and self-directed learning demands increase clearly.",
-              "Do not aim only to avoid failing. GPA affects scholarships, graduate recommendation, overseas applications, and job hunting.",
-              "Do not ignore class participation and regular assessment. Attendance and assignments matter a lot.",
-              "Clubs are not about quantity. Choosing two or three that truly interest you is usually better.",
-              "Manage your living expenses well to avoid unnecessary financial pressure.",
-              "Keep healthy boundaries in dorm relationships and respect differences.",
-              "Follow important notices by yourself instead of relying on reminders from others.",
-              "Ask for help when problems appear. Do not carry pressure alone.",
-              "Do not follow trends blindly. Choose your direction according to your own plan.",
-              "Senior students' advice is useful, but it should not be copied mechanically.",
-              "Campus transportation should follow regulations. Non-compliant vehicles may be removed.",
-              "Campus mobile plans vary a lot, so compare them in advance."
-            ],
-            noteLabel: "UniDock Advice",
-            noteText: "Choose your campus SIM plan before arrival to avoid long queues and information gaps after move-in."
-          },
-          essentials: {
-            eyebrow: "Section B",
-            title: "Study and Life Notes",
-            subtitle: "Set the right expectations first, then get familiar with digital systems, course rhythm, and daily service tools step by step.",
-            items: [
-              "Learning changes from passive to proactive, which requires self-management.",
-              "Campus life depends heavily on digital systems, so it is worth getting familiar early.",
-              "Network access and mobile data are basic infrastructure, so prepare them in advance.",
-              "Daily services rely on several apps, so downloading them early helps.",
-              "Credit-hour and course requirements differ across schools and departments."
-            ],
-            noteLabel: "UniDock Positioning",
-            noteText: "UniDock helps you complete the key preparation before arrival so you can get into rhythm once you reach campus."
-          }
         }
       },
       systemsPage: {
@@ -420,65 +400,6 @@
           eyebrow: "Campus Systems",
           title: "Campus Systems Guide",
           subtitle: "Sort out the systems and apps you will use after arrival so there is less repeated searching and switching."
-        },
-        grid: {
-          eyebrow: "System Cards",
-          title: "Common Systems and Apps",
-          subtitle: "Cards with external links can be opened directly. Items without links stay as unified info cards so you can still build a clean reference list first."
-        },
-        cards: [
-          {
-            badge: "Web Portal",
-            title: "Unified Portal",
-            desc: "A unified entry for related campus applications",
-            meta: "Open"
-          },
-          {
-            badge: "Web Portal",
-            title: "Information Portal",
-            desc: "Authentication and academic-service related entry",
-            meta: "Open"
-          },
-          {
-            badge: "Campus App",
-            title: "Xuexitong",
-            desc: "Course materials, attendance check-ins, and assignments",
-            meta: "Course use"
-          },
-          {
-            badge: "Campus App",
-            title: "WeCom",
-            desc: "Notifications and communication",
-            meta: "Communication"
-          },
-          {
-            badge: "Campus App",
-            title: "Quzhi Campus",
-            desc: "Bathing and drinking water",
-            meta: "Daily services"
-          },
-          {
-            badge: "Campus App",
-            title: "Pangguai Life",
-            desc: "Laundry",
-            meta: "Daily services"
-          },
-          {
-            badge: "Campus App",
-            title: "Shandong Campus Pro",
-            desc: "Campus running",
-            meta: "Fitness related"
-          },
-          {
-            badge: "Campus App",
-            title: "PU Pocket Campus",
-            desc: "Credit-hour system",
-            meta: "Activities and hours"
-          }
-        ],
-        note: {
-          label: "UniDock Advantage",
-          text: "UniDock brings together the key system entries so less time is spent searching for information."
         }
       },
       footer: {
