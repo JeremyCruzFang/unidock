@@ -436,7 +436,7 @@
     const content = translations[currentLang];
     const description = document.querySelector('meta[name="description"]');
     const pageName = document.body.getAttribute("data-page");
-    const pageMeta = (pageName && content[pageName + "Meta"]) || content.meta;
+    const pageMeta = pageName ? (content[pageName + "Meta"] || content.meta) : null;
 
     document.querySelectorAll("[data-i18n]").forEach(function (element) {
       const key = element.getAttribute("data-i18n");
@@ -456,9 +456,11 @@
       }
     });
 
-    document.title = pageMeta.title;
+    if (pageMeta) {
+      document.title = pageMeta.title;
+    }
 
-    if (description) {
+    if (pageMeta && description) {
       description.setAttribute("content", pageMeta.description);
     }
 

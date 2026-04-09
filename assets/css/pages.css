@@ -63,7 +63,7 @@
   position: relative;
   z-index: 3;
   display: grid;
-  grid-template-rows: auto auto 1fr;
+  grid-template-rows: auto 1fr;
   gap: 18px;
   min-height: 100%;
 }

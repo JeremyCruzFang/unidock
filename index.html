@@ -15,8 +15,9 @@
   <link rel="stylesheet" href="./assets/css/components.css">
   <link rel="stylesheet" href="./assets/css/pages.css">
   <link rel="stylesheet" href="./assets/css/animations.css">
+  <link rel="stylesheet" href="./assets/css/nav.css">
 </head>
-<body>
+<body data-page="home">
   <div class="site-background" aria-hidden="true">
     <div class="site-background__mesh"></div>
     <div class="site-background__orb site-background__orb--one"></div>
@@ -75,10 +76,6 @@
           <div class="hero__orbit hero__orbit--inner"></div>
 
           <div class="hero__visual-layout">
-            <div class="hero-floating hero-floating--top">
-              <span data-i18n="hero.floatTop">报道准备</span>
-            </div>
-
             <div class="hero-panel">
               <div class="hero-panel__heading">
                 <span class="hero-panel__tag" data-i18n="hero.panelTag">精选入口</span>
@@ -300,6 +297,7 @@
     </div>
   </footer>
 
+  <script src="./assets/js/nav.js" defer></script>
   <script src="./assets/js/language.js" defer></script>
   <script src="./assets/js/main.js" defer></script>
 </body>
