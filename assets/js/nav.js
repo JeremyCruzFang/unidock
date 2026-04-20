@@ -28,6 +28,25 @@
     );
   }
 
+  function isBetterServicePage() {
+    return /better-service(?:-detail)?\.html$/i.test(window.location.pathname || "");
+  }
+
+  function createBetterLink() {
+    const link = document.createElement("a");
+
+    link.className = "site-header__link";
+    link.href = "./better-service.html";
+    link.setAttribute("data-better-link", "");
+    link.textContent = "Better";
+
+    if (isBetterServicePage()) {
+      link.classList.add("is-active");
+    }
+
+    return link;
+  }
+
   function createMenuButton() {
     const button = document.createElement("button");
 
@@ -126,6 +145,34 @@
     host.appendChild(createMenuButton());
   }
 
+  function ensureHeaderActions() {
+    document.querySelectorAll(".site-header__inner").forEach(function (headerInner) {
+      let actions = headerInner.querySelector(".site-header__actions");
+      let betterLink = headerInner.querySelector("[data-better-link]");
+      const langSwitch = headerInner.querySelector(".lang-switch");
+
+      if (!actions) {
+        actions = document.createElement("div");
+        actions.className = "site-header__actions";
+        headerInner.appendChild(actions);
+      }
+
+      if (!betterLink) {
+        betterLink = createBetterLink();
+      } else {
+        betterLink.classList.toggle("is-active", isBetterServicePage());
+      }
+
+      if (betterLink.parentElement !== actions) {
+        actions.insertBefore(betterLink, actions.firstChild);
+      }
+
+      if (langSwitch && langSwitch.parentElement !== actions) {
+        actions.appendChild(langSwitch);
+      }
+    });
+  }
+
   function ensureDrawer() {
     if (document.getElementById("drawer")) {
       return;
@@ -150,6 +197,12 @@
               '<li data-link="./life-resources-redirect.html" tabindex="0">&#29983;&#27963;&#36164;&#28304;</li>' +
               '<li data-link="./xiaoyuanxitongdaohang.html" tabindex="0">&#26657;&#20869;&#23548;&#33322;</li>' +
             "</ul>" +
+          "</li>" +
+          '<li class="drawer-item drawer-item--highlight" data-link="./better-service.html" tabindex="0">' +
+            '<span class="drawer-item__row">' +
+              "<span>Better Service</span>" +
+              '<span class="drawer-item__badge">&#20869;&#37096;</span>' +
+            "</span>" +
           "</li>" +
           '<li class="drawer-item" data-link="./wechat-add.html" tabindex="0">&#32852;&#31995;&#36127;&#36131;&#20154;</li>' +
         "</ul>" +
@@ -246,6 +299,7 @@
     removeHomepageTopTag();
     ensureStandaloneHeader();
     ensureMenuButton();
+    ensureHeaderActions();
     ensureDrawer();
     bindDrawer();
   });

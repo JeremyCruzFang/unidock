@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="查看 UniDock Better Service 内部整理入口，快速进入新生专属资源的结构化页面。">
+  <meta name="theme-color" content="#f6f7fb">
+  <title>UniDock | Better Service</title>
+  <link rel="icon" href="./favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/pages.css">
+  <link rel="stylesheet" href="./assets/css/animations.css">
+  <link rel="stylesheet" href="./assets/css/nav.css">
+</head>
+<body class="better-service-page">
+  <div class="site-background" aria-hidden="true">
+    <div class="site-background__mesh"></div>
+    <div class="site-background__orb site-background__orb--one"></div>
+    <div class="site-background__orb site-background__orb--two"></div>
+    <div class="site-background__orb site-background__orb--three"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <div class="subpage-header__group">
+        <a class="subpage-back" href="./index.html">
+          <span aria-hidden="true">&larr;</span>
+          <span data-i18n="subpage.back">返回首页</span>
+        </a>
+        <a class="brand" href="./index.html" aria-label="UniDock">
+          <span class="brand__mark">U</span>
+          <span class="brand__text">
+            <strong>UniDock</strong>
+            <span data-i18n="header.subline">NUIST Freshman Hub</span>
+          </span>
+        </a>
+        <span class="subpage-header__title">Better Service</span>
+      </div>
+
+      <div class="lang-switch" data-i18n-aria-label="header.languageLabel" aria-label="语言切换">
+        <svg class="lang-switch__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z" />
+          <path d="M4.5 9H19.5" />
+          <path d="M4.5 15H19.5" />
+          <path d="M12 3C14.2386 5.18991 15.5 8.07785 15.5 12C15.5 15.9221 14.2386 18.8101 12 21C9.76142 18.8101 8.5 15.9221 8.5 12C8.5 8.07785 9.76142 5.18991 12 3Z" />
+        </svg>
+        <div class="lang-switch__buttons">
+          <button class="lang-switch__button is-active" type="button" data-lang-switch="zh">中</button>
+          <button class="lang-switch__button" type="button" data-lang-switch="en">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="subpage-main">
+    <section class="section section--compact">
+      <div class="container">
+        <div class="detail-shell">
+          <section class="detail-intro" data-reveal>
+            <span class="eyebrow">Better Service</span>
+            <h1>Better Service</h1>
+            <p>内部整理 · 新生专属资源入口</p>
+          </section>
+
+          <section class="content-panel" data-reveal data-delay="40">
+            <div class="content-panel__header">
+              <span class="content-panel__eyebrow">精选条目</span>
+              <h2>从内部整理入口进入</h2>
+            </div>
+
+            <div class="service-list-grid">
+              <a class="system-card service-entry-card" href="./better-service-detail.html?id=bs001">
+                <div class="system-card__head">
+                  <span class="system-card__badge">内部整理</span>
+                  <span class="system-card__arrow" aria-hidden="true">→</span>
+                </div>
+                <h3>新生开学资源内部整理</h3>
+                <p class="service-entry-card__summary">流量卡 / 宿舍用品 / 避坑合集（内部版）</p>
+                <span class="system-card__meta">查看详情</span>
+              </a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__brand">
+        <span class="brand__mark brand__mark--footer">U</span>
+        <div class="site-footer__copy">
+          <strong>UniDock</strong>
+          <p data-i18n="footer.desc">为 NUIST 新生整理信息入口、校园资源与联系支持。</p>
+        </div>
+      </div>
+      <p class="site-footer__meta" data-i18n="footer.note">一个克制、清晰、可直接使用的新生首页入口。</p>
+    </div>
+  </footer>
+
+  <script src="./assets/js/nav.js" defer></script>
+  <script src="./assets/js/language.js" defer></script>
+  <script src="./assets/js/main.js" defer></script>
+</body>
+</html>
