@@ -32,6 +32,37 @@
     return /better-service(?:-detail)?\.html$/i.test(window.location.pathname || "");
   }
 
+  function isMailboxPage() {
+    return /mailbox(?:-detail)?\.html$/i.test(window.location.pathname || "");
+  }
+
+  function getMailboxUnreadCount() {
+    if (!window.UniDockMailbox || typeof window.UniDockMailbox.getUnreadCount !== "function") {
+      return 0;
+    }
+
+    return window.UniDockMailbox.getUnreadCount();
+  }
+
+  function createMailboxLink() {
+    const link = document.createElement("a");
+
+    link.className = "site-header__icon-link";
+    link.href = "./mailbox.html";
+    link.setAttribute("data-mailbox-link", "");
+    link.setAttribute("aria-label", "Mailbox");
+    link.innerHTML =
+      '<span class="site-header__icon" aria-hidden="true">' +
+        '<svg viewBox="0 0 24 24" fill="none">' +
+          '<path d="M4 7.5C4 6.67157 4.67157 6 5.5 6H18.5C19.3284 6 20 6.67157 20 7.5V16.5C20 17.3284 19.3284 18 18.5 18H5.5C4.67157 18 4 17.3284 4 16.5V7.5Z" />' +
+          '<path d="M5 7L12 12.5L19 7" />' +
+        "</svg>" +
+      "</span>" +
+      '<span class="site-header__status-dot" data-mailbox-indicator hidden></span>';
+
+    return link;
+  }
+
   function createBetterLink() {
     const link = document.createElement("a");
 
@@ -45,6 +76,40 @@
     }
 
     return link;
+  }
+
+  function updateMailboxLinks() {
+    const unreadCount = getMailboxUnreadCount();
+
+    document.querySelectorAll("[data-mailbox-link]").forEach(function (link) {
+      const indicator = link.querySelector("[data-mailbox-indicator]");
+      const hasUnread = unreadCount > 0;
+
+      link.classList.toggle("is-active", isMailboxPage());
+      link.classList.toggle("has-unread", hasUnread);
+      link.setAttribute("aria-label", hasUnread ? "Mailbox, " + unreadCount + " unread" : "Mailbox");
+
+      if (indicator) {
+        indicator.hidden = !hasUnread;
+      }
+    });
+  }
+
+  let mailboxSyncBound = false;
+
+  function bindMailboxIndicatorSync() {
+    if (mailboxSyncBound) {
+      return;
+    }
+
+    mailboxSyncBound = true;
+
+    window.addEventListener("unidock:mailbox-state-change", updateMailboxLinks);
+    window.addEventListener("storage", function (event) {
+      if (event.key === "mailbox_read_ids") {
+        updateMailboxLinks();
+      }
+    });
   }
 
   function createMenuButton() {
@@ -148,6 +213,7 @@
   function ensureHeaderActions() {
     document.querySelectorAll(".site-header__inner").forEach(function (headerInner) {
       let actions = headerInner.querySelector(".site-header__actions");
+      let mailboxLink = headerInner.querySelector("[data-mailbox-link]");
       let betterLink = headerInner.querySelector("[data-better-link]");
       const langSwitch = headerInner.querySelector(".lang-switch");
 
@@ -157,19 +223,24 @@
         headerInner.appendChild(actions);
       }
 
+      if (!mailboxLink) {
+        mailboxLink = createMailboxLink();
+      }
+
       if (!betterLink) {
         betterLink = createBetterLink();
       } else {
         betterLink.classList.toggle("is-active", isBetterServicePage());
       }
 
-      if (betterLink.parentElement !== actions) {
-        actions.insertBefore(betterLink, actions.firstChild);
-      }
+      actions.appendChild(mailboxLink);
+      actions.appendChild(betterLink);
 
       if (langSwitch && langSwitch.parentElement !== actions) {
         actions.appendChild(langSwitch);
       }
+
+      updateMailboxLinks();
     });
   }
 
@@ -297,6 +368,7 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     removeHomepageTopTag();
+    bindMailboxIndicatorSync();
     ensureStandaloneHeader();
     ensureMenuButton();
     ensureHeaderActions();

@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="查看 UniDock Better Service 内部整理入口，快速进入新生专属资源的结构化页面。">
+  <meta name="description" content="查看 UniDock Mailbox 内的站内通知、置顶消息与模块更新。">
   <meta name="theme-color" content="#f6f7fb">
-  <title>UniDock | Better Service</title>
+  <title>UniDock | Mailbox</title>
   <link rel="icon" href="./favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png">
@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="./assets/css/animations.css">
   <link rel="stylesheet" href="./assets/css/nav.css">
 </head>
-<body class="better-service-page">
+<body class="mailbox-page" data-mailbox-view="list">
   <div class="site-background" aria-hidden="true">
     <div class="site-background__mesh"></div>
     <div class="site-background__orb site-background__orb--one"></div>
@@ -39,7 +39,7 @@
             <span data-i18n="header.subline">NUIST Freshman Hub</span>
           </span>
         </a>
-        <span class="subpage-header__title">Better Service</span>
+        <span class="subpage-header__title">Mailbox</span>
       </div>
 
       <div class="lang-switch" data-i18n-aria-label="header.languageLabel" aria-label="语言切换">
@@ -62,27 +62,29 @@
       <div class="container">
         <div class="detail-shell">
           <section class="detail-intro" data-reveal>
-            <span class="eyebrow">Better Service</span>
-            <h1>Better Service</h1>
-            <p>内部整理 · 新生专属资源入口</p>
+            <span class="eyebrow">Mailbox</span>
+            <h1>Mailbox</h1>
+            <p>查看 UniDock 的站内通知、功能更新与重要提醒。</p>
           </section>
 
-          <section class="content-panel" data-reveal data-delay="40">
+          <section class="content-panel" data-mailbox-section="pinned" data-reveal data-delay="30">
             <div class="content-panel__header">
-              <span class="content-panel__eyebrow">精选条目</span>
-              <h2>从内部整理入口进入</h2>
+              <span class="content-panel__eyebrow">Pinned</span>
+              <h2>置顶消息</h2>
+              <p>优先查看的重要站内更新。</p>
             </div>
+            <div class="mailbox-list" data-mailbox-list="pinned"></div>
+          </section>
 
-            <div class="service-list-grid">
-              <a class="system-card service-entry-card" href="./better-service-detail.html?id=bs001">
-                <div class="system-card__head">
-                  <span class="system-card__badge">内部整理</span>
-                  <span class="system-card__arrow" aria-hidden="true">→</span>
-                </div>
-                <h3>新生开学资源内部整理</h3>
-                <p class="service-entry-card__summary">流量卡 / 宿舍用品 / 避坑合集（内部版）</p>
-                <span class="system-card__meta">查看详情</span>
-              </a>
+          <section class="content-panel" data-reveal data-delay="60">
+            <div class="content-panel__header">
+              <span class="content-panel__eyebrow">Inbox</span>
+              <h2>全部消息</h2>
+              <p>按时间排序的站内通知与功能更新。</p>
+            </div>
+            <div class="mailbox-list" data-mailbox-list="regular"></div>
+            <div class="mailbox-actions">
+              <button class="button button--secondary mailbox-mark-read" type="button" data-mailbox-mark-all>全部标为已读</button>
             </div>
           </section>
         </div>
