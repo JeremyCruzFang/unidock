@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="./assets/css/animations.css">
   <link rel="stylesheet" href="./assets/css/nav.css">
 </head>
-<body class="redirect-page">
+<body class="redirect-page" data-page="campusNavigationRedirect">
   <div class="site-background" aria-hidden="true">
     <div class="site-background__mesh"></div>
     <div class="site-background__orb site-background__orb--one"></div>
@@ -22,7 +22,7 @@
 
   <main class="redirect-main">
     <div class="container redirect-shell">
-      <a class="redirect-back" href="./index.html">返回首页</a>
+      <a class="redirect-back" href="./index.html" data-i18n="transition.backHome">返回首页</a>
 
       <section class="redirect-stage redirect-stage--choice" aria-labelledby="redirect-title">
         <div class="redirect-stage__glow" aria-hidden="true"></div>
@@ -33,28 +33,28 @@
           <span class="redirect-icon__mark">U</span>
         </div>
 
-        <span class="eyebrow redirect-stage__eyebrow">导航选择</span>
-        <h1 id="redirect-title" class="redirect-stage__title">选择你要前往的校园入口</h1>
-        <p class="redirect-stage__subtitle">地图和官网入口都已整理好，按你的当前需求继续前往。</p>
+        <span class="eyebrow redirect-stage__eyebrow" data-i18n="redirectChoices.campus.eyebrow">导航选择</span>
+        <h1 id="redirect-title" class="redirect-stage__title" data-i18n="redirectChoices.campus.title">选择你要前往的校园入口</h1>
+        <p class="redirect-stage__subtitle" data-i18n="redirectChoices.campus.subtitle">地图和官网入口都已整理好，按你的当前需求继续前往。</p>
 
         <div class="choice-grid">
-          <a class="choice-card choice-card--primary" href="./campus-map-redirect.html">
-            <span class="choice-card__label">主入口</span>
-            <h2 class="choice-card__title">校园地图</h2>
-            <p class="choice-card__desc">先查看校内位置、教学区与生活区分布，适合快速找路。</p>
-            <span class="choice-card__meta">立即前往</span>
+          <a class="choice-card choice-card--primary" href="./campus-map-redirect.html" data-campus-map-trigger>
+            <span class="choice-card__label" data-i18n="redirectChoices.campus.primaryLabel">主入口</span>
+            <h2 class="choice-card__title" data-i18n="redirectChoices.campus.primaryTitle">官方校园地图</h2>
+            <p class="choice-card__desc" data-i18n="redirectChoices.campus.primaryDesc">先查看校内位置、教学区与生活区分布，适合快速找路。</p>
+            <span class="choice-card__meta" data-i18n="redirectChoices.campus.primaryMeta">立即前往</span>
           </a>
 
           <a class="choice-card" href="./official-site-redirect.html">
-            <span class="choice-card__label">次入口</span>
-            <h2 class="choice-card__title">校园官网入口</h2>
-            <p class="choice-card__desc">前往学校官方站点，查看通知、公告与综合信息。</p>
-            <span class="choice-card__meta">继续打开</span>
+            <span class="choice-card__label" data-i18n="redirectChoices.campus.secondaryLabel">次入口</span>
+            <h2 class="choice-card__title" data-i18n="redirectChoices.campus.secondaryTitle">校园官网入口</h2>
+            <p class="choice-card__desc" data-i18n="redirectChoices.campus.secondaryDesc">前往学校官方网站，查看通知、公告与综合信息。</p>
+            <span class="choice-card__meta" data-i18n="redirectChoices.campus.secondaryMeta">继续打开</span>
           </a>
         </div>
 
         <div class="redirect-actions redirect-actions--choice">
-          <a class="button button--secondary" href="./index.html">返回首页</a>
+          <a class="button button--secondary" href="./index.html" data-i18n="transition.backHome">返回首页</a>
         </div>
       </section>
 

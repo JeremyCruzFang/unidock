@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="UniDock 正在为你打开南京信息工程大学校园地图。">
+  <meta name="description" content="UniDock 正在为你打开南京信息工程大学官方校园地图服务。">
   <meta name="theme-color" content="#f6f7fb">
-  <title>UniDock | 正在前往校园地图</title>
+  <title>UniDock | 正在前往官方校园地图</title>
   <link rel="stylesheet" href="./assets/css/base.css">
   <link rel="stylesheet" href="./assets/css/components.css">
   <link rel="stylesheet" href="./assets/css/pages.css">
   <link rel="stylesheet" href="./assets/css/animations.css">
   <link rel="stylesheet" href="./assets/css/nav.css">
 </head>
-<body class="redirect-page" data-redirect-page data-redirect-target="https://map.nuist.edu.cn" data-redirect-delay="3">
+<body class="redirect-page" data-page="campusMapRedirect" data-redirect-page data-redirect-target="https://map.nuist.edu.cn" data-redirect-delay="3">
   <div class="site-background" aria-hidden="true">
     <div class="site-background__mesh"></div>
     <div class="site-background__orb site-background__orb--one"></div>
@@ -22,7 +22,7 @@
 
   <main class="redirect-main">
     <div class="container redirect-shell">
-      <a class="redirect-back" href="./index.html">返回首页</a>
+      <a class="redirect-back" href="./index.html" data-i18n="transition.backHome">返回首页</a>
 
       <section class="redirect-stage" aria-labelledby="redirect-title">
         <div class="redirect-stage__glow" aria-hidden="true"></div>
@@ -33,20 +33,22 @@
           <span class="redirect-icon__mark">U</span>
         </div>
 
-        <span class="eyebrow redirect-stage__eyebrow">站外打开</span>
-        <h1 id="redirect-title" class="redirect-stage__title">正在前往校园地图</h1>
-        <p class="redirect-stage__subtitle">即将跳转至南京信息工程大学校园地图页面。</p>
+        <span class="eyebrow redirect-stage__eyebrow" data-i18n="transition.leaving">站外打开</span>
+        <h1 id="redirect-title" class="redirect-stage__title" data-i18n="transition.campusMapTitle">正在前往官方校园地图</h1>
+        <p class="redirect-stage__subtitle" data-i18n="transition.campusMapSubtitle">即将跳转至南京信息工程大学官方校园地图服务。</p>
 
-        <div class="redirect-domain" aria-label="目标域名">map.nuist.edu.cn</div>
+        <div class="redirect-domain" data-i18n-aria-label="transition.domainLabel" aria-label="目标域名">map.nuist.edu.cn</div>
 
         <p class="redirect-status" aria-live="polite">
           <span class="redirect-status__dot" aria-hidden="true"></span>
-          <span>将在 <strong data-redirect-count>3</strong> 秒后自动打开</span>
+          <span data-i18n="transition.opensIn">将在</span>
+          <strong data-redirect-count>3</strong>
+          <span data-i18n="transition.secondsAuto">秒后自动打开</span>
         </p>
 
         <div class="redirect-actions">
-          <a class="button button--primary" href="https://map.nuist.edu.cn" data-redirect-open>立即前往</a>
-          <a class="button button--secondary" href="./index.html" data-redirect-home>返回首页</a>
+          <a class="button button--primary" href="https://map.nuist.edu.cn" data-redirect-open data-i18n="transition.openNow">立即前往</a>
+          <a class="button button--secondary" href="./index.html" data-redirect-home data-i18n="transition.backHome">返回首页</a>
         </div>
       </section>
 

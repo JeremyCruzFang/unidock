@@ -3,37 +3,73 @@
   const mailboxData = [
     {
       id: "mb001",
-      title: "UniDock 已上线 Better Service",
-      content:
-        "Better Service 已开放内部资源入口。\n\n你可以通过首页卡片、顶部导航栏 Better 入口或共享菜单进入对应页面。\n\n该模块会持续承载经过整理的内部资源方向与后续更新。",
+      title: {
+        zh: "UniDock 已上线 Better Service",
+        en: "Better Service is now live on UniDock"
+      },
+      content: {
+        zh: "Better Service 已开放内部资源入口。\n\n你现在可以通过首页卡片、顶部导航栏 Better 入口或目录菜单进入对应页面。\n\n该模块会持续承载经过整理的内部资源方向与后续更新。",
+        en: "Better Service is now available as an internal resource entry.\n\nYou can open it from the homepage card, the Better link in the top navbar, or the global drawer menu.\n\nThis module will continue to carry curated internal resource directions and follow-up updates."
+      },
       date: "2026-04-20",
       pinned: true
     },
     {
       id: "mb002",
-      title: "新生必看模块更新",
-      content:
-        "我们优化了新生必看模块的结构。\n\n现在可以更快定位报道流程、行前准备、避坑提示与校内系统导航四类核心内容。",
+      title: {
+        zh: "新生必看模块更新",
+        en: "Freshman Must-Read module updated"
+      },
+      content: {
+        zh: "我们优化了新生必看模块的结构。\n\n现在可以更快定位报到流程、行前准备、避坑提示与校内系统导航四类核心内容。",
+        en: "We refined the structure of the Freshman Must-Read module.\n\nIt is now faster to reach the four core areas: arrival steps, pre-departure prep, pitfall notes, and campus systems guidance."
+      },
       date: "2026-04-18",
       pinned: false
     },
     {
       id: "mb003",
-      title: "联系方式页已完成整理",
-      content:
-        "联系方式页已统一整理为同一套结构。\n\n手机、微信与邮箱可以直接复制，减少重复确认与手动记录的成本。",
+      title: {
+        zh: "联系方式页已完成整理",
+        en: "The contact page has been cleaned up"
+      },
+      content: {
+        zh: "联系方式页已统一整理为同一套结构。\n\n手机号、微信与邮箱可以直接复制，减少重复确认与手动记录的成本。",
+        en: "The contact page now follows one consistent structure.\n\nPhone numbers, WeChat values, and email addresses can be copied directly to reduce repeated confirmation."
+      },
       date: "2026-04-16",
       pinned: false
     },
     {
       id: "mb004",
-      title: "校内系统导航补充说明",
-      content:
-        "我们补充了校内常用系统与应用的入口说明。\n\n后续如果有新增站内指引，也会优先通过 Mailbox 进行提醒。",
+      title: {
+        zh: "校内系统导航补充说明",
+        en: "Campus systems guide updated with extra notes"
+      },
+      content: {
+        zh: "我们补充了校内常用系统与应用的入口说明。\n\n后续如果有新增站内指引，也会优先通过 Mailbox 进行提醒。",
+        en: "We added more notes for commonly used campus systems and apps.\n\nIf more internal guidance is added later, Mailbox will remain the first place for reminders."
+      },
       date: "2026-04-14",
       pinned: false
     }
   ];
+
+  function t(key) {
+    if (!window.UniDockI18n || typeof window.UniDockI18n.t !== "function") {
+      return "";
+    }
+
+    return window.UniDockI18n.t(key);
+  }
+
+  function getLanguage() {
+    if (!window.UniDockI18n || typeof window.UniDockI18n.getLanguage !== "function") {
+      return "zh";
+    }
+
+    return window.UniDockI18n.getLanguage();
+  }
 
   function normalizeReadIds(value) {
     if (!Array.isArray(value)) {
@@ -140,6 +176,20 @@
     }) || null;
   }
 
+  function getLocalizedField(field) {
+    const lang = getLanguage();
+
+    if (typeof field === "string") {
+      return field;
+    }
+
+    if (field && typeof field === "object") {
+      return field[lang] || field.zh || field.en || "";
+    }
+
+    return "";
+  }
+
   function escapeHtml(value) {
     return String(value)
       .replace(/&/g, "&amp;")
@@ -151,9 +201,18 @@
 
   function formatDate(dateString) {
     const date = new Date(dateString + "T00:00:00");
+    const lang = getLanguage();
 
     if (Number.isNaN(date.getTime())) {
       return dateString;
+    }
+
+    if (lang === "en") {
+      return date.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "short",
+        day: "numeric"
+      });
     }
 
     return date.toLocaleDateString("zh-CN", {
@@ -164,7 +223,7 @@
   }
 
   function formatContent(content) {
-    return content
+    return getLocalizedField(content)
       .split(/\n{2,}/)
       .map(function (paragraph) {
         return paragraph.trim();
@@ -181,8 +240,8 @@
       '<a class="mailbox-item" href="./mailbox-detail.html?id=' + encodeURIComponent(message.id) + '">' +
         '<div class="mailbox-item__main">' +
           '<div class="mailbox-item__title-row">' +
-            "<h3>" + escapeHtml(message.title) + "</h3>" +
-            (message.pinned ? '<span class="mailbox-item__badge">置顶</span>' : "") +
+            "<h3>" + escapeHtml(getLocalizedField(message.title)) + "</h3>" +
+            (message.pinned ? '<span class="mailbox-item__badge">' + escapeHtml(t("mailbox.pinnedBadge")) + "</span>" : "") +
           "</div>" +
         "</div>" +
         '<div class="mailbox-item__meta">' +
@@ -226,8 +285,8 @@
       pinnedSection.hidden = pinnedMessages.length === 0;
     }
 
-    renderMailboxList(pinnedContainer, pinnedMessages, "暂无置顶消息。");
-    renderMailboxList(regularContainer, regularMessages, "暂无消息。");
+    renderMailboxList(pinnedContainer, pinnedMessages, t("mailbox.noPinned"));
+    renderMailboxList(regularContainer, regularMessages, t("mailbox.noMessages"));
     updateMarkAllButton(markAllButton);
   }
 
@@ -243,18 +302,18 @@
     }
 
     if (!message) {
-      titleElement.textContent = "消息不存在";
-      dateElement.textContent = "请返回 Mailbox 查看其他消息";
-      contentElement.innerHTML = "<p>当前消息不存在，或暂时无法读取。</p>";
-      document.title = "UniDock | Mailbox";
+      titleElement.textContent = t("mailbox.notFoundTitle");
+      dateElement.textContent = t("mailbox.notFoundDate");
+      contentElement.innerHTML = "<p>" + escapeHtml(t("mailbox.notFoundBody")) + "</p>";
+      document.title = "UniDock | " + t("mailbox.headerTitle");
       return;
     }
 
     markAsRead(message.id);
-    titleElement.textContent = message.title;
+    titleElement.textContent = getLocalizedField(message.title);
     dateElement.textContent = formatDate(message.date);
     contentElement.innerHTML = formatContent(message.content);
-    document.title = "UniDock | " + message.title;
+    document.title = "UniDock | " + getLocalizedField(message.title);
   }
 
   function dispatchMailboxStateChange() {
@@ -278,22 +337,8 @@
     }
   }
 
-  window.addEventListener("storage", function (event) {
-    if (event.key !== STORAGE_KEY) {
-      return;
-    }
-
-    if (document.body.getAttribute("data-mailbox-view") === "list") {
-      renderMailboxListPage();
-    }
-
-    dispatchMailboxStateChange();
-  });
-
-  document.addEventListener("DOMContentLoaded", function () {
+  function rerenderMailboxView() {
     const view = document.body.getAttribute("data-mailbox-view");
-
-    bindMailboxPageEvents();
 
     if (view === "list") {
       renderMailboxListPage();
@@ -302,7 +347,24 @@
     if (view === "detail") {
       renderMailboxDetailPage();
     }
+  }
 
+  window.addEventListener("storage", function (event) {
+    if (event.key !== STORAGE_KEY) {
+      return;
+    }
+
+    rerenderMailboxView();
+    dispatchMailboxStateChange();
+  });
+
+  window.addEventListener("unidock:language-change", function () {
+    rerenderMailboxView();
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    bindMailboxPageEvents();
+    rerenderMailboxView();
     dispatchMailboxStateChange();
   });
 

@@ -1,20 +1,21 @@
 (function () {
   const STORAGE_KEY = "unidock-language";
   const defaultLang = "zh";
+  let currentLang = defaultLang;
 
   const translations = {
     zh: {
       meta: {
         title: "UniDock | 新生信息与资源入口",
-        description: "UniDock 为 NUIST 新生整理入学前后最常用的信息入口与生活资源，帮你更快完成适应与连接。"
+        description: "UniDock 为 NUIST 新生整理入学前后最常用的信息入口与生活资源，帮助你更快适应与连接。"
       },
       arrivalMeta: {
-        title: "UniDock | 报道全流程",
-        description: "查看 UniDock 整理的报道全流程，从出发到完成报到，按阶段完成关键步骤。"
+        title: "UniDock | 报到全流程",
+        description: "查看 UniDock 整理的报到全流程，从出发到完成报到，按阶段完成关键步骤。"
       },
       checklistMeta: {
         title: "UniDock | 行前准备清单",
-        description: "查看 UniDock 整理的行前准备清单，出发前完成关键准备，减少入校后的遗漏与返工。"
+        description: "查看 UniDock 整理的行前准备清单，在出发前完成关键准备，减少入校后的遗漏与返工。"
       },
       pitfallsMeta: {
         title: "UniDock | 新生避坑提示",
@@ -26,7 +27,39 @@
       },
       contactMeta: {
         title: "UniDock | 联系负责人",
-        description: "联系 UniDock 负责人，快速复制手机号、微信号或邮箱，处理报道流程、行前准备、校园资源与基础使用问题。"
+        description: "联系 UniDock 负责人，快速复制手机号、微信号或邮箱，处理报到流程、行前准备、校园资源与页面使用问题。"
+      },
+      betterServiceMeta: {
+        title: "UniDock | Better Service",
+        description: "查看 UniDock Better Service 内部整理入口，快速进入面向新生的结构化资源页。"
+      },
+      betterServiceDetailMeta: {
+        title: "UniDock | Better Service 详情",
+        description: "查看 Better Service 内部整理详情，了解新生开学资源方向、内部渠道价值与联系入口。"
+      },
+      mailboxMeta: {
+        title: "UniDock | Mailbox",
+        description: "查看 UniDock Mailbox 内的站内通知、置顶消息与模块更新。"
+      },
+      mailboxDetailMeta: {
+        title: "UniDock | Mailbox 详情",
+        description: "查看 UniDock Mailbox 消息详情与具体内容。"
+      },
+      campusMapRedirectMeta: {
+        title: "UniDock | 正在前往官方校园地图",
+        description: "UniDock 正在为你打开南京信息工程大学官方校园地图服务。"
+      },
+      officialSiteRedirectMeta: {
+        title: "UniDock | 正在前往校园官网",
+        description: "UniDock 正在为你打开南京信息工程大学官方网站。"
+      },
+      lifeResourcesRedirectMeta: {
+        title: "UniDock | 选择生活资源入口",
+        description: "UniDock 为你分发生命卡与宿舍用具相关入口。"
+      },
+      campusNavigationRedirectMeta: {
+        title: "UniDock | 选择校园入口",
+        description: "UniDock 为你分发校园地图与校园官网入口。"
       },
       header: {
         subline: "NUIST Freshman Hub",
@@ -35,10 +68,26 @@
       subpage: {
         back: "返回首页"
       },
+      common: {
+        back: "返回",
+        close: "关闭",
+        copy: "复制",
+        copied: "已复制"
+      },
+      menu: {
+        toggle: "打开目录",
+        freshman: "新生必看",
+        arrival: "报到准备",
+        living: "生活资源",
+        navigation: "校内导航",
+        better: "Better Service",
+        internal: "内部",
+        contact: "联系负责人"
+      },
       hero: {
         eyebrow: "NUIST 新生入学支持",
         title: "连接新生信息、校园资源与入学支持",
-        subtitle: "UniDock 为 NUIST 新生整理入学前后最常用的信息入口与生活资源，帮你更快完成适应与连接。",
+        subtitle: "UniDock 为 NUIST 新生整理入学前后最常用的信息入口与生活资源，帮助你更快完成适应与连接。",
         primary: "开始查看",
         secondary: "联系负责人",
         pills: [
@@ -46,13 +95,13 @@
           "覆盖入学前后关键阶段",
           "联系支持更直接"
         ],
-        floatTop: "报道准备",
+        floatTop: "报到准备",
         floatBottom: "地图 / 系统 / 联系方式",
         panelTag: "精选入口",
         panelTitle: "你需要的入口，更快抵达",
-        panelSubtitle: "从报道准备到校园生活，先看这些高频内容。",
+        panelSubtitle: "从报到准备到校园生活，先看这些高频内容。",
         panelItems: [
-          { title: "报道准备", meta: "流程与材料" },
+          { title: "报到准备", meta: "流程与材料" },
           { title: "生活资源", meta: "寝室与流量卡" },
           { title: "校内导航", meta: "地图与官网入口" }
         ]
@@ -73,8 +122,8 @@
             hint: "查看入口"
           },
           {
-            title: "校园地图",
-            desc: "提前熟悉教学区、生活区和常用办事地点。",
+            title: "官方校园地图",
+            desc: "跳转至南京信息工程大学官方地图服务，UniDock 仅提供便捷入口。",
             hint: "站外打开"
           },
           {
@@ -84,7 +133,7 @@
           },
           {
             title: "新生必看",
-            desc: "把报道、准备与避坑内容集中放在一个入口。",
+            desc: "把报到、准备与避坑内容集中放在一个入口。",
             hint: "进入查看"
           },
           {
@@ -92,7 +141,13 @@
             desc: "遇到具体问题时，直接找到对应负责人员。",
             hint: "立即联系"
           }
-        ]
+        ],
+        better: {
+          title: "Better Service",
+          desc: "内部资源入口（新生专属）",
+          hint: "进入查看",
+          badge: "内部"
+        }
       },
       why: {
         eyebrow: "Why UniDock",
@@ -105,7 +160,7 @@
           },
           {
             title: "新生入口集中整理",
-            desc: "从报道前准备到校内导航，先把最常用的内容整理完整。"
+            desc: "从报到前准备到校内导航，先把最常用的内容整理完整。"
           },
           {
             title: "降低信息差",
@@ -119,7 +174,7 @@
         subtitle: "把最容易遗漏的环节拆成四个清晰入口，帮助你按顺序推进准备与适应。",
         items: [
           {
-            title: "报道全流程",
+            title: "报到全流程",
             desc: "按时间顺序梳理报到当天需要完成的关键步骤。"
           },
           {
@@ -167,7 +222,7 @@
               "校内交通需合规，违规车辆可能被清理。",
               "校园卡套餐差异较大，建议提前对比选择。"
             ],
-            noteLabel: "UniDock建议",
+            noteLabel: "UniDock 建议",
             noteText: "入学前完成校园流量卡选择，避免开学排队和信息差。"
           },
           essentials: {
@@ -181,7 +236,7 @@
               "日常生活服务依赖多个 APP，建议提前下载。",
               "学时和课程要求因学院不同而有所差异。"
             ],
-            noteLabel: "UniDock定位",
+            noteLabel: "UniDock 定位",
             noteText: "帮助你在入学前完成关键准备，让你到校即进入状态。"
           }
         }
@@ -225,7 +280,7 @@
           {
             badge: "校内应用",
             title: "趣智校园",
-            desc: "洗澡、饮水",
+            desc: "洗浴、饮水",
             meta: "生活服务"
           },
           {
@@ -236,21 +291,193 @@
           },
           {
             badge: "校内应用",
-            title: "闪动校园Pro",
+            title: "闪动校园 Pro",
             desc: "校园跑",
             meta: "体测相关"
           },
           {
             badge: "校内应用",
-            title: "PU口袋校园",
+            title: "PU 口袋校园",
             desc: "学时系统",
             meta: "活动与学时"
           }
         ],
         note: {
-          label: "UniDock优势",
+          label: "UniDock 优势",
           text: "整合关键系统入口，减少信息查找成本。"
         }
+      },
+      campusMap: {
+        title: "官方校园地图",
+        desc: "跳转至南京信息工程大学官方地图服务，UniDock 仅提供便捷入口。",
+        confirmTitle: "官方校园地图",
+        confirmBody: "你即将离开 UniDock，前往南京信息工程大学官方校园地图服务。地图内容与服务由校方系统提供，UniDock 仅提供便捷导航入口。如官方页面出现授权、商用或使用提示，请以校方说明为准。",
+        openOfficial: "前往官方地图",
+        back: "返回 UniDock"
+      },
+      transition: {
+        leaving: "站外打开",
+        loading: "正在跳转",
+        opensIn: "将在",
+        secondsAuto: "秒后自动打开",
+        openNow: "立即前往",
+        backHome: "返回首页",
+        domainLabel: "目标域名",
+        campusMapTitle: "正在前往官方校园地图",
+        campusMapSubtitle: "即将跳转至南京信息工程大学官方校园地图服务。",
+        officialSiteTitle: "正在前往校园官网",
+        officialSiteSubtitle: "即将跳转至南京信息工程大学官方网站。"
+      },
+      redirectChoices: {
+        campus: {
+          eyebrow: "导航选择",
+          title: "选择你要前往的校园入口",
+          subtitle: "地图和官网入口都已整理好，按你的当前需求继续前往。",
+          primaryLabel: "主入口",
+          primaryTitle: "官方校园地图",
+          primaryDesc: "先查看校内位置、教学区与生活区分布，适合快速找路。",
+          primaryMeta: "立即前往",
+          secondaryLabel: "次入口",
+          secondaryTitle: "校园官网入口",
+          secondaryDesc: "前往学校官方网站，查看通知、公告与综合信息。",
+          secondaryMeta: "继续打开"
+        },
+        resources: {
+          eyebrow: "资源选择",
+          title: "选择你要前往的生活资源",
+          subtitle: "先选择当前最需要查看的资源方向，再继续进入对应入口。",
+          primaryLabel: "主入口",
+          primaryTitle: "校园流量卡",
+          primaryDesc: "返回首页并定位到校园流量卡入口，继续查看对应链接。",
+          primaryMeta: "进入资源",
+          secondaryLabel: "次入口",
+          secondaryTitle: "寝室用具",
+          secondaryDesc: "返回首页并定位到寝室用具入口，继续查看对应链接。",
+          secondaryMeta: "进入资源"
+        }
+      },
+      contact: {
+        eyebrow: "联系方式",
+        title: "联系负责人",
+        intro: "如在报到流程、行前准备、校园资源或页面使用中遇到问题，可直接联系对应负责人。",
+        panelEyebrow: "负责人联系方式",
+        panelTitle: "复制后即可直接联系",
+        panelDesc: "手机号、微信与邮箱已整理为统一结构，减少重复确认和手动记录成本。",
+        owner01: "负责人 01",
+        owner02: "负责人 02",
+        sameWechat: "微信同号",
+        phone: "手机号",
+        wechat: "微信",
+        email: "邮箱",
+        partnershipEyebrow: "合作联系",
+        partnershipTitle: "意向合作联系",
+        partnershipDesc: "如需站点合作、共建或内容协作，可直接通过以下方式联系。",
+        partnershipBadge: "合作入口",
+        partnershipHint: "保持与负责人区块同一套联系方式结构，便于快速复制。",
+        partnershipPhone: "合作联系电话",
+        partnershipEmail: "合作邮箱"
+      },
+      betterService: {
+        headerTitle: "Better Service",
+        eyebrow: "Better Service",
+        title: "Better Service",
+        subtitle: "内部整理 · 新生专属资源入口",
+        sectionEyebrow: "精选条目",
+        sectionTitle: "从内部整理入口进入",
+        sectionDesc: "当前公开一个结构化条目，用于说明内部资源的价值与获取方式。",
+        entryBadge: "内部整理",
+        entryTitle: "新生开学资源内部整理",
+        entryDesc: "流量卡 / 宿舍用品 / 避坑合集（内部版）",
+        entryMeta: "查看详情",
+        detailTitle: "新生开学资源内部整理（限量开放）",
+        detailSubtitle: "把真正影响开学体验的资源方向先整理成结构化页面，再决定是否进入内部渠道。",
+        section1Eyebrow: "Section 1",
+        section1Title: "这不是普通推荐清单",
+        section1P1: "这份内容由往届学长整理，已经帮你把开学阶段最容易踩坑、最耗时间的事情筛过一遍。",
+        section1P2: "你现在看到的是精简公开版。",
+        section1Note: "由 UniDock 整理",
+        section2Eyebrow: "Section 2",
+        section2Title: "核心资源方向（已验证）",
+        section2Card1Title: "1. 校园流量卡",
+        section2Card1Item1: "不同运营商真实体验差异",
+        section2Card1Item2: "校园套餐 vs 普通套餐区别",
+        section2Card1Item3: "常见“低价坑位”避雷",
+        section2Card1Outcome: "避免刚入学就被不合适套餐绑定",
+        section2Card2Title: "2. 宿舍用品选择",
+        section2Card2Item1: "哪些是必须提前准备的",
+        section2Card2Item2: "哪些完全没必要带或买",
+        section2Card2Item3: "校内 vs 校外购买差异",
+        section2Card2Outcome: "减少行李负担，避免重复消费",
+        section2Card3Title: "3. 开学阶段高频服务",
+        section2Card3Item1: "行李搬运 / 接机",
+        section2Card3Item2: "校园代办 / 指引",
+        section2Card3Item3: "临时应急资源",
+        section2Card3Outcome: "解决刚到学校阶段的混乱",
+        section3Eyebrow: "Section 3",
+        section3Title: "但关键信息不在这里",
+        section3Intro: "以下内容不会在公开页面展示：",
+        section3Item1: "实时更新的资源渠道",
+        section3Item2: "实际可用的服务联系方式",
+        section3Item3: "内部筛选过的可靠人员",
+        section3Item4: "开学阶段的动态信息变化",
+        section3Outro: "这些信息只会在私域内同步更新。",
+        section4Eyebrow: "Section 4",
+        section4Title: "为什么建议进入内部渠道",
+        section4Intro: "开学阶段的信息具有很强的时效性：",
+        section4Item1: "今天可用的资源，三天后可能失效",
+        section4Item2: "同一项服务，不同时间价格差异很大",
+        section4Item3: "有些渠道只在小范围流通",
+        section4Outcome: "如果只看公开信息，基本等于滞后版本",
+        section5Eyebrow: "Section 5",
+        section5Title: "你能获得什么",
+        section5Intro: "进入内部渠道后，你会获得：",
+        section5Item1: "实时更新的资源信息",
+        section5Item2: "避坑提醒（基于真实反馈）",
+        section5Item3: "已筛选的服务入口",
+        section5Item4: "直接对接负责人，减少中间环节",
+        section6Eyebrow: "Section 6",
+        section6Title: "获取完整资源（内部版）",
+        section6Desc: "如果你不想在开学阶段再用时间试错，可以直接进入负责人联系入口，获取完整资源的同步方式。",
+        section6Cta: "进入联系负责人",
+        section7Eyebrow: "Section 7",
+        section7Title: "使用说明（很重要）",
+        section7Item1: "仅面向当届新生开放",
+        section7Item2: "不做无关信息推送",
+        section7Item3: "高峰期可能限制新增，避免信息失控",
+        section8Eyebrow: "Section 8",
+        section8Title: "最后提醒",
+        section8Intro: "开学阶段是一个信息差非常明显的时间窗口：",
+        section8Item1: "有人提前准备，顺利过渡",
+        section8Item2: "有人盲目跟随，多花钱也多走弯路",
+        section8Outcome: "是否进入内部渠道，本质上是你是否选择降低试错成本",
+        finalEyebrow: "Final CTA",
+        finalTitle: "现在进入内部渠道",
+        finalCta: "联系负责人"
+      },
+      mailbox: {
+        headerTitle: "站内信箱",
+        navLabel: "站内信箱",
+        navLabelUnread: "站内信箱，{count} 条未读",
+        eyebrow: "Mailbox",
+        title: "站内信箱",
+        intro: "查看 UniDock 的站内通知、功能更新与重要提醒。",
+        pinnedEyebrow: "Pinned",
+        pinnedTitle: "置顶消息",
+        pinnedDesc: "优先查看的重要站内更新。",
+        inboxEyebrow: "Inbox",
+        inboxTitle: "全部消息",
+        inboxDesc: "按时间排序的站内通知与功能更新。",
+        markAll: "全部标为已读",
+        pinnedBadge: "置顶",
+        noPinned: "暂无置顶消息。",
+        noMessages: "暂无消息。",
+        detailBack: "返回",
+        detailEyebrow: "Message",
+        detailTitle: "消息内容",
+        loading: "加载中...",
+        notFoundTitle: "消息不存在",
+        notFoundDate: "请返回 Mailbox 查看其他消息",
+        notFoundBody: "当前消息不存在，或暂时无法读取。"
       },
       footer: {
         desc: "为 NUIST 新生整理信息入口、校园资源与联系支持。",
@@ -260,11 +487,11 @@
     en: {
       meta: {
         title: "UniDock | Freshman Information and Resource Hub",
-        description: "UniDock brings together the most useful pre-arrival and campus-life links for NUIST freshmen, helping them adapt and connect faster."
+        description: "UniDock gathers the most useful links and life resources for NUIST freshmen before and after arrival, helping them adapt faster."
       },
       arrivalMeta: {
         title: "UniDock | Arrival Process",
-        description: "Review UniDock's arrival process page and complete the key steps from departure to final check-in."
+        description: "Review UniDock's arrival process and complete the key steps from departure to check-in."
       },
       checklistMeta: {
         title: "UniDock | Pre-Departure Checklist",
@@ -272,15 +499,47 @@
       },
       pitfallsMeta: {
         title: "UniDock | Freshman Pitfalls",
-        description: "Review UniDock's freshman pitfalls and study-life notes to prepare the key basics before arriving on campus."
+        description: "Review UniDock's freshman pitfalls and study-life notes to prepare the key basics before arrival."
       },
       systemsMeta: {
         title: "UniDock | Campus Systems Guide",
-        description: "Review UniDock's campus system guide to quickly find the unified portal, info portal, and commonly used campus apps."
+        description: "Review UniDock's campus systems guide to quickly find the unified portal, info portal, and commonly used campus apps."
       },
       contactMeta: {
         title: "UniDock | Contact Leads",
-        description: "Contact UniDock leads directly and quickly copy phone numbers, WeChat IDs, or email addresses for help."
+        description: "Contact UniDock leads directly and quickly copy phone numbers, WeChat IDs, or email addresses for support."
+      },
+      betterServiceMeta: {
+        title: "UniDock | Better Service",
+        description: "View the Better Service internal entry and access a structured resource page prepared for freshmen."
+      },
+      betterServiceDetailMeta: {
+        title: "UniDock | Better Service Detail",
+        description: "View the Better Service detail page to understand the resource direction, internal channel value, and contact entry."
+      },
+      mailboxMeta: {
+        title: "UniDock | Mailbox",
+        description: "View mailbox announcements, pinned updates, and module changes inside UniDock."
+      },
+      mailboxDetailMeta: {
+        title: "UniDock | Mailbox Detail",
+        description: "View the full content of a mailbox message in UniDock."
+      },
+      campusMapRedirectMeta: {
+        title: "UniDock | Opening the Official Campus Map",
+        description: "UniDock is opening the official campus map service of NUIST for you."
+      },
+      officialSiteRedirectMeta: {
+        title: "UniDock | Opening the Official Website",
+        description: "UniDock is opening the official website of NUIST for you."
+      },
+      lifeResourcesRedirectMeta: {
+        title: "UniDock | Choose a Living Resource Entry",
+        description: "UniDock is routing you to the campus SIM card and dorm essentials entries."
+      },
+      campusNavigationRedirectMeta: {
+        title: "UniDock | Choose a Campus Entry",
+        description: "UniDock is routing you to the campus map and official website entries."
       },
       header: {
         subline: "NUIST Freshman Hub",
@@ -289,12 +548,28 @@
       subpage: {
         back: "Back to Home"
       },
+      common: {
+        back: "Back",
+        close: "Close",
+        copy: "Copy",
+        copied: "Copied"
+      },
+      menu: {
+        toggle: "Open menu",
+        freshman: "Freshman Must-Read",
+        arrival: "Arrival Prep",
+        living: "Living Resources",
+        navigation: "Campus Navigation",
+        better: "Better Service",
+        internal: "Internal",
+        contact: "Contact Leads"
+      },
       hero: {
         eyebrow: "NUIST Freshman Support",
         title: "Connect freshman information, campus resources, and arrival support",
-        subtitle: "UniDock gathers the links and life resources NUIST freshmen use most before and after arrival, helping them settle in and connect faster.",
+        subtitle: "UniDock gathers the links and resources NUIST freshmen use most before and after arrival, helping them settle in faster.",
         primary: "Start Exploring",
-        secondary: "Contact Lead",
+        secondary: "Contact Leads",
         pills: [
           "Key links in one place",
           "Covers pre-arrival to campus life",
@@ -304,21 +579,21 @@
         floatBottom: "Map / Systems / Contact",
         panelTag: "Selected Links",
         panelTitle: "Reach what matters faster",
-        panelSubtitle: "From arrival prep to daily campus life, start with these essentials.",
+        panelSubtitle: "From arrival prep to campus life, start with these essentials.",
         panelItems: [
           { title: "Arrival Prep", meta: "Steps and materials" },
-          { title: "Living Resources", meta: "Dorm supplies and SIM card" },
+          { title: "Living Resources", meta: "Dorm and SIM card" },
           { title: "Campus Navigation", meta: "Map and official site" }
         ]
       },
       core: {
         eyebrow: "Core Entry",
         title: "Keep high-frequency links in one place",
-        subtitle: "Reduce repeated searching and start with the items freshmen use most.",
+        subtitle: "Reduce repeated searching and start with what freshmen use most.",
         cards: [
           {
             title: "Campus SIM Card",
-            desc: "Quickly check mobile plans that are relevant for freshmen.",
+            desc: "Quickly review mobile plans that are relevant for freshmen.",
             hint: "Open entry"
           },
           {
@@ -327,8 +602,8 @@
             hint: "Open entry"
           },
           {
-            title: "Campus Map",
-            desc: "Get familiar with teaching areas, living zones, and key service spots.",
+            title: "Official Campus Map",
+            desc: "Open the official NUIST campus map service. UniDock only provides a convenient entry.",
             hint: "Open site"
           },
           {
@@ -346,7 +621,13 @@
             desc: "Reach the responsible person directly when you have a specific question.",
             hint: "Contact now"
           }
-        ]
+        ],
+        better: {
+          title: "Better Service",
+          desc: "Internal entry for freshmen only",
+          hint: "View details",
+          badge: "Internal"
+        }
       },
       why: {
         eyebrow: "Why UniDock",
@@ -355,7 +636,7 @@
         items: [
           {
             title: "No need to search everywhere",
-            desc: "Put high-frequency links on one page instead of jumping across chats, posts, and search results."
+            desc: "Keep high-frequency links on one page instead of jumping across chats, posts, and search results."
           },
           {
             title: "Freshman links are curated",
@@ -363,7 +644,7 @@
           },
           {
             title: "Reduce the information gap",
-            desc: "Even first-time visitors to campus information can quickly see what to read next."
+            desc: "Even first-time visitors can quickly see what to read next."
           }
         ]
       },
@@ -393,7 +674,7 @@
       cta: {
         eyebrow: "Further Help",
         title: "Still have unresolved questions?",
-        desc: "You can reach the responsible contact from this site for additional help.",
+        desc: "You can reach the responsible contacts for additional help.",
         button: "Add Contact"
       },
       pitfallsPage: {
@@ -401,6 +682,43 @@
           eyebrow: "Freshman Notes",
           title: "Freshman Pitfalls",
           subtitle: "Clarify the most commonly overlooked points before arrival, and line up the basics of study and campus life early."
+        },
+        sections: {
+          pitfalls: {
+            eyebrow: "Section A",
+            title: "Freshman Pitfalls",
+            subtitle: "Avoid the most common judgment mistakes, missing information, and life-management issues in the first stage of campus life.",
+            items: [
+              "Do not treat university as a stage for coasting. Course difficulty and self-management expectations rise sharply.",
+              "Do not focus only on avoiding failed classes. GPA affects awards, postgraduate recommendations, studying abroad, and job applications.",
+              "Do not ignore attendance and continuous assessment. Class participation and assignments matter a lot.",
+              "Do not join too many clubs. Choose two or three that genuinely match your interests.",
+              "Manage your living expenses to avoid unnecessary financial pressure.",
+              "Keep healthy boundaries in dorm relationships and respect differences.",
+              "Track important notices yourself instead of relying on others to remind you.",
+              "Ask for help early when problems show up. Do not carry the pressure alone.",
+              "Do not follow trends blindly. Choose according to your own plan.",
+              "Senior advice is useful, but it should not be copied without thinking.",
+              "Follow campus traffic rules. Non-compliant vehicles may be removed.",
+              "Campus card plans vary a lot, so compare them in advance."
+            ],
+            noteLabel: "UniDock Advice",
+            noteText: "Choose your campus SIM card before arrival to avoid long lines and information gaps during the first week."
+          },
+          essentials: {
+            eyebrow: "Section B",
+            title: "Study and Life Basics",
+            subtitle: "Build the right expectations first, then get familiar with school systems, course rhythm, and daily service tools.",
+            items: [
+              "Learning shifts from passive to self-directed, so self-management becomes essential.",
+              "Campus life depends heavily on digital systems, so it helps to get familiar early.",
+              "Network access and mobile data are baseline infrastructure, so prepare them in advance.",
+              "Daily services rely on multiple apps, so download them ahead of time.",
+              "Course and activity requirements differ by school and department."
+            ],
+            noteLabel: "UniDock Positioning",
+            noteText: "UniDock helps you finish the key preparation before arrival so you can settle in faster once you are on campus."
+          }
         }
       },
       systemsPage: {
@@ -408,7 +726,238 @@
           eyebrow: "Campus Systems",
           title: "Campus Systems Guide",
           subtitle: "Sort out the systems and apps you will use after arrival so there is less repeated searching and switching."
+        },
+        grid: {
+          eyebrow: "System Cards",
+          title: "Common Systems and Apps",
+          subtitle: "Cards with external links can be opened directly. Items without links remain as a unified information layer so you can build your own usage checklist first."
+        },
+        cards: [
+          {
+            badge: "Web Entry",
+            title: "Unified Portal",
+            desc: "A unified entry for related campus apps",
+            meta: "Open"
+          },
+          {
+            badge: "Web Entry",
+            title: "Info Portal",
+            desc: "Identity authentication and academic services",
+            meta: "Open"
+          },
+          {
+            badge: "Campus App",
+            title: "Chaoxing",
+            desc: "Course materials, attendance, and assignments",
+            meta: "Course Essential"
+          },
+          {
+            badge: "Campus App",
+            title: "WeCom",
+            desc: "Notices and communication",
+            meta: "Communication"
+          },
+          {
+            badge: "Campus App",
+            title: "Quzhi Campus",
+            desc: "Bath and drinking water",
+            meta: "Living Service"
+          },
+          {
+            badge: "Campus App",
+            title: "Pangguai Life",
+            desc: "Laundry",
+            meta: "Living Service"
+          },
+          {
+            badge: "Campus App",
+            title: "Flash Campus Pro",
+            desc: "Campus running",
+            meta: "Fitness Test"
+          },
+          {
+            badge: "Campus App",
+            title: "PU Pocket Campus",
+            desc: "Credit-hour system",
+            meta: "Activities and Hours"
+          }
+        ],
+        note: {
+          label: "UniDock Advantage",
+          text: "Keep key system entries together and reduce the cost of searching for scattered information."
         }
+      },
+      campusMap: {
+        title: "Official Campus Map",
+        desc: "Open the official NUIST campus map service. UniDock only provides a convenient entry.",
+        confirmTitle: "Official Campus Map",
+        confirmBody: "You are about to leave UniDock and open the official campus map service of Nanjing University of Information Science and Technology. The map content and service are provided by the university system. UniDock only provides a convenient navigation entry. If the official page displays authorization, commercial-use, or usage notices, please follow the official instructions.",
+        openOfficial: "Open Official Map",
+        back: "Back to UniDock"
+      },
+      transition: {
+        leaving: "External Link",
+        loading: "Opening",
+        opensIn: "Opening in",
+        secondsAuto: "seconds",
+        openNow: "Open Now",
+        backHome: "Back to Home",
+        domainLabel: "Destination domain",
+        campusMapTitle: "Opening the Official Campus Map",
+        campusMapSubtitle: "You are being redirected to the official campus map service of NUIST.",
+        officialSiteTitle: "Opening the Official Website",
+        officialSiteSubtitle: "You are being redirected to the official website of NUIST."
+      },
+      redirectChoices: {
+        campus: {
+          eyebrow: "Navigation Choice",
+          title: "Choose the campus entry you need",
+          subtitle: "Both the map and the official site entry are ready. Continue based on your current need.",
+          primaryLabel: "Primary Entry",
+          primaryTitle: "Official Campus Map",
+          primaryDesc: "Check campus locations, teaching areas, and living zones first if you need quick navigation.",
+          primaryMeta: "Open now",
+          secondaryLabel: "Secondary Entry",
+          secondaryTitle: "Official Website",
+          secondaryDesc: "Open the school's official website for notices, announcements, and broader information.",
+          secondaryMeta: "Continue"
+        },
+        resources: {
+          eyebrow: "Resource Choice",
+          title: "Choose the living resource you need",
+          subtitle: "Start from the resource direction you need most right now, then continue to the related entry.",
+          primaryLabel: "Primary Entry",
+          primaryTitle: "Campus SIM Card",
+          primaryDesc: "Return to the homepage and jump to the campus SIM card section.",
+          primaryMeta: "Open resource",
+          secondaryLabel: "Secondary Entry",
+          secondaryTitle: "Dorm Essentials",
+          secondaryDesc: "Return to the homepage and jump to the dorm essentials section.",
+          secondaryMeta: "Open resource"
+        }
+      },
+      contact: {
+        eyebrow: "Contact",
+        title: "Contact Leads",
+        intro: "If you run into issues with arrival steps, pre-departure prep, campus resources, or page usage, contact the responsible lead directly.",
+        panelEyebrow: "Lead Contacts",
+        panelTitle: "Copy and contact directly",
+        panelDesc: "Phone, WeChat, and email are kept in one consistent structure to reduce repeated confirmation.",
+        owner01: "Responsible Person 01",
+        owner02: "Responsible Person 02",
+        sameWechat: "Same as phone number",
+        phone: "Phone",
+        wechat: "WeChat",
+        email: "Email",
+        partnershipEyebrow: "Partnership",
+        partnershipTitle: "Partnership Contact",
+        partnershipDesc: "For collaboration, co-building, or content coordination, contact us directly through the following details.",
+        partnershipBadge: "Partnership",
+        partnershipHint: "Kept in the same structured contact format for quick copying.",
+        partnershipPhone: "Partnership Phone",
+        partnershipEmail: "Partnership Email"
+      },
+      betterService: {
+        headerTitle: "Better Service",
+        eyebrow: "Better Service",
+        title: "Better Service",
+        subtitle: "Internal curation for freshmen only",
+        sectionEyebrow: "Selected Entry",
+        sectionTitle: "Enter through the curated internal entry",
+        sectionDesc: "A structured public entry is shown first so you can understand the value and access path of the internal resource channel.",
+        entryBadge: "Internal",
+        entryTitle: "Curated Freshman Launch Resources",
+        entryDesc: "SIM card / dorm essentials / pitfalls collection (internal version)",
+        entryMeta: "View details",
+        detailTitle: "Curated Freshman Launch Resources (Limited Opening)",
+        detailSubtitle: "The resource directions that most affect the first weeks of campus life are organized here first, before you decide whether to enter the internal channel.",
+        section1Eyebrow: "Section 1",
+        section1Title: "This is not a generic recommendation list",
+        section1P1: "This page is organized by senior students who already filtered the most common mistakes and the most time-consuming tasks in the freshman stage.",
+        section1P2: "What you are seeing now is the simplified public version.",
+        section1Note: "Curated by UniDock",
+        section2Eyebrow: "Section 2",
+        section2Title: "Core resource directions (verified)",
+        section2Card1Title: "1. Campus SIM Card",
+        section2Card1Item1: "Real differences between carriers",
+        section2Card1Item2: "Campus plans vs. regular consumer plans",
+        section2Card1Item3: "Common low-price traps to avoid",
+        section2Card1Outcome: "Avoid being locked into an unsuitable plan right after arrival",
+        section2Card2Title: "2. Dorm Essentials",
+        section2Card2Item1: "What must be prepared in advance",
+        section2Card2Item2: "What you do not need to bring or buy at all",
+        section2Card2Item3: "Campus vs. off-campus purchase differences",
+        section2Card2Outcome: "Reduce luggage burden and avoid duplicate spending",
+        section2Card3Title: "3. High-frequency first-week services",
+        section2Card3Item1: "Luggage handling / pickup",
+        section2Card3Item2: "Campus errands / guidance",
+        section2Card3Item3: "Temporary emergency resources",
+        section2Card3Outcome: "Reduce the chaos in the first days on campus",
+        section3Eyebrow: "Section 3",
+        section3Title: "But the key information is not here",
+        section3Intro: "The following will not be shown on the public page:",
+        section3Item1: "Real-time resource channels",
+        section3Item2: "Actually usable service contacts",
+        section3Item3: "Internally filtered and reliable people",
+        section3Item4: "Fast-changing first-week information",
+        section3Outro: "These items are only synchronized inside the private channel.",
+        section4Eyebrow: "Section 4",
+        section4Title: "Why entering the internal channel is recommended",
+        section4Intro: "Information in the first weeks of arrival is highly time-sensitive:",
+        section4Item1: "A resource that works today may be gone in three days",
+        section4Item2: "The same service can vary a lot in price depending on timing",
+        section4Item3: "Some channels only circulate within a small range",
+        section4Outcome: "If you only rely on public information, you are usually seeing a delayed version",
+        section5Eyebrow: "Section 5",
+        section5Title: "What you can get",
+        section5Intro: "After entering the internal channel, you can get:",
+        section5Item1: "Real-time resource updates",
+        section5Item2: "Pitfall reminders based on real feedback",
+        section5Item3: "Filtered service entries",
+        section5Item4: "Direct connection to the responsible lead with fewer middle steps",
+        section6Eyebrow: "Section 6",
+        section6Title: "Get the full resource set (internal version)",
+        section6Desc: "If you do not want to spend the first weeks learning through trial and error, go directly to the contact entry and receive the synchronized access path for the full resource set.",
+        section6Cta: "Open Contact Leads",
+        section7Eyebrow: "Section 7",
+        section7Title: "Usage notes",
+        section7Item1: "Open only to the current freshman cohort",
+        section7Item2: "No unrelated push messages",
+        section7Item3: "New additions may be limited during peak periods to keep information stable",
+        section8Eyebrow: "Section 8",
+        section8Title: "Final reminder",
+        section8Intro: "The first weeks of arrival are a period with a very visible information gap:",
+        section8Item1: "Some people prepare early and transition smoothly",
+        section8Item2: "Some people follow blindly, spend more, and take more detours",
+        section8Outcome: "Whether you enter the internal channel is essentially whether you choose to lower your trial-and-error cost",
+        finalEyebrow: "Final CTA",
+        finalTitle: "Enter the internal channel now",
+        finalCta: "Contact Leads"
+      },
+      mailbox: {
+        headerTitle: "Mailbox",
+        navLabel: "Mailbox",
+        navLabelUnread: "Mailbox, {count} unread",
+        eyebrow: "Mailbox",
+        title: "Mailbox",
+        intro: "View UniDock notifications, product updates, and important reminders.",
+        pinnedEyebrow: "Pinned",
+        pinnedTitle: "Pinned Messages",
+        pinnedDesc: "Important updates that should be checked first.",
+        inboxEyebrow: "Inbox",
+        inboxTitle: "All Messages",
+        inboxDesc: "Site notifications and updates sorted by time.",
+        markAll: "Mark all as read",
+        pinnedBadge: "Pinned",
+        noPinned: "No pinned messages yet.",
+        noMessages: "No messages yet.",
+        detailBack: "Back",
+        detailEyebrow: "Message",
+        detailTitle: "Message Content",
+        loading: "Loading...",
+        notFoundTitle: "Message not found",
+        notFoundDate: "Please go back to Mailbox and view other messages",
+        notFoundBody: "The current message does not exist or cannot be loaded right now."
       },
       footer: {
         desc: "An entry point for NUIST freshmen to access information, campus resources, and direct support.",
@@ -431,16 +980,62 @@
     }, source);
   }
 
-  function setLanguage(lang) {
-    const currentLang = translations[lang] ? lang : defaultLang;
+  function formatValue(value, replacements) {
+    if (typeof value !== "string" || !replacements) {
+      return value;
+    }
+
+    return value.replace(/\{(\w+)\}/g, function (match, key) {
+      if (Object.prototype.hasOwnProperty.call(replacements, key)) {
+        return String(replacements[key]);
+      }
+
+      return match;
+    });
+  }
+
+  function getTranslationValue(lang, key) {
+    return getValue(translations[lang], key);
+  }
+
+  function translate(key, replacements) {
+    const value = getTranslationValue(currentLang, key);
+    const fallbackValue = currentLang === defaultLang ? value : getTranslationValue(defaultLang, key);
+    const resolved = typeof value === "string" ? value : fallbackValue;
+
+    return formatValue(typeof resolved === "string" ? resolved : "", replacements);
+  }
+
+  function isTransitionActive() {
+    return document.body.classList.contains("is-transitioning") ||
+      document.documentElement.getAttribute("data-transition-state") === "active";
+  }
+
+  function syncLanguageSwitchState() {
+    const disabled = isTransitionActive();
+
+    document.querySelectorAll("[data-lang-switch]").forEach(function (button) {
+      button.disabled = disabled;
+      button.setAttribute("aria-disabled", disabled ? "true" : "false");
+      button.classList.toggle("is-disabled", disabled);
+      button.tabIndex = disabled ? -1 : 0;
+    });
+
+    document.querySelectorAll(".lang-switch").forEach(function (switcher) {
+      switcher.classList.toggle("is-disabled", disabled);
+      switcher.setAttribute("aria-disabled", disabled ? "true" : "false");
+    });
+  }
+
+  function applyTranslations() {
     const content = translations[currentLang];
     const description = document.querySelector('meta[name="description"]');
     const pageName = document.body.getAttribute("data-page");
-    const pageMeta = pageName ? (content[pageName + "Meta"] || content.meta) : null;
+    const pageMeta = pageName ? (content[pageName + "Meta"] || content.meta) : content.meta;
 
     document.querySelectorAll("[data-i18n]").forEach(function (element) {
       const key = element.getAttribute("data-i18n");
-      const value = getValue(content, key);
+      const value = getTranslationValue(currentLang, key);
 
       if (typeof value === "string") {
         element.textContent = value;
@@ -449,18 +1044,18 @@
 
     document.querySelectorAll("[data-i18n-aria-label]").forEach(function (element) {
       const key = element.getAttribute("data-i18n-aria-label");
-      const value = getValue(content, key);
+      const value = getTranslationValue(currentLang, key);
 
       if (typeof value === "string") {
         element.setAttribute("aria-label", value);
       }
     });
 
-    if (pageMeta) {
+    if (pageMeta && pageMeta.title) {
       document.title = pageMeta.title;
     }
 
-    if (pageMeta && description) {
+    if (pageMeta && pageMeta.description && description) {
       description.setAttribute("content", pageMeta.description);
     }
 
@@ -470,21 +1065,61 @@
       button.classList.toggle("is-active", button.getAttribute("data-lang-switch") === currentLang);
     });
 
-    localStorage.setItem(STORAGE_KEY, currentLang);
+    syncLanguageSwitchState();
   }
 
-  function initLanguageSwitch() {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    const preferred = stored && translations[stored] ? stored : defaultLang;
+  function setLanguage(lang) {
+    currentLang = translations[lang] ? lang : defaultLang;
+    applyTranslations();
+    localStorage.setItem(STORAGE_KEY, currentLang);
 
-    setLanguage(preferred);
+    window.dispatchEvent(new CustomEvent("unidock:language-change", {
+      detail: {
+        lang: currentLang
+      }
+    }));
+  }
 
+  function bindLanguageSwitch() {
     document.querySelectorAll("[data-lang-switch]").forEach(function (button) {
-      button.addEventListener("click", function () {
+      button.addEventListener("click", function (event) {
+        if (isTransitionActive()) {
+          event.preventDefault();
+          return;
+        }
+
         setLanguage(button.getAttribute("data-lang-switch"));
+      });
+
+      button.addEventListener("keydown", function (event) {
+        if (!isTransitionActive()) {
+          return;
+        }
+
+        if (event.key === "Enter" || event.key === " " || event.key === "Spacebar") {
+          event.preventDefault();
+          event.stopPropagation();
+        }
       });
     });
   }
 
-  document.addEventListener("DOMContentLoaded", initLanguageSwitch);
+  window.UniDockI18n = {
+    getLanguage: function () {
+      return currentLang;
+    },
+    setLanguage: setLanguage,
+    t: translate,
+    syncLanguageSwitchState: syncLanguageSwitchState
+  };
+
+  window.addEventListener("unidock:transition-state", syncLanguageSwitchState);
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    const preferred = stored && translations[stored] ? stored : defaultLang;
+
+    bindLanguageSwitch();
+    setLanguage(preferred);
+  });
 })();

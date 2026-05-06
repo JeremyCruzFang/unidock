@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="查看 UniDock Mailbox 消息详情与具体内容。">
   <meta name="theme-color" content="#f6f7fb">
-  <title>UniDock | Mailbox Detail</title>
+  <title>UniDock | Mailbox 详情</title>
   <link rel="icon" href="./favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png">
@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="./assets/css/animations.css">
   <link rel="stylesheet" href="./assets/css/nav.css">
 </head>
-<body class="mailbox-page" data-mailbox-view="detail">
+<body class="mailbox-page" data-page="mailboxDetail" data-mailbox-view="detail">
   <div class="site-background" aria-hidden="true">
     <div class="site-background__mesh"></div>
     <div class="site-background__orb site-background__orb--one"></div>
@@ -30,7 +30,7 @@
       <div class="subpage-header__group">
         <a class="subpage-back" href="./mailbox.html">
           <span aria-hidden="true">&larr;</span>
-          <span>返回</span>
+          <span data-i18n="mailbox.detailBack">返回</span>
         </a>
         <a class="brand" href="./index.html" aria-label="UniDock">
           <span class="brand__mark">U</span>
@@ -39,7 +39,7 @@
             <span data-i18n="header.subline">NUIST Freshman Hub</span>
           </span>
         </a>
-        <span class="subpage-header__title">Mailbox</span>
+        <span class="subpage-header__title" data-i18n="mailbox.headerTitle">站内信箱</span>
       </div>
 
       <div class="lang-switch" data-i18n-aria-label="header.languageLabel" aria-label="语言切换">
@@ -62,15 +62,15 @@
       <div class="container">
         <div class="detail-shell">
           <section class="detail-intro" data-reveal>
-            <span class="eyebrow">Mailbox</span>
-            <h1 data-mailbox-detail-title>加载中...</h1>
+            <span class="eyebrow" data-i18n="mailbox.eyebrow">Mailbox</span>
+            <h1 data-mailbox-detail-title data-i18n="mailbox.loading">加载中...</h1>
             <span class="mailbox-detail__date" data-mailbox-detail-date>--</span>
           </section>
 
           <section class="content-panel" data-reveal data-delay="30">
             <div class="content-panel__header">
-              <span class="content-panel__eyebrow">Message</span>
-              <h2>消息内容</h2>
+              <span class="content-panel__eyebrow" data-i18n="mailbox.detailEyebrow">Message</span>
+              <h2 data-i18n="mailbox.detailTitle">消息内容</h2>
             </div>
             <div class="mailbox-detail__content" data-mailbox-detail-content></div>
           </section>

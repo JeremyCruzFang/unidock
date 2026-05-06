@@ -1,4 +1,12 @@
 (function () {
+  function t(key, replacements) {
+    if (!window.UniDockI18n || typeof window.UniDockI18n.t !== "function") {
+      return "";
+    }
+
+    return window.UniDockI18n.t(key, replacements);
+  }
+
   function createBrandMarkup() {
     return (
       '<a class="brand" href="./index.html" aria-label="UniDock">' +
@@ -21,7 +29,7 @@
           '<path d="M12 3C14.2386 5.18991 15.5 8.07785 15.5 12C15.5 15.9221 14.2386 18.8101 12 21C9.76142 18.8101 8.5 15.9221 8.5 12C8.5 8.07785 9.76142 5.18991 12 3Z" />' +
         "</svg>" +
         '<div class="lang-switch__buttons">' +
-          '<button class="lang-switch__button is-active" type="button" data-lang-switch="zh">&#20013;</button>' +
+          '<button class="lang-switch__button is-active" type="button" data-lang-switch="zh">中</button>' +
           '<button class="lang-switch__button" type="button" data-lang-switch="en">EN</button>' +
         "</div>" +
       "</div>"
@@ -50,7 +58,6 @@
     link.className = "site-header__icon-link";
     link.href = "./mailbox.html";
     link.setAttribute("data-mailbox-link", "");
-    link.setAttribute("aria-label", "Mailbox");
     link.innerHTML =
       '<span class="site-header__icon" aria-hidden="true">' +
         '<svg viewBox="0 0 24 24" fill="none">' +
@@ -80,14 +87,17 @@
 
   function updateMailboxLinks() {
     const unreadCount = getMailboxUnreadCount();
+    const hasUnread = unreadCount > 0;
 
     document.querySelectorAll("[data-mailbox-link]").forEach(function (link) {
       const indicator = link.querySelector("[data-mailbox-indicator]");
-      const hasUnread = unreadCount > 0;
+      const ariaLabel = hasUnread
+        ? t("mailbox.navLabelUnread", { count: unreadCount })
+        : t("mailbox.navLabel");
 
       link.classList.toggle("is-active", isMailboxPage());
       link.classList.toggle("has-unread", hasUnread);
-      link.setAttribute("aria-label", hasUnread ? "Mailbox, " + unreadCount + " unread" : "Mailbox");
+      link.setAttribute("aria-label", ariaLabel || "Mailbox");
 
       if (indicator) {
         indicator.hidden = !hasUnread;
@@ -105,6 +115,7 @@
     mailboxSyncBound = true;
 
     window.addEventListener("unidock:mailbox-state-change", updateMailboxLinks);
+    window.addEventListener("unidock:language-change", updateMailboxLinks);
     window.addEventListener("storage", function (event) {
       if (event.key === "mailbox_read_ids") {
         updateMailboxLinks();
@@ -118,6 +129,7 @@
     button.id = "menu-toggle";
     button.className = "menu-toggle";
     button.type = "button";
+    button.setAttribute("data-i18n-aria-label", "menu.toggle");
     button.setAttribute("aria-label", "Open menu");
     button.setAttribute("aria-expanded", "false");
     button.innerHTML =
@@ -148,7 +160,7 @@
     back.href = "./index.html";
     back.innerHTML =
       '<span aria-hidden="true">&larr;</span>' +
-      '<span data-i18n="subpage.back">&#36820;&#22238;&#39318;&#39029;</span>';
+      '<span data-i18n="subpage.back">返回首页</span>';
 
     left.appendChild(back);
     left.insertAdjacentHTML("beforeend", createBrandMarkup());
@@ -239,9 +251,9 @@
       if (langSwitch && langSwitch.parentElement !== actions) {
         actions.appendChild(langSwitch);
       }
-
-      updateMailboxLinks();
     });
+
+    updateMailboxLinks();
   }
 
   function ensureDrawer() {
@@ -260,22 +272,22 @@
         '<ul class="drawer-list">' +
           '<li class="drawer-item expandable">' +
             '<button class="drawer-title" type="button">' +
-              '<span>&#26032;&#29983;&#24517;&#30475;</span>' +
+              '<span data-i18n="menu.freshman">新生必看</span>' +
               '<span class="arrow">&#9662;</span>' +
             "</button>" +
             '<ul class="drawer-sub">' +
-              '<li data-link="./baodaoquanliucheng.html" tabindex="0">&#25253;&#36947;&#20934;&#22791;</li>' +
-              '<li data-link="./life-resources-redirect.html" tabindex="0">&#29983;&#27963;&#36164;&#28304;</li>' +
-              '<li data-link="./xiaoyuanxitongdaohang.html" tabindex="0">&#26657;&#20869;&#23548;&#33322;</li>' +
+              '<li data-link="./baodaoquanliucheng.html" tabindex="0" data-i18n="menu.arrival">报到准备</li>' +
+              '<li data-link="./life-resources-redirect.html" tabindex="0" data-i18n="menu.living">生活资源</li>' +
+              '<li data-link="./xiaoyuanxitongdaohang.html" tabindex="0" data-i18n="menu.navigation">校内导航</li>' +
             "</ul>" +
           "</li>" +
           '<li class="drawer-item drawer-item--highlight" data-link="./better-service.html" tabindex="0">' +
             '<span class="drawer-item__row">' +
-              "<span>Better Service</span>" +
-              '<span class="drawer-item__badge">&#20869;&#37096;</span>' +
+              '<span data-i18n="menu.better">Better Service</span>' +
+              '<span class="drawer-item__badge" data-i18n="menu.internal">内部</span>' +
             "</span>" +
           "</li>" +
-          '<li class="drawer-item" data-link="./wechat-add.html" tabindex="0">&#32852;&#31995;&#36127;&#36131;&#20154;</li>' +
+          '<li class="drawer-item" data-link="./wechat-add.html" tabindex="0" data-i18n="menu.contact">联系负责人</li>' +
         "</ul>" +
       "</nav>";
 

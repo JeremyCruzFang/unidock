@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="./assets/css/animations.css">
   <link rel="stylesheet" href="./assets/css/nav.css">
 </head>
-<body class="mailbox-page" data-mailbox-view="list">
+<body class="mailbox-page" data-page="mailbox" data-mailbox-view="list">
   <div class="site-background" aria-hidden="true">
     <div class="site-background__mesh"></div>
     <div class="site-background__orb site-background__orb--one"></div>
@@ -39,7 +39,7 @@
             <span data-i18n="header.subline">NUIST Freshman Hub</span>
           </span>
         </a>
-        <span class="subpage-header__title">Mailbox</span>
+        <span class="subpage-header__title" data-i18n="mailbox.headerTitle">站内信箱</span>
       </div>
 
       <div class="lang-switch" data-i18n-aria-label="header.languageLabel" aria-label="语言切换">
@@ -62,29 +62,29 @@
       <div class="container">
         <div class="detail-shell">
           <section class="detail-intro" data-reveal>
-            <span class="eyebrow">Mailbox</span>
-            <h1>Mailbox</h1>
-            <p>查看 UniDock 的站内通知、功能更新与重要提醒。</p>
+            <span class="eyebrow" data-i18n="mailbox.eyebrow">Mailbox</span>
+            <h1 data-i18n="mailbox.title">站内信箱</h1>
+            <p data-i18n="mailbox.intro">查看 UniDock 的站内通知、功能更新与重要提醒。</p>
           </section>
 
           <section class="content-panel" data-mailbox-section="pinned" data-reveal data-delay="30">
             <div class="content-panel__header">
-              <span class="content-panel__eyebrow">Pinned</span>
-              <h2>置顶消息</h2>
-              <p>优先查看的重要站内更新。</p>
+              <span class="content-panel__eyebrow" data-i18n="mailbox.pinnedEyebrow">Pinned</span>
+              <h2 data-i18n="mailbox.pinnedTitle">置顶消息</h2>
+              <p data-i18n="mailbox.pinnedDesc">优先查看的重要站内更新。</p>
             </div>
             <div class="mailbox-list" data-mailbox-list="pinned"></div>
           </section>
 
           <section class="content-panel" data-reveal data-delay="60">
             <div class="content-panel__header">
-              <span class="content-panel__eyebrow">Inbox</span>
-              <h2>全部消息</h2>
-              <p>按时间排序的站内通知与功能更新。</p>
+              <span class="content-panel__eyebrow" data-i18n="mailbox.inboxEyebrow">Inbox</span>
+              <h2 data-i18n="mailbox.inboxTitle">全部消息</h2>
+              <p data-i18n="mailbox.inboxDesc">按时间排序的站内通知与功能更新。</p>
             </div>
             <div class="mailbox-list" data-mailbox-list="regular"></div>
             <div class="mailbox-actions">
-              <button class="button button--secondary mailbox-mark-read" type="button" data-mailbox-mark-all>全部标为已读</button>
+              <button class="button button--secondary mailbox-mark-read" type="button" data-mailbox-mark-all data-i18n="mailbox.markAll">全部标为已读</button>
             </div>
           </section>
         </div>
