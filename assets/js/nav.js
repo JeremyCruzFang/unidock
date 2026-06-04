@@ -10,7 +10,7 @@
   function createBrandMarkup() {
     return (
       '<a class="brand" href="./index.html" aria-label="UniDock">' +
-        '<span class="brand__mark">U</span>' +
+        '<img class="brand__mark" src="./icons/unidock-144.png" alt="UniDock" width="30" height="30">' +
         '<span class="brand__text">' +
           "<strong>UniDock</strong>" +
           '<span data-i18n="header.subline">NUIST Freshman Hub</span>' +
@@ -378,9 +378,19 @@
     }
   }
 
+  function isRedirectPage() {
+    return document.body && document.body.classList.contains("redirect-page");
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     removeHomepageTopTag();
     bindMailboxIndicatorSync();
+
+    if (isRedirectPage()) {
+      // Redirect pages keep a minimal full-screen layout: no sticky header / drawer / actions.
+      return;
+    }
+
     ensureStandaloneHeader();
     ensureMenuButton();
     ensureHeaderActions();
