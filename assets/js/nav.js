@@ -36,10 +36,6 @@
     );
   }
 
-  function isBetterServicePage() {
-    return /better-service(?:-detail)?\.html$/i.test(window.location.pathname || "");
-  }
-
   function isMailboxPage() {
     return /mailbox(?:-detail)?\.html$/i.test(window.location.pathname || "");
   }
@@ -66,21 +62,6 @@
         "</svg>" +
       "</span>" +
       '<span class="site-header__status-dot" data-mailbox-indicator hidden></span>';
-
-    return link;
-  }
-
-  function createBetterLink() {
-    const link = document.createElement("a");
-
-    link.className = "site-header__link";
-    link.href = "./better-service.html";
-    link.setAttribute("data-better-link", "");
-    link.textContent = "Better";
-
-    if (isBetterServicePage()) {
-      link.classList.add("is-active");
-    }
 
     return link;
   }
@@ -226,7 +207,6 @@
     document.querySelectorAll(".site-header__inner").forEach(function (headerInner) {
       let actions = headerInner.querySelector(".site-header__actions");
       let mailboxLink = headerInner.querySelector("[data-mailbox-link]");
-      let betterLink = headerInner.querySelector("[data-better-link]");
       const langSwitch = headerInner.querySelector(".lang-switch");
 
       if (!actions) {
@@ -239,14 +219,7 @@
         mailboxLink = createMailboxLink();
       }
 
-      if (!betterLink) {
-        betterLink = createBetterLink();
-      } else {
-        betterLink.classList.toggle("is-active", isBetterServicePage());
-      }
-
       actions.appendChild(mailboxLink);
-      actions.appendChild(betterLink);
 
       if (langSwitch && langSwitch.parentElement !== actions) {
         actions.appendChild(langSwitch);
@@ -280,12 +253,6 @@
               '<li data-link="./life-resources-redirect.html" tabindex="0" data-i18n="menu.living">生活资源</li>' +
               '<li data-link="./xiaoyuanxitongdaohang.html" tabindex="0" data-i18n="menu.navigation">校内导航</li>' +
             "</ul>" +
-          "</li>" +
-          '<li class="drawer-item drawer-item--highlight" data-link="./better-service.html" tabindex="0">' +
-            '<span class="drawer-item__row">' +
-              '<span data-i18n="menu.better">Better Service</span>' +
-              '<span class="drawer-item__badge" data-i18n="menu.internal">内部</span>' +
-            "</span>" +
           "</li>" +
           '<li class="drawer-item" data-link="./wechat-add.html" tabindex="0" data-i18n="menu.contact">联系负责人</li>' +
         "</ul>" +

@@ -2,19 +2,6 @@
   const STORAGE_KEY = "mailbox_read_ids";
   const mailboxData = [
     {
-      id: "mb001",
-      title: {
-        zh: "UniDock 已上线 Better Service",
-        en: "Better Service is now live on UniDock"
-      },
-      content: {
-        zh: "Better Service 已开放内部资源入口。\n\n你现在可以通过首页卡片、顶部导航栏 Better 入口或目录菜单进入对应页面。\n\n该模块会持续承载经过整理的内部资源方向与后续更新。",
-        en: "Better Service is now available as an internal resource entry.\n\nYou can open it from the homepage card, the Better link in the top navbar, or the global drawer menu.\n\nThis module will continue to carry curated internal resource directions and follow-up updates."
-      },
-      date: "2026-04-20",
-      pinned: true
-    },
-    {
       id: "mb002",
       title: {
         zh: "新生必看模块更新",

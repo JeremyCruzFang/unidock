@@ -425,10 +425,6 @@ img.brand__mark--footer,
   letter-spacing: 0.02em;
 }
 
-.entry-card--internal {
-  border-color: rgba(15, 23, 42, 0.08);
-}
-
 .entry-card:hover .entry-card__arrow,
 .guide-item:hover .guide-item__arrow {
   transform: translateX(3px);
