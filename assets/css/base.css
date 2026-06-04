@@ -1,38 +1,59 @@
+/* UniDock — Brand Immersive Redesign — base.css */
+
 :root {
   --font-sans: "SF Pro Display", "SF Pro Text", "PingFang SC", "Segoe UI Variable", "Helvetica Neue", sans-serif;
   --font-mono: "SF Mono", "JetBrains Mono", "Cascadia Code", monospace;
-  --color-bg: #f6f7fb;
-  --color-bg-deep: #eef2ff;
-  --color-surface: rgba(255, 255, 255, 0.72);
-  --color-surface-strong: rgba(255, 255, 255, 0.88);
-  --color-line: rgba(15, 23, 42, 0.08);
-  --color-line-strong: rgba(15, 23, 42, 0.14);
-  --color-text: #111827;
-  --color-muted: #5b6475;
-  --color-soft: #8791a5;
-  --color-accent: #1453ff;
-  --color-accent-deep: #0d2f8f;
-  --color-accent-soft: rgba(20, 83, 255, 0.12);
-  --color-warm: rgba(255, 188, 121, 0.22);
-  --shadow-soft: 0 22px 60px rgba(26, 39, 71, 0.08);
-  --shadow-card: 0 18px 42px rgba(26, 39, 71, 0.08);
-  --shadow-strong: 0 30px 72px rgba(26, 39, 71, 0.12);
-  --radius-xs: 14px;
-  --radius-sm: 20px;
-  --radius-md: 28px;
-  --radius-lg: 36px;
-  --container: 1180px;
-  --header-offset: 112px;
-  --section-space: clamp(84px, 8vw, 116px);
-  --section-space-tight: clamp(64px, 6vw, 84px);
-  --grid-gap: clamp(18px, 2.2vw, 24px);
-  --stack-xs: 10px;
-  --stack-sm: 14px;
-  --stack-md: 20px;
-  --stack-lg: 28px;
-  --stack-xl: 38px;
-  --transition-fast: 220ms ease;
-  --transition-base: 360ms cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* color */
+  --color-bg: #eef1f8;
+  --color-bg-deep: #e8ecf5;
+  --color-surface: rgba(255, 255, 255, 0.85);
+  --color-surface-strong: rgba(255, 255, 255, 0.92);
+  --color-surface-soft: rgba(255, 255, 255, 0.7);
+  --color-surface-faint: rgba(245, 248, 255, 0.7);
+  --color-surface-border: rgba(255, 255, 255, 0.55);
+  --color-line: rgba(15, 23, 42, 0.07);
+  --color-line-strong: rgba(15, 23, 42, 0.12);
+  --color-text: #0f172a;
+  --color-muted: #475569;
+  --color-soft: #94a3b8;
+  --color-accent: #0f0f0f;
+  --color-accent-hover: #1a1a1a;
+  --color-accent-soft: rgba(15, 15, 15, 0.06);
+  --color-accent-deep: #0f0f0f;
+  --color-alert: #ef4444;
+
+  /* radius */
+  --radius-xs: 12px;
+  --radius-sm: 14px;
+  --radius-md: 22px;
+  --radius-lg: 28px;
+  --radius-xl: 32px;
+
+  /* shadow */
+  --shadow-soft: 0 6px 24px rgba(15, 23, 42, 0.045), 0 16px 40px rgba(15, 23, 42, 0.03);
+  --shadow-card: 0 6px 24px rgba(15, 23, 42, 0.045), 0 16px 40px rgba(15, 23, 42, 0.03);
+  --shadow-hover: 0 10px 36px rgba(15, 23, 42, 0.065);
+  --shadow-strong: 0 18px 48px rgba(15, 23, 42, 0.09);
+  --shadow-nav: 0 8px 28px rgba(15, 23, 42, 0.055);
+
+  /* layout */
+  --container: 1060px;
+  --header-offset: 88px;
+  --section-space: clamp(72px, 8vw, 96px);
+  --section-space-tight: clamp(52px, 6vw, 72px);
+  --grid-gap: 18px;
+
+  /* spacing */
+  --stack-xs: 8px;
+  --stack-sm: 12px;
+  --stack-md: 18px;
+  --stack-lg: 24px;
+  --stack-xl: 32px;
+
+  /* transitions */
+  --transition-fast: 200ms ease;
+  --transition-base: 340ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 *,
@@ -52,14 +73,35 @@ body {
   overflow-x: clip;
   color: var(--color-text);
   font-family: var(--font-sans);
-  background:
-    radial-gradient(circle at 10% 15%, rgba(119, 164, 255, 0.16), transparent 26%),
-    radial-gradient(circle at 85% 18%, rgba(255, 197, 149, 0.2), transparent 24%),
-    radial-gradient(circle at 75% 78%, rgba(157, 217, 255, 0.18), transparent 24%),
-    linear-gradient(180deg, #fbfcff 0%, #f6f7fb 38%, #f2f4fb 100%);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  background:
+    radial-gradient(ellipse at 18% 0%, rgba(100, 145, 255, 0.11), transparent 48%),
+    radial-gradient(ellipse at 82% 4%, rgba(255, 190, 140, 0.09), transparent 38%),
+    radial-gradient(ellipse at 70% 80%, rgba(140, 210, 255, 0.08), transparent 36%),
+    linear-gradient(180deg, #e8ecf5 0%, #eef1f8 32%, #f4f2ef 100%);
+  background-attachment: fixed;
+}
+
+/* iOS Safari fallback: background-attachment:fixed not supported */
+@supports (-webkit-touch-callout: none) {
+  body {
+    background-attachment: scroll;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse at 18% 0%, rgba(100, 145, 255, 0.11), transparent 48%),
+      radial-gradient(ellipse at 82% 4%, rgba(255, 190, 140, 0.09), transparent 38%),
+      radial-gradient(ellipse at 70% 80%, rgba(140, 210, 255, 0.08), transparent 36%),
+      linear-gradient(180deg, #e8ecf5 0%, #eef1f8 32%, #f4f2ef 100%);
+  }
 }
 
 img,
@@ -104,7 +146,7 @@ footer {
 }
 
 main {
-  padding-top: 10px;
+  padding-top: 0;
 }
 
 section[id] {
@@ -112,7 +154,7 @@ section[id] {
 }
 
 .container {
-  width: min(calc(100% - 40px), var(--container));
+  width: min(calc(100% - 48px), var(--container));
   margin: 0 auto;
 }
 
@@ -122,71 +164,26 @@ section[id] {
 
 .section--compact {
   padding-top: var(--section-space-tight);
+  padding-bottom: var(--section-space-tight);
 }
 
-.site-background {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.site-background__mesh {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.14)),
-    linear-gradient(90deg, rgba(15, 23, 42, 0.015) 1px, transparent 1px),
-    linear-gradient(rgba(15, 23, 42, 0.015) 1px, transparent 1px);
-  background-size: auto, 72px 72px, 72px 72px;
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent 92%);
-}
-
+/* The .site-background DIV is kept for DOM compatibility; visually neutralised */
+.site-background,
+.site-background__mesh,
 .site-background__orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(12px);
-  opacity: 0.8;
+  display: none !important;
 }
 
-.site-background__orb--one {
-  width: 420px;
-  height: 420px;
-  top: -120px;
-  right: -40px;
-  background: radial-gradient(circle, rgba(119, 164, 255, 0.35) 0%, rgba(119, 164, 255, 0) 72%);
-}
-
-.site-background__orb--two {
-  width: 360px;
-  height: 360px;
-  left: -140px;
-  top: 26%;
-  background: radial-gradient(circle, rgba(255, 203, 163, 0.34) 0%, rgba(255, 203, 163, 0) 72%);
-}
-
-.site-background__orb--three {
-  width: 460px;
-  height: 460px;
-  right: 12%;
-  bottom: -180px;
-  background: radial-gradient(circle, rgba(141, 212, 255, 0.28) 0%, rgba(141, 212, 255, 0) 74%);
-}
-
+/* Eyebrow capsule */
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  min-height: 34px;
-  padding: 7px 15px;
-  border: 1px solid rgba(20, 83, 255, 0.1);
+  padding: 5px 14px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.68);
-  box-shadow: 0 10px 30px rgba(20, 83, 255, 0.06);
-  color: var(--color-accent-deep);
-  font-size: 0.85rem;
-  font-weight: 600;
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  font-size: 0.78rem;
+  font-weight: 650;
   letter-spacing: 0.04em;
 }
 
@@ -202,18 +199,20 @@ section[id] {
 }
 
 .section-heading h2 {
-  margin-top: 18px;
-  font-size: clamp(2rem, 4vw, 3.3rem);
+  margin-top: 14px;
+  font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+  font-weight: 700;
   line-height: 1.14;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.04em;
   text-wrap: balance;
 }
 
 .section-heading p {
-  margin-top: 16px;
+  margin-top: 12px;
   max-width: 42rem;
   color: var(--color-muted);
-  font-size: 1.03rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
   text-wrap: pretty;
 }
 
@@ -235,31 +234,27 @@ section[id] {
 
 @media (max-width: 900px) {
   :root {
-    --header-offset: 96px;
-    --section-space: clamp(68px, 10vw, 88px);
-    --section-space-tight: clamp(52px, 8vw, 68px);
-    --stack-xl: 30px;
+    --header-offset: 76px;
+    --section-space: clamp(56px, 9vw, 76px);
+    --section-space-tight: clamp(40px, 7vw, 56px);
   }
 
   .container {
-    width: min(calc(100% - 28px), var(--container));
-  }
-
-  main {
-    padding-top: 6px;
-  }
-
-  .section-heading {
-    margin-bottom: var(--stack-xl);
+    width: min(calc(100% - 32px), var(--container));
   }
 
   .section-heading h2 {
-    font-size: clamp(1.9rem, 8vw, 2.6rem);
-    letter-spacing: -0.05em;
+    font-size: clamp(1.5rem, 5.6vw, 1.95rem);
   }
 
   .section-heading p {
-    font-size: 0.98rem;
+    font-size: 0.93rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: min(calc(100% - 24px), var(--container));
   }
 }
 
