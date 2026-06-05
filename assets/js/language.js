@@ -464,7 +464,7 @@
         more: {
           eyebrow: "更多套餐",
           title: "更多套餐",
-          desc: "更多号卡套餐将在第二阶段从号卡系统中整理后展示。",
+          desc: "联系负责人获取更多套餐信息",
           button: "查看更多套餐"
         },
         cta: {
@@ -478,18 +478,20 @@
         hero: {
           eyebrow: "更多套餐",
           title: "更多校园流量卡套餐",
-          subtitle: "本页面为第二阶段号卡套餐信息陈列位置。"
+          subtitle: "如需获取更多套餐、办理细则、发货 / 限制地区等信息，请联系负责人确认。"
         },
-        empty: {
-          eyebrow: "空状态",
-          title: "套餐信息整理中",
-          desc: "套餐信息将在第二阶段整理后展示。",
+        contact: {
+          eyebrow: "联系负责人",
+          title: "联系负责人获取更多套餐信息",
+          desc: "如需获取更多套餐、办理细则、发货 / 限制地区等信息，请直接联系本站负责人确认。",
+          button: "联系负责人",
           back: "返回校园流量卡"
         }
       },
       footer: {
         desc: "为 NUIST 新生整理信息入口、校园资源与联系支持。",
-        note: "一个克制、清晰、可直接使用的新生首页入口。"
+        note: "一个克制、清晰、可直接使用的新生首页入口。",
+        contactButton: "联系我们"
       }
     },
     en: {
@@ -952,7 +954,7 @@
         more: {
           eyebrow: "More Plans",
           title: "More Plans",
-          desc: "More mobile card plans will be organized from the card system in Stage 2.",
+          desc: "Contact the responsible person for more plan options.",
           button: "View more plans"
         },
         cta: {
@@ -966,18 +968,20 @@
         hero: {
           eyebrow: "More Plans",
           title: "More Campus Mobile Plans",
-          subtitle: "This page is reserved as the Stage 2 surface for additional campus mobile card plans."
+          subtitle: "For more plan options, application details, and shipping or restricted regions, please reach out to the responsible contact."
         },
-        empty: {
-          eyebrow: "Empty State",
-          title: "Plan information being organized",
-          desc: "Plan information will be displayed after Stage 2 organization.",
+        contact: {
+          eyebrow: "Contact",
+          title: "Contact the responsible person for more plan options",
+          desc: "For more plan options, application details, and shipping or restricted regions, please contact the responsible person directly.",
+          button: "Contact lead",
           back: "Back to Campus Mobile Plan"
         }
       },
       footer: {
         desc: "An entry point for NUIST freshmen to access information, campus resources, and direct support.",
-        note: "A restrained, clear homepage that is ready to use."
+        note: "A restrained, clear homepage that is ready to use.",
+        contactButton: "Contact Us"
       }
     }
   };

@@ -589,6 +589,40 @@ img.brand__mark--footer,
   line-height: 1.5;
 }
 
+.site-footer__contact {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 18px;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--color-text);
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-fast),
+    background var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.site-footer__contact:hover,
+.site-footer__contact:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(15, 23, 42, 0.18);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  outline: none;
+}
+
 /* ── Campus map confirmation modal ──────────────────────────────────────── */
 .campus-map-modal {
   position: fixed;
@@ -767,6 +801,7 @@ body.modal-open {
 
   .site-footer__inner {
     flex-direction: column;
+    align-items: stretch;
     padding: 22px 20px;
     border-radius: var(--radius-md);
   }
@@ -774,6 +809,10 @@ body.modal-open {
   .site-footer__meta {
     max-width: none;
     text-align: left;
+  }
+
+  .site-footer__contact {
+    align-self: flex-start;
   }
 }
 
