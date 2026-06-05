@@ -238,7 +238,8 @@
     const entries = [];
     detailOrder.forEach(function (key) {
       const value = specValue(specs, lang, key);
-      if (value) {
+      // Skip empty values and placeholders so the UI never surfaces "待确认".
+      if (value && !isPlaceholder(value)) {
         entries.push({ key: key, value: value });
       }
     });
@@ -256,7 +257,7 @@
     const list = createEl("dl", "plan-card__detail-list");
     entries.forEach(function (entry) {
       list.appendChild(createEl("dt", "plan-card__detail-term", t("mobilePlanPage.card." + entry.key)));
-      list.appendChild(createEl("dd", "plan-card__detail-desc" + (isPlaceholder(entry.value) ? " is-placeholder" : ""), entry.value));
+      list.appendChild(createEl("dd", "plan-card__detail-desc", entry.value));
     });
 
     details.appendChild(list);
@@ -279,7 +280,8 @@
     buildHighlights(card, plan, lang);
     buildKeySpecs(card, plan, lang);
     buildBenefits(card, plan, lang);
-    buildNotices(card, plan, lang);
+    // Notices were a "待确认 / 以实际办理为准" callout. Per Stage 1.1, the UI
+    // hides all TBD-related fields; the data is retained for Stage 2.
     buildDetails(card, plan, lang);
     buildActions(card);
 

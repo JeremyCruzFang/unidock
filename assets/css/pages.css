@@ -1971,6 +1971,64 @@ img.redirect-icon__mark,
   /* prevent stray ::before content if any class composes here */
 }
 
+/* ── Campus Mobile Plan: transparency note (collapsible) ───────────────── */
+.transparency-note {
+  margin-top: 22px;
+  padding: 14px 18px;
+  border: 1px solid rgba(15, 15, 15, 0.08);
+  border-radius: var(--radius-sm);
+  background: rgba(248, 250, 255, 0.7);
+}
+
+.transparency-note__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.transparency-note__summary::-webkit-details-marker {
+  display: none;
+}
+
+.transparency-note__summary::after {
+  content: "↓";
+  flex: 0 0 auto;
+  color: var(--color-soft);
+  font-size: 0.85rem;
+  transition: transform var(--transition-base);
+}
+
+.transparency-note[open] .transparency-note__summary::after {
+  transform: rotate(180deg);
+}
+
+.transparency-note__label {
+  color: var(--color-accent);
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+}
+
+.transparency-note__hint {
+  color: var(--color-soft);
+  font-size: 0.78rem;
+}
+
+.transparency-note[open] .transparency-note__hint {
+  display: none;
+}
+
+.transparency-note__text {
+  margin: 10px 0 0;
+  color: var(--color-muted);
+  font-size: 0.86rem;
+  line-height: 1.65;
+}
+
 /* ── Campus Mobile Plan: plan grid + plan card ─────────────────────────── */
 .plan-grid {
   display: grid;

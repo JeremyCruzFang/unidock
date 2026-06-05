@@ -57,6 +57,10 @@
         title: "UniDock | 校园流量卡",
         description: "查看 UniDock 整理的校园流量卡套餐信息，包括月费、流量、首充机制、活动期与办理前注意事项。"
       },
+      mobilePlanMoreMeta: {
+        title: "UniDock | 更多校园流量卡套餐",
+        description: "更多校园流量卡套餐将在第二阶段从号卡系统中整理后展示。"
+      },
       header: {
         subline: "NUIST Freshman Hub",
         languageLabel: "语言切换"
@@ -398,6 +402,7 @@
         },
         transparency: {
           label: "信息透明",
+          toggle: "点击展开说明",
           text: "本页面根据当前已获得的校园号卡宣传信息整理。套餐价格、流量、活动期、首充规则、会员权益、办理资格、限制地区、发货地区、激活方式、合约期和售后规则可能随运营商政策调整。最终以实际办理页面或负责人确认为准。"
         },
         activity: {
@@ -407,7 +412,7 @@
           items: [
             { title: "免费使用期", desc: "4-8 月共 5 个月免费使用。" },
             { title: "办理用时", desc: "整体办理流程约需 10 分钟。" },
-            { title: "上门办理", desc: "支持上门办理，减少现场排队。" },
+            { title: "线下办理", desc: "支持在校内宿舍区或指定地点线下办理。" },
             { title: "规则说明", desc: "活动细节与最终规则以实际办理页面为准。" }
           ]
         },
@@ -437,20 +442,6 @@
           toggleOpen: "查看完整规则",
           toggleClose: "收起完整规则"
         },
-        checklist: {
-          eyebrow: "办理前请确认",
-          title: "办理前请逐项确认",
-          subtitle: "图片宣传中未提供的关键规则，需要在办理前与负责人或运营商确认。",
-          items: [
-            "合约期：是否存在最低使用月份与违约说明。",
-            "注销方式：线上注销、线下注销以及所需材料。",
-            "激活方式：开卡时是否需要本人到场、人脸核身或上传身份证。",
-            "限制地区：本号卡是否对特定省份、地区或在校状态有限制。",
-            "发货地区：能否寄送到南京及生源地，物流时效是多少。",
-            "通话与短信：是否包含国内通话分钟数与短信。",
-            "校园流量与全国流量：哪些场景算校园流量，哪些算全国通用。"
-          ]
-        },
         process: {
           eyebrow: "办理流程",
           title: "四步完成办理",
@@ -458,7 +449,7 @@
           steps: [
             { title: "了解套餐", desc: "对照本页内容，明确月费、流量、首充和活动期。" },
             { title: "咨询确认", desc: "联系负责人，确认合约期、激活方式与限制地区。" },
-            { title: "办理激活", desc: "约定上门或线下办理，按指引完成实名与开卡。" },
+            { title: "办理激活", desc: "在校内宿舍区或指定地点完成线下办理，按指引完成实名与开卡。" },
             { title: "使用与售后", desc: "首充并核对话费有效期，后续问题保留沟通入口。" }
           ]
         },
@@ -467,16 +458,33 @@
           title: "常见问题与说明",
           items: [
             { q: "活动期免费使用是怎么算的？", a: "宣传资料显示 4 月到 8 月共 5 个月免费使用，期间月租按活动规则减免，具体到账时间以运营商系统为准。" },
-            { q: "首充优惠是如何兑现的？", a: "宣传资料显示首次充值 100 元，账户到手 200 元话费，可在指定有效期内使用，逾期未使用部分以运营商规则为准。" },
-            { q: "校园流量是只能在校内使用吗？", a: "目前宣传资料未给出明确说明，办理时请向负责人或运营商确认具体场景，以避免误用。" },
-            { q: "图片中没有写出的项目怎么办？", a: "本页面将所有未在图片中明确给出的字段统一标记为 “待确认”，请以负责人或实际办理说明为准。" }
+            { q: "首充优惠是如何兑现的？", a: "宣传资料显示首次充值 100 元，账户到手 200 元话费，可在指定有效期内使用，逾期未使用部分以运营商规则为准。" }
           ]
+        },
+        more: {
+          eyebrow: "更多套餐",
+          title: "更多套餐",
+          desc: "更多号卡套餐将在第二阶段从号卡系统中整理后展示。",
+          button: "查看更多套餐"
         },
         cta: {
           eyebrow: "继续办理",
           title: "对套餐还有疑问？",
           desc: "联系本站负责人，提前确认套餐细节、限制地区与办理方式。",
           button: "联系负责人"
+        }
+      },
+      mobilePlanMorePage: {
+        hero: {
+          eyebrow: "更多套餐",
+          title: "更多校园流量卡套餐",
+          subtitle: "本页面为第二阶段号卡套餐信息陈列位置。"
+        },
+        empty: {
+          eyebrow: "空状态",
+          title: "套餐信息整理中",
+          desc: "套餐信息将在第二阶段整理后展示。",
+          back: "返回校园流量卡"
         }
       },
       footer: {
@@ -536,6 +544,10 @@
       mobilePlanMeta: {
         title: "UniDock | Campus Mobile Plan",
         description: "Review UniDock's campus mobile plan summary, including monthly fees, data allowance, recharge bonus, promotional period, and notes before applying."
+      },
+      mobilePlanMoreMeta: {
+        title: "UniDock | More Campus Mobile Plans",
+        description: "More campus mobile card plans will be organized from the card system in Stage 2."
       },
       header: {
         subline: "NUIST Freshman Hub",
@@ -878,6 +890,7 @@
         },
         transparency: {
           label: "Transparency",
+          toggle: "Tap to expand",
           text: "The information on this page is organized based on currently available campus mobile plan materials. Pricing, data allowance, promotional periods, recharge bonuses, membership benefits, eligibility, restricted regions, shipping regions, activation methods, contract terms, and support rules may change. Final terms are subject to the actual application page or confirmation from the responsible contact."
         },
         activity: {
@@ -887,7 +900,7 @@
           items: [
             { title: "Free Period", desc: "Free use across the 5 months from April to August." },
             { title: "Handling Time", desc: "The whole application takes about 10 minutes." },
-            { title: "On-Site Handling", desc: "On-site handling is available so you don't need to wait in line." },
+            { title: "Offline Handling", desc: "Offline application is available in campus dorm areas or designated locations." },
             { title: "Rule Disclaimer", desc: "Promotional details and final rules are subject to the actual application page." }
           ]
         },
@@ -917,20 +930,6 @@
           toggleOpen: "View full terms",
           toggleClose: "Hide full terms"
         },
-        checklist: {
-          eyebrow: "Pre-Application Checks",
-          title: "Confirm these before applying",
-          subtitle: "Some key rules are not stated in the promo materials. Confirm them with the responsible contact or the carrier before applying.",
-          items: [
-            "Contract period: whether there is a minimum usage term and any penalty terms.",
-            "Cancellation: online vs. offline cancellation paths and the required materials.",
-            "Activation: whether the cardholder must be physically present, complete face verification, or upload ID.",
-            "Restricted regions: whether the plan limits applicants by province, region, or student status.",
-            "Shipping: whether the SIM can ship to Nanjing or the student's hometown, and the delivery time.",
-            "Voice and SMS: whether domestic call minutes and SMS are included.",
-            "Campus vs. nationwide data: which scenarios count as campus-only data and which count as nationwide."
-          ]
-        },
         process: {
           eyebrow: "Process",
           title: "Four steps to complete the application",
@@ -938,7 +937,7 @@
           steps: [
             { title: "Review the plan", desc: "Read this page and clarify the monthly fee, data, recharge, and promo period." },
             { title: "Consult and confirm", desc: "Reach out to the contact and confirm contract terms, activation, and restrictions." },
-            { title: "Apply and activate", desc: "Schedule on-site or offline handling, complete real-name registration, and activate the SIM." },
+            { title: "Apply and activate", desc: "Complete offline handling at a campus dorm area or designated location, finish real-name registration, and activate the SIM." },
             { title: "Use and support", desc: "Complete the first recharge, verify the balance validity, and keep the contact for later issues." }
           ]
         },
@@ -947,16 +946,33 @@
           title: "Frequently asked questions",
           items: [
             { q: "How does the free period work?", a: "Promo materials state that April to August is a 5-month free period during which the monthly fee is waived per promo rules. The actual posting timing follows the carrier system." },
-            { q: "How is the recharge bonus delivered?", a: "Promo materials state that the first recharge of 100 CNY credits 200 CNY of balance, usable within the stated validity window. Unused balance after expiration follows the carrier rules." },
-            { q: "Is campus data only usable on campus?", a: "Promo materials do not state this explicitly. Confirm the actual coverage with the contact or the carrier before relying on it." },
-            { q: "What about fields the promo doesn't mention?", a: "Fields not stated in the promo materials are uniformly marked as \"To be confirmed\" on this page. The actual application page or the responsible contact is the source of truth." }
+            { q: "How is the recharge bonus delivered?", a: "Promo materials state that the first recharge of 100 CNY credits 200 CNY of balance, usable within the stated validity window. Unused balance after expiration follows the carrier rules." }
           ]
+        },
+        more: {
+          eyebrow: "More Plans",
+          title: "More Plans",
+          desc: "More mobile card plans will be organized from the card system in Stage 2.",
+          button: "View more plans"
         },
         cta: {
           eyebrow: "Apply",
           title: "Still have questions about the plan?",
           desc: "Reach out to the responsible contact to confirm plan details, restricted regions, and how to apply.",
           button: "Contact lead"
+        }
+      },
+      mobilePlanMorePage: {
+        hero: {
+          eyebrow: "More Plans",
+          title: "More Campus Mobile Plans",
+          subtitle: "This page is reserved as the Stage 2 surface for additional campus mobile card plans."
+        },
+        empty: {
+          eyebrow: "Empty State",
+          title: "Plan information being organized",
+          desc: "Plan information will be displayed after Stage 2 organization.",
+          back: "Back to Campus Mobile Plan"
         }
       },
       footer: {

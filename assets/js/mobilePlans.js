@@ -25,8 +25,8 @@
         freePeriodEn: "Free use for 5 months from April to August",
         handlingTimeZh: "办理约需 10 分钟",
         handlingTimeEn: "About 10 minutes to apply",
-        serviceModeZh: "可上门办理",
-        serviceModeEn: "On-site handling available",
+        serviceModeZh: "支持在校内宿舍区或指定地点线下办理",
+        serviceModeEn: "Offline application is available in campus dorm areas or designated locations",
         noteZh: "规则以实际办理为准",
         noteEn: "Final terms subject to actual application page"
       },
@@ -125,8 +125,8 @@
         freePeriodEn: "Free use for 5 months from April to August",
         handlingTimeZh: "办理约需 10 分钟",
         handlingTimeEn: "About 10 minutes to apply",
-        serviceModeZh: "可上门办理",
-        serviceModeEn: "On-site handling available",
+        serviceModeZh: "支持在校内宿舍区或指定地点线下办理",
+        serviceModeEn: "Offline application is available in campus dorm areas or designated locations",
         noteZh: "规则以实际办理为准",
         noteEn: "Final terms subject to actual application page"
       },
