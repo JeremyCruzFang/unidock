@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="查看 UniDock 整理的校园流量卡套餐信息，包括月费、流量、首充机制、活动期与办理前注意事项。">
+  <meta name="theme-color" content="#f6f7fb">
+  <title>UniDock | 校园流量卡</title>
+  <link rel="icon" href="./favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="./icons/unidock-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./icons/unidock-32.png">
+  <link rel="apple-touch-icon" href="./icons/unidock-256.png">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/pages.css">
+  <link rel="stylesheet" href="./assets/css/animations.css">
+  <link rel="stylesheet" href="./assets/css/nav.css">
+</head>
+<body data-page="mobilePlan">
+  <div class="site-background" aria-hidden="true">
+    <div class="site-background__mesh"></div>
+    <div class="site-background__orb site-background__orb--one"></div>
+    <div class="site-background__orb site-background__orb--two"></div>
+    <div class="site-background__orb site-background__orb--three"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <div class="subpage-header__group">
+        <a class="subpage-back" href="./index.html">
+          <span aria-hidden="true">←</span>
+          <span data-i18n="subpage.back">返回首页</span>
+        </a>
+        <a class="brand" href="./index.html" aria-label="UniDock">
+          <img class="brand__mark" src="./icons/unidock-144.png" alt="UniDock" width="30" height="30">
+          <span class="brand__text">
+            <strong>UniDock</strong>
+            <span data-i18n="header.subline">NUIST Freshman Hub</span>
+          </span>
+        </a>
+      </div>
+
+      <div class="lang-switch" data-i18n-aria-label="header.languageLabel" aria-label="语言切换">
+        <svg class="lang-switch__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z" />
+          <path d="M4.5 9H19.5" />
+          <path d="M4.5 15H19.5" />
+          <path d="M12 3C14.2386 5.18991 15.5 8.07785 15.5 12C15.5 15.9221 14.2386 18.8101 12 21C9.76142 18.8101 8.5 15.9221 8.5 12C8.5 8.07785 9.76142 5.18991 12 3Z" />
+        </svg>
+        <div class="lang-switch__buttons">
+          <button class="lang-switch__button is-active" type="button" data-lang-switch="zh">中</button>
+          <button class="lang-switch__button" type="button" data-lang-switch="en">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="subpage-main">
+    <section class="section section--compact">
+      <div class="container">
+        <div class="detail-shell">
+          <section class="detail-intro" data-reveal>
+            <span class="eyebrow" data-i18n="mobilePlanPage.hero.eyebrow">校园流量卡</span>
+            <h1 data-i18n="mobilePlanPage.hero.title">校园流量卡</h1>
+            <p data-i18n="mobilePlanPage.hero.subtitle">为新生整理校园号卡套餐、流量规格、优惠机制和办理注意事项。</p>
+
+            <div class="soft-note soft-note--quiet" style="margin-top: 22px;">
+              <span class="soft-note__label" data-i18n="mobilePlanPage.transparency.label">信息透明</span>
+              <p data-i18n="mobilePlanPage.transparency.text">本页面根据当前已获得的校园号卡宣传信息整理。套餐价格、流量、活动期、首充规则、会员权益、办理资格、限制地区、发货地区、激活方式、合约期和售后规则可能随运营商政策调整。最终以实际办理页面或负责人确认为准。</p>
+            </div>
+          </section>
+
+          <section class="content-panel" data-reveal data-delay="40">
+            <div class="content-panel__header">
+              <span class="content-panel__eyebrow" data-i18n="mobilePlanPage.activity.eyebrow">活动期说明</span>
+              <h2 data-i18n="mobilePlanPage.activity.title">本期校园号卡活动要点</h2>
+              <p data-i18n="mobilePlanPage.activity.subtitle">在了解套餐前，先看一下当前活动期的关键信息。</p>
+            </div>
+
+            <div class="stage-grid">
+              <article class="stage-card">
+                <span class="stage-card__index">01</span>
+                <h2 data-i18n="mobilePlanPage.activity.items.0.title">免费使用期</h2>
+                <p data-i18n="mobilePlanPage.activity.items.0.desc">4-8 月共 5 个月免费使用。</p>
+              </article>
+              <article class="stage-card">
+                <span class="stage-card__index">02</span>
+                <h2 data-i18n="mobilePlanPage.activity.items.1.title">办理用时</h2>
+                <p data-i18n="mobilePlanPage.activity.items.1.desc">整体办理流程约需 10 分钟。</p>
+              </article>
+              <article class="stage-card">
+                <span class="stage-card__index">03</span>
+                <h2 data-i18n="mobilePlanPage.activity.items.2.title">上门办理</h2>
+                <p data-i18n="mobilePlanPage.activity.items.2.desc">支持上门办理，减少现场排队。</p>
+              </article>
+              <article class="stage-card">
+                <span class="stage-card__index">04</span>
+                <h2 data-i18n="mobilePlanPage.activity.items.3.title">规则说明</h2>
+                <p data-i18n="mobilePlanPage.activity.items.3.desc">活动细节与最终规则以实际办理页面为准。</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="content-panel" data-reveal data-delay="80">
+            <div class="content-panel__header">
+              <span class="content-panel__eyebrow" data-i18n="mobilePlanPage.plans.eyebrow">号卡套餐</span>
+              <h2 data-i18n="mobilePlanPage.plans.title">首批校园流量卡套餐</h2>
+              <p data-i18n="mobilePlanPage.plans.subtitle">目前整理 2 个中国移动校园号卡套餐，按月费排序便于对照。</p>
+            </div>
+
+            <div class="plan-grid" data-mobile-plan-grid></div>
+          </section>
+
+          <section class="content-panel" data-reveal data-delay="120">
+            <div class="content-panel__header">
+              <span class="content-panel__eyebrow" data-i18n="mobilePlanPage.checklist.eyebrow">办理前请确认</span>
+              <h2 data-i18n="mobilePlanPage.checklist.title">办理前请逐项确认</h2>
+              <p data-i18n="mobilePlanPage.checklist.subtitle">图片宣传中未提供的关键规则，需要在办理前与负责人或运营商确认。</p>
+            </div>
+
+            <ol class="numbered-list">
+              <li class="numbered-list__item">
+                <span class="numbered-list__index">01</span>
+                <span class="numbered-list__body" data-i18n="mobilePlanPage.checklist.items.0">合约期：是否存在最低使用月份与违约说明。</span>
+              </li>
+              <li class="numbered-list__item">
+                <span class="numbered-list__index">02</span>
+                <span class="numbered-list__body" data-i18n="mobilePlanPage.checklist.items.1">注销方式：线上注销、线下注销以及所需材料。</span>
+              </li>
+              <li class="numbered-list__item">
+                <span class="numbered-list__index">03</span>
+                <span class="numbered-list__body" data-i18n="mobilePlanPage.checklist.items.2">激活方式：开卡时是否需要本人到场、人脸核身或上传身份证。</span>
+              </li>
+              <li class="numbered-list__item">
+                <span class="numbered-list__index">04</span>
+                <span class="numbered-list__body" data-i18n="mobilePlanPage.checklist.items.3">限制地区：本号卡是否对特定省份、地区或在校状态有限制。</span>
+              </li>
+              <li class="numbered-list__item">
+                <span class="numbered-list__index">05</span>
+                <span class="numbered-list__body" data-i18n="mobilePlanPage.checklist.items.4">发货地区：能否寄送到南京及生源地，物流时效是多少。</span>
+              </li>
+              <li class="numbered-list__item">
+                <span class="numbered-list__index">06</span>
+                <span class="numbered-list__body" data-i18n="mobilePlanPage.checklist.items.5">通话与短信：是否包含国内通话分钟数与短信。</span>
+              </li>
+              <li class="numbered-list__item">
+                <span class="numbered-list__index">07</span>
+                <span class="numbered-list__body" data-i18n="mobilePlanPage.checklist.items.6">校园流量与全国流量：哪些场景算校园流量，哪些算全国通用。</span>
+              </li>
+            </ol>
+          </section>
+
+          <section class="content-panel" data-reveal data-delay="160">
+            <div class="content-panel__header">
+              <span class="content-panel__eyebrow" data-i18n="mobilePlanPage.process.eyebrow">办理流程</span>
+              <h2 data-i18n="mobilePlanPage.process.title">四步完成办理</h2>
+              <p data-i18n="mobilePlanPage.process.subtitle">把校园号卡办理拆成清晰阶段，按顺序推进即可。</p>
+            </div>
+
+            <div class="stage-grid">
+              <article class="stage-card">
+                <span class="stage-card__index">01</span>
+                <h2 data-i18n="mobilePlanPage.process.steps.0.title">了解套餐</h2>
+                <p data-i18n="mobilePlanPage.process.steps.0.desc">对照本页内容，明确月费、流量、首充和活动期。</p>
+              </article>
+              <article class="stage-card">
+                <span class="stage-card__index">02</span>
+                <h2 data-i18n="mobilePlanPage.process.steps.1.title">咨询确认</h2>
+                <p data-i18n="mobilePlanPage.process.steps.1.desc">联系负责人，确认合约期、激活方式与限制地区。</p>
+              </article>
+              <article class="stage-card">
+                <span class="stage-card__index">03</span>
+                <h2 data-i18n="mobilePlanPage.process.steps.2.title">办理激活</h2>
+                <p data-i18n="mobilePlanPage.process.steps.2.desc">约定上门或线下办理，按指引完成实名与开卡。</p>
+              </article>
+              <article class="stage-card">
+                <span class="stage-card__index">04</span>
+                <h2 data-i18n="mobilePlanPage.process.steps.3.title">使用与售后</h2>
+                <p data-i18n="mobilePlanPage.process.steps.3.desc">首充并核对话费有效期，后续问题保留沟通入口。</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="content-panel" data-reveal data-delay="200">
+            <div class="content-panel__header">
+              <span class="content-panel__eyebrow" data-i18n="mobilePlanPage.faq.eyebrow">常见问题</span>
+              <h2 data-i18n="mobilePlanPage.faq.title">常见问题与说明</h2>
+            </div>
+
+            <div class="info-stack">
+              <div class="info-item">
+                <span class="info-item__index">Q1</span>
+                <div class="info-item__body">
+                  <h3 data-i18n="mobilePlanPage.faq.items.0.q">活动期免费使用是怎么算的？</h3>
+                  <p data-i18n="mobilePlanPage.faq.items.0.a">宣传资料显示 4 月到 8 月共 5 个月免费使用，期间月租按活动规则减免，具体到账时间以运营商系统为准。</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <span class="info-item__index">Q2</span>
+                <div class="info-item__body">
+                  <h3 data-i18n="mobilePlanPage.faq.items.1.q">首充优惠是如何兑现的？</h3>
+                  <p data-i18n="mobilePlanPage.faq.items.1.a">宣传资料显示首次充值 100 元，账户到手 200 元话费，可在指定有效期内使用，逾期未使用部分以运营商规则为准。</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <span class="info-item__index">Q3</span>
+                <div class="info-item__body">
+                  <h3 data-i18n="mobilePlanPage.faq.items.2.q">校园流量是只能在校内使用吗？</h3>
+                  <p data-i18n="mobilePlanPage.faq.items.2.a">目前宣传资料未给出明确说明，办理时请向负责人或运营商确认具体场景，以避免误用。</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <span class="info-item__index">Q4</span>
+                <div class="info-item__body">
+                  <h3 data-i18n="mobilePlanPage.faq.items.3.q">图片中没有写出的项目怎么办？</h3>
+                  <p data-i18n="mobilePlanPage.faq.items.3.a">本页面将所有未在图片中明确给出的字段统一标记为 “待确认”，请以负责人或实际办理说明为准。</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--compact" id="contact-section">
+      <div class="container">
+        <div class="cta-banner" data-reveal>
+          <div class="cta-banner__copy">
+            <span class="eyebrow" data-i18n="mobilePlanPage.cta.eyebrow">继续办理</span>
+            <h2 data-i18n="mobilePlanPage.cta.title">对套餐还有疑问？</h2>
+            <p data-i18n="mobilePlanPage.cta.desc">联系本站负责人，提前确认套餐细节、限制地区与办理方式。</p>
+          </div>
+          <a class="button button--primary button--wide" href="./wechat-add.html" data-i18n="mobilePlanPage.cta.button">联系负责人</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__brand">
+        <img class="brand__mark brand__mark--footer" src="./icons/unidock-144.png" alt="UniDock" width="36" height="36">
+        <div class="site-footer__copy">
+          <strong>UniDock</strong>
+          <p data-i18n="footer.desc">为 NUIST 新生整理信息入口、校园资源与联系支持。</p>
+        </div>
+      </div>
+      <p class="site-footer__meta" data-i18n="footer.note">一个克制、清晰、可直接使用的新生首页入口。</p>
+    </div>
+  </footer>
+
+  <script src="./assets/js/mailbox.js" defer></script>
+  <script src="./assets/js/nav.js" defer></script>
+  <script src="./assets/js/language.js" defer></script>
+  <script src="./assets/js/mobilePlans.js" defer></script>
+  <script src="./assets/js/mobilePlanPage.js" defer></script>
+  <script src="./assets/js/main.js" defer></script>
+</body>
+</html>

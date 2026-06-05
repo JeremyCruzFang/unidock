@@ -1970,3 +1970,391 @@ img.redirect-icon__mark,
 .contact-card::before {
   /* prevent stray ::before content if any class composes here */
 }
+
+/* ── Campus Mobile Plan: plan grid + plan card ─────────────────────────── */
+.plan-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.plan-card {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 26px 24px;
+  border: 1px solid var(--color-surface-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-strong);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+}
+
+.plan-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), transparent 56%);
+  pointer-events: none;
+}
+
+.plan-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.plan-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.plan-card__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-muted);
+}
+
+.plan-card__carrier-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.04);
+  color: var(--color-text);
+  font-size: 0.7rem;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+}
+
+.plan-card__carrier {
+  font-size: 0.82rem;
+  color: var(--color-text);
+}
+
+.plan-card__name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.plan-card__fee {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.plan-card__fee-label {
+  font-size: 0.76rem;
+  color: var(--color-muted);
+  letter-spacing: 0.02em;
+}
+
+.plan-card__fee-amount {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.plan-card__fee-number {
+  font-size: 1.85rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+  line-height: 1;
+}
+
+.plan-card__fee-unit {
+  font-size: 0.78rem;
+  color: var(--color-muted);
+  letter-spacing: 0.01em;
+}
+
+.plan-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.plan-card__tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  white-space: normal;
+  word-break: keep-all;
+}
+
+.plan-card__section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.plan-card__section-label {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  color: var(--color-soft);
+  text-transform: uppercase;
+}
+
+.plan-card__highlights {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.plan-card__highlight {
+  display: grid;
+  grid-template-columns: 14px 1fr;
+  gap: 8px;
+  align-items: start;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--color-text);
+}
+
+.plan-card__highlight-dot {
+  color: var(--color-soft);
+  line-height: 1.4;
+}
+
+.plan-card__spec-list,
+.plan-card__detail-list {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+  column-gap: 16px;
+  row-gap: 8px;
+}
+
+.plan-card__spec-term,
+.plan-card__detail-term {
+  font-size: 0.82rem;
+  color: var(--color-muted);
+  letter-spacing: 0.01em;
+}
+
+.plan-card__spec-desc,
+.plan-card__detail-desc {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--color-text);
+  line-height: 1.55;
+}
+
+.plan-card__detail-desc.is-placeholder {
+  color: var(--color-soft);
+  font-style: italic;
+}
+
+.plan-card__benefits-title {
+  margin: 0;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+
+.plan-card__benefit-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.plan-card__benefit {
+  display: grid;
+  grid-template-columns: 26px 1fr;
+  gap: 10px;
+  align-items: start;
+  padding: 12px 14px;
+  border: 1px solid rgba(15, 23, 42, 0.05);
+  border-radius: var(--radius-sm);
+  background: rgba(245, 248, 255, 0.7);
+}
+
+.plan-card__benefit-index {
+  color: var(--color-soft);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  padding-top: 2px;
+}
+
+.plan-card__benefit-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.plan-card__benefit-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.plan-card__benefit-detail {
+  color: var(--color-muted);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.plan-card__section--notices .plan-card__section-label {
+  color: var(--color-accent);
+}
+
+.plan-card__notice-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.plan-card__notice {
+  position: relative;
+  padding: 10px 14px 10px 28px;
+  border: 1px solid rgba(15, 23, 42, 0.05);
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.02);
+  font-size: 0.84rem;
+  color: var(--color-muted);
+  line-height: 1.55;
+}
+
+.plan-card__notice::before {
+  content: "!";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-grid;
+  place-items: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  font-size: 0.62rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.plan-card__details {
+  border-top: 1px solid rgba(15, 23, 42, 0.06);
+  padding-top: 14px;
+}
+
+.plan-card__details-summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  list-style: none;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--color-text);
+  user-select: none;
+}
+
+.plan-card__details-summary::-webkit-details-marker {
+  display: none;
+}
+
+.plan-card__details-summary::after {
+  content: "↓";
+  font-size: 0.8rem;
+  color: var(--color-soft);
+  transition: transform var(--transition-base);
+}
+
+.plan-card__details[open] .plan-card__details-summary::after {
+  transform: rotate(180deg);
+}
+
+.plan-card__details-toggle-close {
+  display: none;
+}
+
+.plan-card__details[open] .plan-card__details-toggle-open {
+  display: none;
+}
+
+.plan-card__details[open] .plan-card__details-toggle-close {
+  display: inline;
+}
+
+.plan-card__detail-list {
+  margin-top: 12px;
+}
+
+.plan-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.plan-card__cta {
+  width: 100%;
+  justify-content: center;
+}
+
+@media (max-width: 760px) {
+  .plan-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .plan-card {
+    padding: 22px 18px;
+  }
+
+  .plan-card__name {
+    font-size: 1.15rem;
+  }
+
+  .plan-card__fee-number {
+    font-size: 1.6rem;
+  }
+
+  .plan-card__spec-list,
+  .plan-card__detail-list {
+    grid-template-columns: 1fr;
+    row-gap: 4px;
+  }
+
+  .plan-card__spec-term,
+  .plan-card__detail-term {
+    color: var(--color-soft);
+    font-size: 0.78rem;
+  }
+
+  .plan-card__spec-desc,
+  .plan-card__detail-desc {
+    margin-bottom: 6px;
+  }
+}
