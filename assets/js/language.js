@@ -61,6 +61,10 @@
         title: "UniDock | 更多校园流量卡套餐",
         description: "更多校园流量卡套餐将在第二阶段从号卡系统中整理后展示。"
       },
+      dormSuppliesMeta: {
+        title: "UniDock | 寝室用具",
+        description: "查看 UniDock 整理的寝室用具图册，包括三件套花色、床帘和单品。"
+      },
       header: {
         subline: "NUIST Freshman Hub",
         languageLabel: "语言切换"
@@ -488,6 +492,65 @@
           back: "返回校园流量卡"
         }
       },
+      dormSuppliesPage: {
+        hero: {
+          eyebrow: "生活资源",
+          title: "寝室用具",
+          subtitle: "整理三件套花色、床帘和单品图册，方便你在入住前预览宿舍生活用品的样式。"
+        },
+        transparency: {
+          label: "信息透明",
+          toggle: "点击展开说明",
+          text: "本页面图片来源于素材中心，仅供参考。最终花色、材质和到货款式以实际办理或负责人确认为准。"
+        },
+        sections: {
+          beddingSet: {
+            eyebrow: "Section 01",
+            title: "三件套花色",
+            subtitle: "已收录 53 个三件套花色，覆盖麂皮绒、天丝、长绒棉等不同材质。"
+          },
+          bedCurtain: {
+            eyebrow: "Section 02",
+            title: "床帘",
+            subtitle: "已收录 20 个床帘款式，包含 U 型导轨遮光款与蚊帐式床帘。"
+          },
+          singleItems: {
+            eyebrow: "Section 03",
+            title: "单品",
+            subtitle: "已收录 12 个单品，包含床帘花色合集、床垫、枕头、被芯与套件。"
+          }
+        },
+        card: {
+          photoCountSingle: "共 1 张",
+          photoCountTpl: "共 {count} 张",
+          openHint: "点击查看全部图片",
+          fallback: "暂无图片",
+          imageAlt: "{name} 第 {index} 张"
+        },
+        action: {
+          viewAll: "查看全部",
+          expand: "展开",
+          collapse: "收起",
+          floatingAria: "收起当前板块"
+        },
+        pillModal: {
+          eyebrow: "选择产品",
+          title: "选择产品",
+          countTpl: "共 {count} 个",
+          empty: "暂无产品"
+        },
+        modal: {
+          close: "关闭",
+          sectionLabel: "所属板块",
+          countTpl: "共 {count} 张"
+        },
+        cta: {
+          eyebrow: "继续了解",
+          title: "想确认具体到货款式？",
+          desc: "联系本站负责人，提前确认花色细节、价格与下单方式。",
+          button: "联系负责人"
+        }
+      },
       footer: {
         desc: "为 NUIST 新生整理信息入口、校园资源与联系支持。",
         note: "一个克制、清晰、可直接使用的新生首页入口。",
@@ -550,6 +613,10 @@
       mobilePlanMoreMeta: {
         title: "UniDock | More Campus Mobile Plans",
         description: "More campus mobile card plans will be organized from the card system in Stage 2."
+      },
+      dormSuppliesMeta: {
+        title: "UniDock | Dorm Supplies",
+        description: "Browse UniDock's dorm supplies gallery: bedding sets, bed curtains, and single items."
       },
       header: {
         subline: "NUIST Freshman Hub",
@@ -976,6 +1043,65 @@
           desc: "For more plan options, application details, and shipping or restricted regions, please contact the responsible person directly.",
           button: "Contact lead",
           back: "Back to Campus Mobile Plan"
+        }
+      },
+      dormSuppliesPage: {
+        hero: {
+          eyebrow: "Living Resources",
+          title: "Dorm Supplies",
+          subtitle: "Browse the gallery for bedding sets, bed curtains, and single items so you can preview dorm essentials before move-in."
+        },
+        transparency: {
+          label: "Transparency",
+          toggle: "Tap to expand",
+          text: "Images on this page come from the supplier material library and are for reference only. Final patterns, materials, and shipped styles are subject to the actual application or confirmation from the responsible contact."
+        },
+        sections: {
+          beddingSet: {
+            eyebrow: "Section 01",
+            title: "Bedding Sets",
+            subtitle: "53 bedding set patterns are organized, covering suede, Tencel, and long-staple cotton."
+          },
+          bedCurtain: {
+            eyebrow: "Section 02",
+            title: "Bed Curtains",
+            subtitle: "20 bed curtain styles are organized, including U-track blackout curtains and mosquito-net curtains."
+          },
+          singleItems: {
+            eyebrow: "Section 03",
+            title: "Single Items",
+            subtitle: "12 single items are organized, including curtain pattern collections, mattresses, pillows, quilts, and basic sets."
+          }
+        },
+        card: {
+          photoCountSingle: "1 photo",
+          photoCountTpl: "{count} photos",
+          openHint: "Click to view all images",
+          fallback: "No image",
+          imageAlt: "{name} image {index}"
+        },
+        action: {
+          viewAll: "View All",
+          expand: "Expand",
+          collapse: "Collapse",
+          floatingAria: "Collapse current section"
+        },
+        pillModal: {
+          eyebrow: "Select a Product",
+          title: "Select a Product",
+          countTpl: "{count} items",
+          empty: "No products"
+        },
+        modal: {
+          close: "Close",
+          sectionLabel: "Section",
+          countTpl: "{count} photos"
+        },
+        cta: {
+          eyebrow: "Next Step",
+          title: "Want to confirm the actual style?",
+          desc: "Contact the UniDock lead to confirm patterns, prices, and how to order.",
+          button: "Contact lead"
         }
       },
       footer: {

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="查看 UniDock 整理的寝室用具图册，包括三件套花色、床帘和单品。">
+  <meta name="theme-color" content="#f6f7fb">
+  <title>UniDock | 寝室用具</title>
+  <link rel="icon" href="./favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="./icons/unidock-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./icons/unidock-32.png">
+  <link rel="apple-touch-icon" href="./icons/unidock-256.png">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/pages.css">
+  <link rel="stylesheet" href="./assets/css/animations.css">
+  <link rel="stylesheet" href="./assets/css/nav.css">
+</head>
+<body data-page="dormSupplies">
+  <div class="site-background" aria-hidden="true">
+    <div class="site-background__mesh"></div>
+    <div class="site-background__orb site-background__orb--one"></div>
+    <div class="site-background__orb site-background__orb--two"></div>
+    <div class="site-background__orb site-background__orb--three"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <div class="subpage-header__group">
+        <a class="subpage-back" href="./index.html">
+          <span aria-hidden="true">←</span>
+          <span data-i18n="subpage.back">返回首页</span>
+        </a>
+        <a class="brand" href="./index.html" aria-label="UniDock">
+          <img class="brand__mark" src="./icons/unidock-144.png" alt="UniDock" width="30" height="30">
+          <span class="brand__text">
+            <strong>UniDock</strong>
+            <span data-i18n="header.subline">NUIST Freshman Hub</span>
+          </span>
+        </a>
+      </div>
+
+      <div class="lang-switch" data-i18n-aria-label="header.languageLabel" aria-label="语言切换">
+        <svg class="lang-switch__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z" />
+          <path d="M4.5 9H19.5" />
+          <path d="M4.5 15H19.5" />
+          <path d="M12 3C14.2386 5.18991 15.5 8.07785 15.5 12C15.5 15.9221 14.2386 18.8101 12 21C9.76142 18.8101 8.5 15.9221 8.5 12C8.5 8.07785 9.76142 5.18991 12 3Z" />
+        </svg>
+        <div class="lang-switch__buttons">
+          <button class="lang-switch__button is-active" type="button" data-lang-switch="zh">中</button>
+          <button class="lang-switch__button" type="button" data-lang-switch="en">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="subpage-main">
+    <section class="section section--compact">
+      <div class="container">
+        <div class="detail-shell">
+          <section class="detail-intro" data-reveal>
+            <span class="eyebrow" data-i18n="dormSuppliesPage.hero.eyebrow">生活资源</span>
+            <h1 data-i18n="dormSuppliesPage.hero.title">寝室用具</h1>
+            <p data-i18n="dormSuppliesPage.hero.subtitle">整理三件套花色、床帘和单品图册，方便你在入住前预览宿舍生活用品的样式。</p>
+
+            <details class="transparency-note">
+              <summary class="transparency-note__summary">
+                <span class="transparency-note__label" data-i18n="dormSuppliesPage.transparency.label">信息透明</span>
+                <span class="transparency-note__hint" data-i18n="dormSuppliesPage.transparency.toggle">点击展开说明</span>
+              </summary>
+              <p class="transparency-note__text" data-i18n="dormSuppliesPage.transparency.text">本页面图片来源于素材中心，仅供参考。最终花色、材质和到货款式以实际办理或负责人确认为准。</p>
+            </details>
+          </section>
+
+          <section class="content-panel dorm-section is-collapsed" data-dorm-section="bedding-set">
+            <div class="content-panel__header dorm-section__header">
+              <div class="dorm-section__title-wrap">
+                <span class="content-panel__eyebrow" data-dorm-eyebrow="bedding-set">Section 01</span>
+                <h2 data-dorm-title="bedding-set">三件套花色</h2>
+                <p data-dorm-subtitle="bedding-set">已收录 53 个三件套花色，覆盖麂皮绒、天丝、长绒棉等不同材质。</p>
+              </div>
+              <div class="dorm-section__actions">
+                <button type="button" class="dorm-section__view-all" data-dorm-view-all="bedding-set">
+                  <span data-i18n="dormSuppliesPage.action.viewAll">查看全部</span>
+                </button>
+                <button type="button" class="dorm-section__toggle" data-dorm-toggle="bedding-set" aria-expanded="false">
+                  <span class="dorm-section__toggle-label dorm-section__toggle-label--expand" data-i18n="dormSuppliesPage.action.expand">展开</span>
+                  <span class="dorm-section__toggle-label dorm-section__toggle-label--collapse" data-i18n="dormSuppliesPage.action.collapse">收起</span>
+                  <span class="dorm-section__toggle-chevron" aria-hidden="true"></span>
+                </button>
+              </div>
+            </div>
+            <div class="dorm-section__body">
+              <div class="dorm-grid" data-dorm-grid="bedding-set"></div>
+            </div>
+          </section>
+
+          <section class="content-panel dorm-section is-collapsed" data-dorm-section="bed-curtain">
+            <div class="content-panel__header dorm-section__header">
+              <div class="dorm-section__title-wrap">
+                <span class="content-panel__eyebrow" data-dorm-eyebrow="bed-curtain">Section 02</span>
+                <h2 data-dorm-title="bed-curtain">床帘</h2>
+                <p data-dorm-subtitle="bed-curtain">已收录 20 个床帘款式，包含 U 型导轨遮光款与蚊帐式床帘。</p>
+              </div>
+              <div class="dorm-section__actions">
+                <button type="button" class="dorm-section__view-all" data-dorm-view-all="bed-curtain">
+                  <span data-i18n="dormSuppliesPage.action.viewAll">查看全部</span>
+                </button>
+                <button type="button" class="dorm-section__toggle" data-dorm-toggle="bed-curtain" aria-expanded="false">
+                  <span class="dorm-section__toggle-label dorm-section__toggle-label--expand" data-i18n="dormSuppliesPage.action.expand">展开</span>
+                  <span class="dorm-section__toggle-label dorm-section__toggle-label--collapse" data-i18n="dormSuppliesPage.action.collapse">收起</span>
+                  <span class="dorm-section__toggle-chevron" aria-hidden="true"></span>
+                </button>
+              </div>
+            </div>
+            <div class="dorm-section__body">
+              <div class="dorm-grid" data-dorm-grid="bed-curtain"></div>
+            </div>
+          </section>
+
+          <section class="content-panel dorm-section is-collapsed" data-dorm-section="single-items">
+            <div class="content-panel__header dorm-section__header">
+              <div class="dorm-section__title-wrap">
+                <span class="content-panel__eyebrow" data-dorm-eyebrow="single-items">Section 03</span>
+                <h2 data-dorm-title="single-items">单品</h2>
+                <p data-dorm-subtitle="single-items">已收录 12 个单品，包含床帘花色合集、床垫、枕头、被芯与套件。</p>
+              </div>
+              <div class="dorm-section__actions">
+                <button type="button" class="dorm-section__view-all" data-dorm-view-all="single-items">
+                  <span data-i18n="dormSuppliesPage.action.viewAll">查看全部</span>
+                </button>
+                <button type="button" class="dorm-section__toggle" data-dorm-toggle="single-items" aria-expanded="false">
+                  <span class="dorm-section__toggle-label dorm-section__toggle-label--expand" data-i18n="dormSuppliesPage.action.expand">展开</span>
+                  <span class="dorm-section__toggle-label dorm-section__toggle-label--collapse" data-i18n="dormSuppliesPage.action.collapse">收起</span>
+                  <span class="dorm-section__toggle-chevron" aria-hidden="true"></span>
+                </button>
+              </div>
+            </div>
+            <div class="dorm-section__body">
+              <div class="dorm-grid" data-dorm-grid="single-items"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--compact" id="contact-section">
+      <div class="container">
+        <div class="cta-banner" data-reveal>
+          <div class="cta-banner__copy">
+            <span class="eyebrow" data-i18n="dormSuppliesPage.cta.eyebrow">继续了解</span>
+            <h2 data-i18n="dormSuppliesPage.cta.title">想确认具体到货款式？</h2>
+            <p data-i18n="dormSuppliesPage.cta.desc">联系本站负责人，提前确认花色细节、价格与下单方式。</p>
+          </div>
+          <a class="button button--primary button--wide" href="./wechat-add.html" data-i18n="dormSuppliesPage.cta.button">联系负责人</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__brand">
+        <img class="brand__mark brand__mark--footer" src="./icons/unidock-144.png" alt="UniDock" width="36" height="36">
+        <div class="site-footer__copy">
+          <strong>UniDock</strong>
+          <p data-i18n="footer.desc">为 NUIST 新生整理信息入口、校园资源与联系支持。</p>
+        </div>
+      </div>
+      <a class="site-footer__contact" href="./wechat-add.html" data-i18n="footer.contactButton">联系我们</a>
+    </div>
+  </footer>
+
+  <script src="./assets/js/mailbox.js" defer></script>
+  <script src="./assets/js/nav.js" defer></script>
+  <script src="./assets/js/language.js" defer></script>
+  <script src="./assets/js/dormSupplies.js" defer></script>
+  <script src="./assets/js/dormSuppliesPage.js" defer></script>
+  <script src="./assets/js/main.js" defer></script>
+</body>
+</html>
