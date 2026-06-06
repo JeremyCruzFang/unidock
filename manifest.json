@@ -7,20 +7,20 @@
   "theme_color": "#f6f7fb",
   "icons": [
     {
-      "src": "./icons/pwa-192x192.png",
-      "sizes": "192x192",
+      "src": "./icons/unidock-144.png",
+      "sizes": "144x144",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "./icons/pwa-512x512.png",
-      "sizes": "512x512",
+      "src": "./icons/unidock-256.png",
+      "sizes": "256x256",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "./icons/maskable-512x512.png",
-      "sizes": "512x512",
+      "src": "./icons/unidock-256.png",
+      "sizes": "256x256",
       "type": "image/png",
       "purpose": "maskable"
     }
