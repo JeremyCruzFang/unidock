@@ -59,7 +59,7 @@
       },
       mobilePlanMoreMeta: {
         title: "UniDock | 更多校园流量卡套餐",
-        description: "更多校园流量卡套餐将在第二阶段从号卡系统中整理后展示。"
+        description: "获取更多校园流量卡套餐、办理细则与发货限制地区信息，直接联系 UniDock 负责人确认。"
       },
       dormSuppliesMeta: {
         title: "UniDock | 寝室用具",
@@ -567,7 +567,6 @@
         intro: "如在报到流程、行前准备、校园资源或页面使用中遇到问题，可直接联系对应负责人。",
         panelEyebrow: "负责人联系方式",
         panelTitle: "复制后即可直接联系",
-        panelDesc: "手机号、微信与邮箱已整理为统一结构，减少重复确认和手动记录成本。",
         owner01: "负责人 01",
         owner02: "负责人 02",
         sameWechat: "微信同号",
@@ -578,7 +577,6 @@
         partnershipTitle: "意向合作联系",
         partnershipDesc: "如需站点合作、共建或内容协作，可直接通过以下方式联系。",
         partnershipBadge: "合作入口",
-        partnershipHint: "保持与负责人区块同一套联系方式结构，便于快速复制。",
         partnershipPhone: "合作联系电话",
         partnershipEmail: "合作邮箱"
       },
@@ -821,7 +819,7 @@
       },
       mobilePlanMoreMeta: {
         title: "UniDock | More Campus Mobile Plans",
-        description: "More campus mobile card plans will be organized from the card system in Stage 2."
+        description: "Reach out to the UniDock leads for more campus mobile plan options, application details, and shipping or restricted region info."
       },
       dormSuppliesMeta: {
         title: "UniDock | Dorm Supplies",
@@ -1329,7 +1327,6 @@
         intro: "If you run into issues with arrival steps, pre-departure prep, campus resources, or page usage, contact the responsible lead directly.",
         panelEyebrow: "Lead Contacts",
         panelTitle: "Copy and contact directly",
-        panelDesc: "Phone, WeChat, and email are kept in one consistent structure to reduce repeated confirmation.",
         owner01: "Responsible Person 01",
         owner02: "Responsible Person 02",
         sameWechat: "Same as phone number",
@@ -1340,7 +1337,6 @@
         partnershipTitle: "Partnership Contact",
         partnershipDesc: "For collaboration, co-building, or content coordination, contact us directly through the following details.",
         partnershipBadge: "Partnership",
-        partnershipHint: "Kept in the same structured contact format for quick copying.",
         partnershipPhone: "Partnership Phone",
         partnershipEmail: "Partnership Email"
       },
