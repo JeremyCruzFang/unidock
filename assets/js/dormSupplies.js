@@ -1,7 +1,8 @@
 /* UniDock - Dorm Supplies data (auto-generated from handoff JSON)
    Source: dorm-supplies-handoff/data/dorm-products.json
    Section keys: bedding-set, bed-curtain, single-items
-   Images are stored at ./assets/img/dorm-supplies/<sectionKey>/<productKey>/<NN>.webp */
+   Full images:  ./assets/img/dorm-supplies/<sectionKey>/<productKey>/<NN>.webp
+   Cover thumbs: ./assets/img/dorm-supplies-thumbs/<sectionKey>/<productKey>/cover.webp */
 (function () {
   const SECTION_ORDER = ["bedding-set","bed-curtain","single-items"];
   const PRODUCTS = [
@@ -11,6 +12,7 @@
     "productName": "淡粉清晨-麂皮绒产品图+实拍图",
     "displayName": "淡粉清晨-麂皮绒",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/淡粉清晨-麂皮绒/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/淡粉清晨-麂皮绒/01.webp",
       "./assets/img/dorm-supplies/bedding-set/淡粉清晨-麂皮绒/02.webp",
@@ -31,6 +33,7 @@
     "productName": "大雾四起-麂皮绒产品图+实拍图",
     "displayName": "大雾四起-麂皮绒",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/大雾四起-麂皮绒/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/大雾四起-麂皮绒/01.webp",
       "./assets/img/dorm-supplies/bedding-set/大雾四起-麂皮绒/02.webp",
@@ -51,6 +54,7 @@
     "productName": "迷雾森林-天丝产品图+实拍图",
     "displayName": "迷雾森林-天丝",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/迷雾森林-天丝/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/迷雾森林-天丝/01.webp",
       "./assets/img/dorm-supplies/bedding-set/迷雾森林-天丝/02.webp",
@@ -73,6 +77,7 @@
     "productName": "冬日晴空-天丝产品图+实拍图",
     "displayName": "冬日晴空-天丝",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/冬日晴空-天丝/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/冬日晴空-天丝/01.webp",
       "./assets/img/dorm-supplies/bedding-set/冬日晴空-天丝/02.webp",
@@ -93,6 +98,7 @@
     "productName": "珍珠灰-长绒棉产品图+实拍图",
     "displayName": "珍珠灰-长绒棉",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/珍珠灰-长绒棉/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/珍珠灰-长绒棉/01.webp",
       "./assets/img/dorm-supplies/bedding-set/珍珠灰-长绒棉/02.webp",
@@ -113,6 +119,7 @@
     "productName": "爱马仕橙-长绒棉产品图+实拍图",
     "displayName": "爱马仕橙-长绒棉",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/爱马仕橙-长绒棉/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/爱马仕橙-长绒棉/01.webp",
       "./assets/img/dorm-supplies/bedding-set/爱马仕橙-长绒棉/02.webp",
@@ -131,6 +138,7 @@
     "productName": "Y44汪汪家族-蓝产品图+实拍图",
     "displayName": "Y44汪汪家族-蓝",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/Y44汪汪家族-蓝/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/Y44汪汪家族-蓝/01.webp",
       "./assets/img/dorm-supplies/bedding-set/Y44汪汪家族-蓝/02.webp",
@@ -146,6 +154,7 @@
     "productName": "Y43甜心小猫产品图+实拍图",
     "displayName": "Y43甜心小猫",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/Y43甜心小猫/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/Y43甜心小猫/01.webp",
       "./assets/img/dorm-supplies/bedding-set/Y43甜心小猫/02.webp",
@@ -165,6 +174,7 @@
     "productName": "L63牛奶玉桂狗产品图+实拍图",
     "displayName": "L63牛奶玉桂狗",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/L63牛奶玉桂狗/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/L63牛奶玉桂狗/01.webp",
       "./assets/img/dorm-supplies/bedding-set/L63牛奶玉桂狗/02.webp",
@@ -186,6 +196,7 @@
     "productName": "L62紫色库洛米产品图+素材图",
     "displayName": "L62紫色库洛米",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/L62紫色库洛米/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/L62紫色库洛米/01.webp",
       "./assets/img/dorm-supplies/bedding-set/L62紫色库洛米/02.webp",
@@ -204,6 +215,7 @@
     "productName": "L61顽皮乐乐产品图+实拍图",
     "displayName": "L61顽皮乐乐",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/L61顽皮乐乐/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/L61顽皮乐乐/01.webp",
       "./assets/img/dorm-supplies/bedding-set/L61顽皮乐乐/02.webp",
@@ -223,6 +235,7 @@
     "productName": "L60甜甜布丁产品图+实拍图",
     "displayName": "L60甜甜布丁",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/L60甜甜布丁/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/L60甜甜布丁/01.webp",
       "./assets/img/dorm-supplies/bedding-set/L60甜甜布丁/02.webp",
@@ -239,6 +252,7 @@
     "productName": "L59糖果小咪产品图+实拍图",
     "displayName": "L59糖果小咪",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/L59糖果小咪/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/L59糖果小咪/01.webp",
       "./assets/img/dorm-supplies/bedding-set/L59糖果小咪/02.webp",
@@ -264,6 +278,7 @@
     "productName": "L58奶芙KT产品图+实拍图",
     "displayName": "L58奶芙KT",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/L58奶芙KT/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/L58奶芙KT/01.webp",
       "./assets/img/dorm-supplies/bedding-set/L58奶芙KT/02.webp",
@@ -284,6 +299,7 @@
     "productName": "S57条纹星星人产品图+实拍图",
     "displayName": "S57条纹星星人",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/S57条纹星星人/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/S57条纹星星人/01.webp",
       "./assets/img/dorm-supplies/bedding-set/S57条纹星星人/02.webp",
@@ -301,6 +317,7 @@
     "productName": "S56潮酷唐老鸭产品图+素材图",
     "displayName": "S56潮酷唐老鸭",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/S56潮酷唐老鸭/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/S56潮酷唐老鸭/01.webp",
       "./assets/img/dorm-supplies/bedding-set/S56潮酷唐老鸭/02.webp",
@@ -319,6 +336,7 @@
     "productName": "S55欢乐派对米产品图+实拍图",
     "displayName": "S55欢乐派对米",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/S55欢乐派对米/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/S55欢乐派对米/01.webp",
       "./assets/img/dorm-supplies/bedding-set/S55欢乐派对米/02.webp",
@@ -339,6 +357,7 @@
     "productName": "S54巧克力犬-蓝产品图+实拍图",
     "displayName": "S54巧克力犬-蓝",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/S54巧克力犬-蓝/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/S54巧克力犬-蓝/01.webp",
       "./assets/img/dorm-supplies/bedding-set/S54巧克力犬-蓝/02.webp",
@@ -357,6 +376,7 @@
     "productName": "S49萌兔花园-米产品图+实拍图",
     "displayName": "S49萌兔花园-米",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/S49萌兔花园-米/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/S49萌兔花园-米/01.webp",
       "./assets/img/dorm-supplies/bedding-set/S49萌兔花园-米/02.webp",
@@ -376,6 +396,7 @@
     "productName": "S48暗影千鸟产品图+实拍图",
     "displayName": "S48暗影千鸟",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/S48暗影千鸟/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/S48暗影千鸟/01.webp",
       "./assets/img/dorm-supplies/bedding-set/S48暗影千鸟/02.webp",
@@ -394,6 +415,7 @@
     "productName": "S47爱心凯蒂产品图+实拍图",
     "displayName": "S47爱心凯蒂",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/S47爱心凯蒂/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/S47爱心凯蒂/01.webp",
       "./assets/img/dorm-supplies/bedding-set/S47爱心凯蒂/02.webp",
@@ -412,6 +434,7 @@
     "productName": "S46湛蓝大格产品图+实拍图",
     "displayName": "S46湛蓝大格",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/S46湛蓝大格/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/S46湛蓝大格/01.webp",
       "./assets/img/dorm-supplies/bedding-set/S46湛蓝大格/02.webp",
@@ -429,6 +452,7 @@
     "productName": "S45北欧时代产品图+实拍图",
     "displayName": "S45北欧时代",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/S45北欧时代/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/S45北欧时代/01.webp",
       "./assets/img/dorm-supplies/bedding-set/S45北欧时代/02.webp",
@@ -447,6 +471,7 @@
     "productName": "S44心动-米产品图+实拍图",
     "displayName": "S44心动-米",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/S44心动-米/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/S44心动-米/01.webp",
       "./assets/img/dorm-supplies/bedding-set/S44心动-米/02.webp",
@@ -464,6 +489,7 @@
     "productName": "S43腊肠狗产品图+实拍图",
     "displayName": "S43腊肠狗",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/S43腊肠狗/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/S43腊肠狗/01.webp",
       "./assets/img/dorm-supplies/bedding-set/S43腊肠狗/02.webp",
@@ -482,6 +508,7 @@
     "productName": "S42格里斯产品图+实拍图",
     "displayName": "S42格里斯",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/S42格里斯/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/S42格里斯/01.webp",
       "./assets/img/dorm-supplies/bedding-set/S42格里斯/02.webp",
@@ -498,6 +525,7 @@
     "productName": "S38绅士产品图+实拍图",
     "displayName": "S38绅士",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/S38绅士/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/S38绅士/01.webp",
       "./assets/img/dorm-supplies/bedding-set/S38绅士/02.webp",
@@ -515,6 +543,7 @@
     "productName": "S37画报产品图+实拍图",
     "displayName": "S37画报",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/S37画报/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/S37画报/01.webp",
       "./assets/img/dorm-supplies/bedding-set/S37画报/02.webp",
@@ -533,6 +562,7 @@
     "productName": "S36果实产品图+实拍图",
     "displayName": "S36果实",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/S36果实/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/S36果实/01.webp",
       "./assets/img/dorm-supplies/bedding-set/S36果实/02.webp",
@@ -551,6 +581,7 @@
     "productName": "T24星际宝贝产品图+实拍图",
     "displayName": "T24星际宝贝",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/T24星际宝贝/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/T24星际宝贝/01.webp",
       "./assets/img/dorm-supplies/bedding-set/T24星际宝贝/02.webp",
@@ -572,6 +603,7 @@
     "productName": "T23开心派对产品图+实拍图",
     "displayName": "T23开心派对",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/T23开心派对/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/T23开心派对/01.webp",
       "./assets/img/dorm-supplies/bedding-set/T23开心派对/02.webp",
@@ -593,6 +625,7 @@
     "productName": "T22童话小镇产品图+实拍图",
     "displayName": "T22童话小镇",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/T22童话小镇/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/T22童话小镇/01.webp",
       "./assets/img/dorm-supplies/bedding-set/T22童话小镇/02.webp",
@@ -614,6 +647,7 @@
     "productName": "T21可可庄园产品图+实拍图",
     "displayName": "T21可可庄园",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/T21可可庄园/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/T21可可庄园/01.webp",
       "./assets/img/dorm-supplies/bedding-set/T21可可庄园/02.webp",
@@ -635,6 +669,7 @@
     "productName": "T20百变凯蒂产品图+实拍图",
     "displayName": "T20百变凯蒂",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/T20百变凯蒂/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/T20百变凯蒂/01.webp",
       "./assets/img/dorm-supplies/bedding-set/T20百变凯蒂/02.webp",
@@ -656,6 +691,7 @@
     "productName": "T19灰色轨迹产品图+实拍图",
     "displayName": "T19灰色轨迹",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/T19灰色轨迹/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/T19灰色轨迹/01.webp",
       "./assets/img/dorm-supplies/bedding-set/T19灰色轨迹/02.webp",
@@ -677,6 +713,7 @@
     "productName": "Q19落日余晖产品图+实拍图",
     "displayName": "Q19落日余晖",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/Q19落日余晖/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/Q19落日余晖/01.webp",
       "./assets/img/dorm-supplies/bedding-set/Q19落日余晖/02.webp",
@@ -694,6 +731,7 @@
     "productName": "Q18海阔天空产品图+实拍图",
     "displayName": "Q18海阔天空",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/Q18海阔天空/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/Q18海阔天空/01.webp",
       "./assets/img/dorm-supplies/bedding-set/Q18海阔天空/02.webp",
@@ -716,6 +754,7 @@
     "productName": "Q16奶油日记产品图+实拍图",
     "displayName": "Q16奶油日记",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/Q16奶油日记/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/Q16奶油日记/01.webp",
       "./assets/img/dorm-supplies/bedding-set/Q16奶油日记/02.webp",
@@ -737,6 +776,7 @@
     "productName": "Q15橘子汽水产品图+实拍图",
     "displayName": "Q15橘子汽水",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/Q15橘子汽水/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/Q15橘子汽水/01.webp",
       "./assets/img/dorm-supplies/bedding-set/Q15橘子汽水/02.webp",
@@ -758,6 +798,7 @@
     "productName": "Q14暮色回响产品图+实拍图",
     "displayName": "Q14暮色回响",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/Q14暮色回响/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/Q14暮色回响/01.webp",
       "./assets/img/dorm-supplies/bedding-set/Q14暮色回响/02.webp",
@@ -779,6 +820,7 @@
     "productName": "Q13海盐芝士产品图+实拍图",
     "displayName": "Q13海盐芝士",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/Q13海盐芝士/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/Q13海盐芝士/01.webp",
       "./assets/img/dorm-supplies/bedding-set/Q13海盐芝士/02.webp",
@@ -800,6 +842,7 @@
     "productName": "A42一路生花产品图+实拍图",
     "displayName": "A42一路生花",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/A42一路生花/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/A42一路生花/01.webp",
       "./assets/img/dorm-supplies/bedding-set/A42一路生花/02.webp",
@@ -821,6 +864,7 @@
     "productName": "A40法系罗兰产品图+实拍图",
     "displayName": "A40法系罗兰",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/A40法系罗兰/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/A40法系罗兰/01.webp",
       "./assets/img/dorm-supplies/bedding-set/A40法系罗兰/02.webp",
@@ -842,6 +886,7 @@
     "productName": "A36浪里白条产品图+实拍图",
     "displayName": "A36浪里白条",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/A36浪里白条/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/A36浪里白条/01.webp",
       "./assets/img/dorm-supplies/bedding-set/A36浪里白条/02.webp",
@@ -863,6 +908,7 @@
     "productName": "A32野兽小猫产品图+实拍图",
     "displayName": "A32野兽小猫",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/A32野兽小猫/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/A32野兽小猫/01.webp",
       "./assets/img/dorm-supplies/bedding-set/A32野兽小猫/02.webp",
@@ -880,6 +926,7 @@
     "productName": "A28梵高的泪产品图+实拍图",
     "displayName": "A28梵高的泪",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/A28梵高的泪/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/A28梵高的泪/01.webp",
       "./assets/img/dorm-supplies/bedding-set/A28梵高的泪/02.webp"
@@ -891,6 +938,7 @@
     "productName": "A25涂鸦艺术产品图+实拍图",
     "displayName": "A25涂鸦艺术",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/A25涂鸦艺术/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/A25涂鸦艺术/01.webp",
       "./assets/img/dorm-supplies/bedding-set/A25涂鸦艺术/02.webp",
@@ -909,6 +957,7 @@
     "productName": "A11阳光泡芙产品图+实拍图",
     "displayName": "A11阳光泡芙",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/A11阳光泡芙/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/A11阳光泡芙/01.webp",
       "./assets/img/dorm-supplies/bedding-set/A11阳光泡芙/02.webp",
@@ -930,6 +979,7 @@
     "productName": "A10尊嘟假嘟产品图+实拍图",
     "displayName": "A10尊嘟假嘟",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/A10尊嘟假嘟/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/A10尊嘟假嘟/01.webp",
       "./assets/img/dorm-supplies/bedding-set/A10尊嘟假嘟/02.webp",
@@ -951,6 +1001,7 @@
     "productName": "A8小熊吐司产品图+实拍图",
     "displayName": "A8小熊吐司",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/A8小熊吐司/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/A8小熊吐司/01.webp",
       "./assets/img/dorm-supplies/bedding-set/A8小熊吐司/02.webp",
@@ -972,6 +1023,7 @@
     "productName": "A5节节高升产品图+实拍图",
     "displayName": "A5节节高升",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/A5节节高升/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/A5节节高升/01.webp",
       "./assets/img/dorm-supplies/bedding-set/A5节节高升/02.webp",
@@ -993,6 +1045,7 @@
     "productName": "A2年少有为产品图+实拍图",
     "displayName": "A2年少有为",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/A2年少有为/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/A2年少有为/01.webp",
       "./assets/img/dorm-supplies/bedding-set/A2年少有为/02.webp"
@@ -1004,6 +1057,7 @@
     "productName": "A1迷你拾光产品图+实拍图",
     "displayName": "A1迷你拾光",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bedding-set/A1迷你拾光/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bedding-set/A1迷你拾光/01.webp",
       "./assets/img/dorm-supplies/bedding-set/A1迷你拾光/02.webp"
@@ -1015,6 +1069,7 @@
     "productName": "U型导轨蕾丝边收纳款遮光床帘-浅蓝灰",
     "displayName": "U型导轨蕾丝边收纳款遮光床帘-浅蓝灰",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bed-curtain/U型导轨蕾丝边收纳款遮光床帘-浅蓝灰/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bed-curtain/U型导轨蕾丝边收纳款遮光床帘-浅蓝灰/01.webp",
       "./assets/img/dorm-supplies/bed-curtain/U型导轨蕾丝边收纳款遮光床帘-浅蓝灰/02.webp",
@@ -1033,6 +1088,7 @@
     "productName": "U型导轨蕾丝边收纳款遮光床帘-抹茶绿",
     "displayName": "U型导轨蕾丝边收纳款遮光床帘-抹茶绿",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bed-curtain/U型导轨蕾丝边收纳款遮光床帘-抹茶绿/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bed-curtain/U型导轨蕾丝边收纳款遮光床帘-抹茶绿/01.webp",
       "./assets/img/dorm-supplies/bed-curtain/U型导轨蕾丝边收纳款遮光床帘-抹茶绿/02.webp",
@@ -1051,6 +1107,7 @@
     "productName": "U型导轨蕾丝边收纳款遮光床帘-卡其色",
     "displayName": "U型导轨蕾丝边收纳款遮光床帘-卡其色",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bed-curtain/U型导轨蕾丝边收纳款遮光床帘-卡其色/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bed-curtain/U型导轨蕾丝边收纳款遮光床帘-卡其色/01.webp",
       "./assets/img/dorm-supplies/bed-curtain/U型导轨蕾丝边收纳款遮光床帘-卡其色/02.webp",
@@ -1069,6 +1126,7 @@
     "productName": "U型导轨蕾丝边收纳款遮光床帘-粉玉色",
     "displayName": "U型导轨蕾丝边收纳款遮光床帘-粉玉色",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bed-curtain/U型导轨蕾丝边收纳款遮光床帘-粉玉色/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bed-curtain/U型导轨蕾丝边收纳款遮光床帘-粉玉色/01.webp",
       "./assets/img/dorm-supplies/bed-curtain/U型导轨蕾丝边收纳款遮光床帘-粉玉色/02.webp",
@@ -1087,6 +1145,7 @@
     "productName": "蚊帐式床帘小熊兔子实拍图",
     "displayName": "蚊帐式床帘小熊兔子",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bed-curtain/蚊帐式床帘小熊兔子/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bed-curtain/蚊帐式床帘小熊兔子/01.webp",
       "./assets/img/dorm-supplies/bed-curtain/蚊帐式床帘小熊兔子/02.webp",
@@ -1104,6 +1163,7 @@
     "productName": "蚊帐式床帘外星飞船实拍图",
     "displayName": "蚊帐式床帘外星飞船",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bed-curtain/蚊帐式床帘外星飞船/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bed-curtain/蚊帐式床帘外星飞船/01.webp",
       "./assets/img/dorm-supplies/bed-curtain/蚊帐式床帘外星飞船/02.webp",
@@ -1121,6 +1181,7 @@
     "productName": "蚊帐式床帘蓝色小狗实拍图",
     "displayName": "蚊帐式床帘蓝色小狗",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bed-curtain/蚊帐式床帘蓝色小狗/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bed-curtain/蚊帐式床帘蓝色小狗/01.webp",
       "./assets/img/dorm-supplies/bed-curtain/蚊帐式床帘蓝色小狗/02.webp",
@@ -1137,6 +1198,7 @@
     "productName": "蚊帐式床帘蓝色夕阳实拍图",
     "displayName": "蚊帐式床帘蓝色夕阳",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bed-curtain/蚊帐式床帘蓝色夕阳/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bed-curtain/蚊帐式床帘蓝色夕阳/01.webp",
       "./assets/img/dorm-supplies/bed-curtain/蚊帐式床帘蓝色夕阳/02.webp",
@@ -1156,6 +1218,7 @@
     "productName": "蚊帐式床帘纯蓝色实拍图",
     "displayName": "蚊帐式床帘纯蓝色",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bed-curtain/蚊帐式床帘纯蓝色/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bed-curtain/蚊帐式床帘纯蓝色/01.webp",
       "./assets/img/dorm-supplies/bed-curtain/蚊帐式床帘纯蓝色/02.webp",
@@ -1177,6 +1240,7 @@
     "productName": "蚊帐式床帘纯灰色实拍图",
     "displayName": "蚊帐式床帘纯灰色",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bed-curtain/蚊帐式床帘纯灰色/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bed-curtain/蚊帐式床帘纯灰色/01.webp",
       "./assets/img/dorm-supplies/bed-curtain/蚊帐式床帘纯灰色/02.webp",
@@ -1193,6 +1257,7 @@
     "productName": "蚊帐式床帘白鹿实拍图",
     "displayName": "蚊帐式床帘白鹿",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bed-curtain/蚊帐式床帘白鹿/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bed-curtain/蚊帐式床帘白鹿/01.webp",
       "./assets/img/dorm-supplies/bed-curtain/蚊帐式床帘白鹿/02.webp",
@@ -1208,6 +1273,7 @@
     "productName": "蚊帐式床帘bunny实拍图",
     "displayName": "蚊帐式床帘bunny",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bed-curtain/蚊帐式床帘bunny/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bed-curtain/蚊帐式床帘bunny/01.webp",
       "./assets/img/dorm-supplies/bed-curtain/蚊帐式床帘bunny/02.webp",
@@ -1223,6 +1289,7 @@
     "productName": "蚊帐式床帘灰色煤球实拍图",
     "displayName": "蚊帐式床帘灰色煤球",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bed-curtain/蚊帐式床帘灰色煤球/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bed-curtain/蚊帐式床帘灰色煤球/01.webp",
       "./assets/img/dorm-supplies/bed-curtain/蚊帐式床帘灰色煤球/02.webp",
@@ -1237,6 +1304,7 @@
     "productName": "蚊帐式床帘新小黄鸭实拍图",
     "displayName": "蚊帐式床帘新小黄鸭",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bed-curtain/蚊帐式床帘新小黄鸭/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bed-curtain/蚊帐式床帘新小黄鸭/01.webp",
       "./assets/img/dorm-supplies/bed-curtain/蚊帐式床帘新小黄鸭/02.webp"
@@ -1248,6 +1316,7 @@
     "productName": "蚊帐式床帘想念你实拍图",
     "displayName": "蚊帐式床帘想念你",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bed-curtain/蚊帐式床帘想念你/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bed-curtain/蚊帐式床帘想念你/01.webp",
       "./assets/img/dorm-supplies/bed-curtain/蚊帐式床帘想念你/02.webp",
@@ -1262,6 +1331,7 @@
     "productName": "蚊帐式床帘去旅行实拍图",
     "displayName": "蚊帐式床帘去旅行",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bed-curtain/蚊帐式床帘去旅行/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bed-curtain/蚊帐式床帘去旅行/01.webp",
       "./assets/img/dorm-supplies/bed-curtain/蚊帐式床帘去旅行/02.webp"
@@ -1273,6 +1343,7 @@
     "productName": "蚊帐式床帘奶油熊熊实拍图",
     "displayName": "蚊帐式床帘奶油熊熊",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bed-curtain/蚊帐式床帘奶油熊熊/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bed-curtain/蚊帐式床帘奶油熊熊/01.webp",
       "./assets/img/dorm-supplies/bed-curtain/蚊帐式床帘奶油熊熊/02.webp"
@@ -1284,6 +1355,7 @@
     "productName": "蚊帐式床帘奶茶熊-米色产品图",
     "displayName": "蚊帐式床帘奶茶熊-米色",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bed-curtain/蚊帐式床帘奶茶熊-米色/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bed-curtain/蚊帐式床帘奶茶熊-米色/01.webp"
     ]
@@ -1294,6 +1366,7 @@
     "productName": "蚊帐式床帘蓝色大象实拍图",
     "displayName": "蚊帐式床帘蓝色大象",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bed-curtain/蚊帐式床帘蓝色大象/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bed-curtain/蚊帐式床帘蓝色大象/01.webp",
       "./assets/img/dorm-supplies/bed-curtain/蚊帐式床帘蓝色大象/02.webp"
@@ -1305,6 +1378,7 @@
     "productName": "蚊帐式床帘腊肠狗实拍图",
     "displayName": "蚊帐式床帘腊肠狗",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/bed-curtain/蚊帐式床帘腊肠狗/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/bed-curtain/蚊帐式床帘腊肠狗/01.webp",
       "./assets/img/dorm-supplies/bed-curtain/蚊帐式床帘腊肠狗/02.webp"
@@ -1316,6 +1390,7 @@
     "productName": "宿舍必备半遮光蚊帐式床帘花色",
     "displayName": "宿舍必备半遮光蚊帐式床帘花色",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/single-items/宿舍必备半遮光蚊帐式床帘花色/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/single-items/宿舍必备半遮光蚊帐式床帘花色/01.webp",
       "./assets/img/dorm-supplies/single-items/宿舍必备半遮光蚊帐式床帘花色/02.webp",
@@ -1339,6 +1414,7 @@
     "productName": "涂层强遮光蚊帐式床帘花色",
     "displayName": "涂层强遮光蚊帐式床帘花色",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/single-items/涂层强遮光蚊帐式床帘花色/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/single-items/涂层强遮光蚊帐式床帘花色/01.webp",
       "./assets/img/dorm-supplies/single-items/涂层强遮光蚊帐式床帘花色/02.webp",
@@ -1366,6 +1442,7 @@
     "productName": "U型导轨蕾丝边收纳款遮光床帘花色",
     "displayName": "U型导轨蕾丝边收纳款遮光床帘花色",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/single-items/U型导轨蕾丝边收纳款遮光床帘花色/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/single-items/U型导轨蕾丝边收纳款遮光床帘花色/01.webp",
       "./assets/img/dorm-supplies/single-items/U型导轨蕾丝边收纳款遮光床帘花色/02.webp",
@@ -1379,6 +1456,7 @@
     "productName": "免安装支架床帘花色",
     "displayName": "免安装支架床帘花色",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/single-items/免安装支架床帘花色/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/single-items/免安装支架床帘花色/01.webp",
       "./assets/img/dorm-supplies/single-items/免安装支架床帘花色/02.webp",
@@ -1396,6 +1474,7 @@
     "productName": "牛奶丝乳胶记忆棉床垫",
     "displayName": "牛奶丝乳胶记忆棉床垫",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/single-items/牛奶丝乳胶记忆棉床垫/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/single-items/牛奶丝乳胶记忆棉床垫/01.webp",
       "./assets/img/dorm-supplies/single-items/牛奶丝乳胶记忆棉床垫/02.webp",
@@ -1408,6 +1487,7 @@
     "productName": "泰国纯乳胶枕头产品图",
     "displayName": "泰国纯乳胶枕头",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/single-items/泰国纯乳胶枕头/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/single-items/泰国纯乳胶枕头/01.webp",
       "./assets/img/dorm-supplies/single-items/泰国纯乳胶枕头/02.webp"
@@ -1419,6 +1499,7 @@
     "productName": "基础款套件产品图",
     "displayName": "基础款套件",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/single-items/基础款套件/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/single-items/基础款套件/01.webp",
       "./assets/img/dorm-supplies/single-items/基础款套件/02.webp",
@@ -1431,6 +1512,7 @@
     "productName": "护颈枕芯产品图",
     "displayName": "护颈枕芯",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/single-items/护颈枕芯/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/single-items/护颈枕芯/01.webp",
       "./assets/img/dorm-supplies/single-items/护颈枕芯/02.webp",
@@ -1448,6 +1530,7 @@
     "productName": "抗菌被芯产品图",
     "displayName": "抗菌被芯",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/single-items/抗菌被芯/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/single-items/抗菌被芯/01.webp",
       "./assets/img/dorm-supplies/single-items/抗菌被芯/02.webp",
@@ -1469,6 +1552,7 @@
     "productName": "记忆海绵床垫产品图",
     "displayName": "记忆海绵床垫",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/single-items/记忆海绵床垫/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/single-items/记忆海绵床垫/01.webp",
       "./assets/img/dorm-supplies/single-items/记忆海绵床垫/02.webp",
@@ -1487,6 +1571,7 @@
     "productName": "凉感丝夏凉被产品图及花色",
     "displayName": "凉感丝夏凉被",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/single-items/凉感丝夏凉被/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/single-items/凉感丝夏凉被/01.webp",
       "./assets/img/dorm-supplies/single-items/凉感丝夏凉被/02.webp",
@@ -1512,6 +1597,7 @@
     "productName": "云感皱皱双层纱夏被产品图及花色",
     "displayName": "云感皱皱双层纱夏被",
     "status": "confirmed",
+    "coverThumb": "./assets/img/dorm-supplies-thumbs/single-items/云感皱皱双层纱夏被/cover.webp",
     "images": [
       "./assets/img/dorm-supplies/single-items/云感皱皱双层纱夏被/01.webp",
       "./assets/img/dorm-supplies/single-items/云感皱皱双层纱夏被/02.webp",

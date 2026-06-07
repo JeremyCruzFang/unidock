@@ -62,27 +62,20 @@
       return stack;
     }
 
-    // Up to three back layers under the cover
+    // Back layers under the cover are pure CSS surfaces — no image requests.
+    // The visual depth is the same as before, but it costs zero bytes.
     const layerCount = Math.min(images.length, 3);
     for (let i = layerCount - 1; i >= 1; i--) {
       const layer = createEl("div", "dorm-card__layer dorm-card__layer--" + i);
-      // back layers use the next images so they peek out faintly
-      const img = createEl("img", "dorm-card__layer-img");
-      img.src = images[Math.min(i, images.length - 1)];
-      img.alt = "";
-      img.loading = "lazy";
-      img.decoding = "async";
-      img.addEventListener("error", function () {
-        layer.classList.add("is-broken");
-      });
-      layer.appendChild(img);
+      layer.setAttribute("aria-hidden", "true");
       stack.appendChild(layer);
     }
 
-    // Cover image
+    // Cover image — uses the tiny thumbnail, not the full WebP. Full images are
+    // only fetched when the lightbox opens.
     const cover = createEl("div", "dorm-card__cover");
     const coverImg = createEl("img", "dorm-card__cover-img");
-    coverImg.src = images[0];
+    coverImg.src = product.coverThumb || images[0];
     coverImg.alt = t("dormSuppliesPage.card.imageAlt", { name: product.displayName, index: 1 }) || product.displayName;
     coverImg.loading = "lazy";
     coverImg.decoding = "async";
@@ -132,27 +125,47 @@
     return card;
   }
 
-  function renderSections() {
-    const data = window.UniDockDormSupplies;
-    if (!data) return;
+  // Track which sections have had their cards built. We only build a section's
+  // grid the first time it is expanded — collapsed sections issue zero image
+  // requests during initial paint.
+  const renderedSections = new Set();
 
+  function syncSectionTexts() {
     Object.keys(SECTION_META).forEach(function (key) {
       const meta = SECTION_META[key];
-      const grid = document.querySelector('[data-dorm-grid="' + key + '"]');
       const eyebrowEl = document.querySelector('[data-dorm-eyebrow="' + key + '"]');
       const titleEl = document.querySelector('[data-dorm-title="' + key + '"]');
       const subtitleEl = document.querySelector('[data-dorm-subtitle="' + key + '"]');
-
       if (eyebrowEl) eyebrowEl.textContent = t(meta.labelKey + ".eyebrow");
       if (titleEl) titleEl.textContent = t(meta.labelKey + ".title");
       if (subtitleEl) subtitleEl.textContent = t(meta.labelKey + ".subtitle");
-
-      if (!grid) return;
-      grid.innerHTML = "";
-      data.bySection(key).forEach(function (p) {
-        grid.appendChild(buildCard(p));
-      });
     });
+  }
+
+  function renderSectionGrid(key) {
+    const data = window.UniDockDormSupplies;
+    if (!data) return;
+    const grid = document.querySelector('[data-dorm-grid="' + key + '"]');
+    if (!grid) return;
+    grid.innerHTML = "";
+    data.bySection(key).forEach(function (p) {
+      grid.appendChild(buildCard(p));
+    });
+    renderedSections.add(key);
+  }
+
+  // Re-render any already-expanded section so card alt text / hint translate.
+  function rerenderRenderedSections() {
+    renderedSections.forEach(function (key) {
+      renderSectionGrid(key);
+    });
+  }
+
+  // Called by the initial page load and language change. Builds nothing for
+  // collapsed sections; just refreshes the header labels.
+  function renderSections() {
+    syncSectionTexts();
+    rerenderRenderedSections();
   }
 
   /* ── Lightbox ───────────────────────────────────────────────────────────── */
@@ -238,13 +251,19 @@
 
     grid.innerHTML = "";
     product.images.forEach(function (src, i) {
-      const fig = createEl("figure", "dorm-lightbox__figure");
+      const fig = createEl("figure", "dorm-lightbox__figure dorm-lightbox__figure--loading");
       const img = createEl("img", "dorm-lightbox__img");
       img.src = src;
       img.alt = t("dormSuppliesPage.card.imageAlt", { name: product.displayName, index: i + 1 });
-      img.loading = "lazy";
+      // First image loads eagerly (above-the-fold), rest are lazy.
+      img.loading = i === 0 ? "eager" : "lazy";
       img.decoding = "async";
+      img.fetchPriority = i === 0 ? "high" : "auto";
+      img.addEventListener("load", function () {
+        fig.classList.remove("dorm-lightbox__figure--loading");
+      });
       img.addEventListener("error", function () {
+        fig.classList.remove("dorm-lightbox__figure--loading");
         fig.classList.add("is-broken");
       });
       fig.appendChild(img);
@@ -423,8 +442,14 @@
 
   function expandSection(section) {
     if (!section) return;
-    section.classList.remove("is-collapsed");
     const key = section.getAttribute("data-dorm-section");
+    // Lazy-render the grid on first expand. Collapsed sections never trigger
+    // an image fetch, and re-expanding a previously rendered section just
+    // re-shows the cached DOM.
+    if (key && !renderedSections.has(key)) {
+      renderSectionGrid(key);
+    }
+    section.classList.remove("is-collapsed");
     const btn = section.querySelector('[data-dorm-toggle="' + key + '"]');
     if (btn) btn.setAttribute("aria-expanded", "true");
     updateFloatingCollapse();

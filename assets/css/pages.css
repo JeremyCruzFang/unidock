@@ -2902,16 +2902,20 @@ img.redirect-icon__mark,
   pointer-events: none;
 }
 
+/* CSS-only back layers — no real images. Soft gradient surfaces give the same
+   stacked-deck feel as before but cost zero network requests. */
 .dorm-card__layer--1 {
   z-index: 2;
   transform: translate(6px, 6px) rotate(2deg) scale(0.97);
-  filter: brightness(0.96);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.85) 0%, rgba(225,232,245,0.85) 100%);
 }
 
 .dorm-card__layer--2 {
   z-index: 1;
   transform: translate(12px, 12px) rotate(4deg) scale(0.94);
-  filter: brightness(0.92);
+  background:
+    linear-gradient(135deg, rgba(248,250,254,0.85) 0%, rgba(206,217,236,0.85) 100%);
 }
 
 .dorm-card__trigger:hover .dorm-card__layer--1 {
@@ -3144,12 +3148,36 @@ body.dorm-lightbox-open {
 }
 
 .dorm-lightbox__figure {
+  position: relative;
   margin: 0;
   border-radius: var(--radius-sm);
   overflow: hidden;
   background: #f3f5fa;
   aspect-ratio: 1 / 1;
   border: 1px solid var(--color-line);
+}
+
+/* Loading skeleton — fades in/out under the figure while the image streams. */
+.dorm-lightbox__figure--loading::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg,
+      rgba(241, 243, 249, 0) 0%,
+      rgba(241, 243, 249, 0.85) 40%,
+      rgba(232, 236, 245, 0.85) 50%,
+      rgba(241, 243, 249, 0.85) 60%,
+      rgba(241, 243, 249, 0) 100%),
+    linear-gradient(180deg, #eef1f8 0%, #e6ebf5 100%);
+  background-size: 200% 100%, 100% 100%;
+  background-position: -100% 0, 0 0;
+  animation: dorm-lightbox-skeleton 1.4s ease-in-out infinite;
+}
+
+@keyframes dorm-lightbox-skeleton {
+  0% { background-position: -100% 0, 0 0; }
+  100% { background-position: 200% 0, 0 0; }
 }
 
 .dorm-lightbox__figure.is-broken {

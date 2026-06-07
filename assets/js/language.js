@@ -193,6 +193,215 @@
         desc: "你可以通过本站负责人员联系方式，获取进一步帮助。",
         button: "添加联系方式"
       },
+      checklistPage: {
+        hero: {
+          eyebrow: "行前准备",
+          title: "行前准备清单",
+          subtitle: "出发前完成关键准备，减少入校后的遗漏、返工和临时排队。",
+          tags: ["证件", "生活", "电子", "建议"]
+        },
+        materials: {
+          eyebrow: "证件与材料",
+          title: "最高优先级：先把入学材料准备完整",
+          subtitle: "这一部分决定你能否顺利完成入学与报到，尤其是档案材料，不建议拖到出发当天再确认。",
+          mustTitle: "必须携带",
+          mustItems: [
+            "录取通知书原件。",
+            "身份证原件。",
+            "近期同底 1 寸、2 寸免冠彩照各 4 张。",
+            "个人档案或档案移交证明，确保档案密封、签章完整。",
+            "团员建议带上团员证，以便后续组织关系处理。"
+          ],
+          conditionalTitle: "按情况准备",
+          conditionalItems: [
+            "已办理生源地信用助学贷款的同学：带好贷款受理证明。",
+            "姓名、生源地或户口信息有变更的同学：带好相关证明材料。",
+            "外市来宁且年底前需在南京就医的同学：提前完成医保异地备案。",
+            "如企业微信人脸照片采集未成功，到校后还需按要求补录信息。"
+          ],
+          noteLabel: "重点提醒",
+          noteText: "档案是入学的硬性材料之一，若既没有档案也没有移交证明，可能无法完成入学。录取通知书、身份证、证件照建议至少做一份电子备份，放在手机相册或云端。"
+        },
+        living: {
+          eyebrow: "生活与寝居",
+          title: "把宿舍生活的基础配置提前想清楚",
+          subtitle: "床上用品、洗漱、清洁和基础药品四组最容易在出发前遗漏，建议按组扫描，不要只凭印象打包。",
+          mustLabel: "必备",
+          missLabel: "易遗漏",
+          cards: [
+            { title: "床上用品", must: "床单、被套、枕套，提前确认宿舍床尺寸。", miss: "床垫、被子、枕头、蚊帐、遮光床帘。" },
+            { title: "洗漱", must: "牙刷杯、毛巾、沐浴露、洗发水、洗面奶、洗衣液。", miss: "脸盆、水桶、浴室防滑拖和居家拖鞋。" },
+            { title: "清洁", must: "扫把、簸箕、抹布。", miss: "晾衣架、夹子、粘钩，多备几个会更省心。" },
+            { title: "药品", must: "创可贴、感冒药、退烧药。", miss: "肠胃药、碘伏、驱蚊液或花露水。" }
+          ],
+          bridgeEyebrow: "UniDock 入口",
+          bridgeTitle: "寝居用品一站式入口",
+          bridgeDesc: "如果你想把宿舍基础物资集中处理，可以回到首页从寝室用具入口继续查看。",
+          bridgeButton: "查看入口"
+        },
+        electronics: {
+          eyebrow: "电子与学习",
+          title: "别只带设备，也要把配件和网络方案想清楚",
+          subtitle: "手机和电脑只是基础，真正容易耽误使用的是充电、插座、耳机、存储和校园网络这些细节。",
+          mainTitle: "主设备",
+          mainItems: [
+            "手机、电脑是大学阶段最基础的学习与沟通工具。",
+            "如果需要办理校园网或宽带，建议提前了解学校的网络方案。",
+            "U 盘或移动硬盘适合备份课件、作业和资料。"
+          ],
+          accessoriesTitle: "配件",
+          accessoriesItems: [
+            "充电器、充电宝、数据线至少按日常习惯各准备一套。",
+            "插线板建议带独立开关，最好 4 个以上插口。",
+            "鼠标、键盘、耳机、笔袋、荧光笔、2B 铅笔和尺子都属于容易漏装的学习配件。"
+          ],
+          noteLabel: "网络提醒",
+          noteText: "建议提前处理流量卡与网络方案。网络与通信属于基础设施，越早决定，到校后的排队和信息差越少。"
+        },
+        avoid: {
+          eyebrow: "不建议携带",
+          title: "把行李负担压下来，现场会更轻松",
+          subtitle: "并不是带得越多越稳妥，真正影响体验的往往是大件、重件和到校后才能判断要不要买的物品。",
+          dontTitle: "不要带",
+          dontItems: [
+            "大型大功率电器，如电饭煲、锅具等。",
+            "过多换季厚衣服，宿舍柜体空间有限，冬装后续邮寄更合理。",
+            "无用杂物和暂时用不到的堆积品，会明显增加整理成本。"
+          ],
+          laterTitle: "可以后补",
+          laterItems: [
+            "非必需品可以等到学校后再网购或在附近超市补齐。",
+            "这样能减轻搬运行李的压力，也更容易根据宿舍实际情况补货。",
+            "宿舍通常有公共吹风机，如需自带也建议先确认管理要求。"
+          ]
+        },
+        advice: {
+          eyebrow: "UniDock 建议",
+          title: "把关键准备放到出发前，而不是到校后",
+          subtitle: "真正节省时间的不是多带东西，而是提前做好顺序判断和基础规划。",
+          bridgeTitle: "出发前优先完成这三步",
+          bridgeItems: [
+            "先处理流量卡与网络方案，不把基础通信留到报到当天。",
+            "把证件、档案和基础生活物资按优先级分层打包。",
+            "提前规划宿舍区、路线和现场流程，避免开学排队与信息差。"
+          ],
+          bridgeButton: "查看报道全流程"
+        }
+      },
+      arrivalPage: {
+        hero: {
+          eyebrow: "报道流程",
+          title: "报道全流程",
+          subtitle: "从出发到完成报到，按阶段完成关键步骤。",
+          stages: [
+            { title: "出发前", desc: "证件、宿舍区域、入校路径先确认。" },
+            { title: "到达南京", desc: "按地铁、高铁、机场或自驾路线入校。" },
+            { title: "入校与报到", desc: "到宿舍报到点后按迎新流程完成验证。" },
+            { title: "现场支持", desc: "接驳、快递、缴费与咨询都在现场可用。" }
+          ]
+        },
+        before: {
+          eyebrow: "出发前",
+          title: "先把出发前的三件事做完",
+          subtitle: "证件和物品先整理完整，再确认宿舍区域与入校路径，到校后会顺畅很多。",
+          items: [
+            { title: "带齐物品", desc: "确认已带齐必要证件与物品，尤其是录取通知书、身份证、证件照和档案材料。" },
+            { title: "确认宿舍区域", desc: "提前确定自己属于东苑、中苑、西苑还是南苑，后续选择校门和停车路线都依赖这一步。" },
+            { title: "查看校园地图", desc: "建议先熟悉校门、宿舍区和报到点的大致位置，避免入校后走冤枉路。" }
+          ],
+          button: "查看行前准备清单"
+        },
+        arrive: {
+          eyebrow: "到达南京",
+          title: "按你的到达方式选择路线",
+          subtitle: "先确认到站类型，再按路线进校；如果是自驾，优先确认宿舍区与入校门的对应关系。",
+          routes: [
+            { badge: "路线卡 01", title: "地铁 / 高铁", note: "适合到达南京站、南京南站或小红山站后继续换乘进校的同学。" },
+            { badge: "路线卡 02", title: "机场", note: "从机场出发时换乘会更多，建议提前预留时间，并确认地铁运营时段。" },
+            { badge: "路线卡 03", title: "自驾", note: "离南京 3 到 4 小时车程内的同学可以考虑自驾，但一定先看宿舍区与校门映射。" }
+          ]
+        },
+        drive: {
+          eyebrow: "自驾入校",
+          title: "先看宿舍区，再展开详细路线",
+          subtitle: "先确认你的宿舍区与推荐校门，再按下方折叠路线查看详细行驶路径；默认全部收起，避免页面信息一次性铺满。",
+          mappings: [
+            { title: "晖园 / 硕园", desc: "推荐校门：东苑东门 / 东苑南门" },
+            { title: "沁园", desc: "推荐校门：气象谷东门 / 中苑南门" },
+            { title: "文园", desc: "推荐校门：西苑南门、西苑北门" },
+            { title: "毓园", desc: "推荐校门：南苑东门" }
+          ],
+          accordions: [
+            { title: "东苑东门入校", subtitle: "对应晖园、硕园宿舍区", exit: "建议由中苑南门或西苑南门出校。" },
+            { title: "东苑南门入校", subtitle: "适合前往沁园周边区域", exit: "建议由中苑南门或西苑南门出校。" },
+            { title: "中苑南门入校", subtitle: "直接服务沁园宿舍区", exit: "建议由西苑南门出校。" },
+            { title: "西苑南门入校", subtitle: "对应文园宿舍区", exit: "建议沿西苑围墙南段或揽江楼东侧道路出校。" },
+            { title: "西苑北门入校", subtitle: "适合从万家坝路方向进入", exit: "建议由西苑南门出校。" },
+            { title: "气象谷入校", subtitle: "适合前往沁园，含两种入场方案", exit: "建议由气象谷东门或西南门出校。" },
+            { title: "南苑东门入校", subtitle: "对应毓园宿舍区", exit: "" }
+          ],
+          noteLabel: "行车提醒",
+          noteText: "校内全线单向行驶，限速 30km/h，禁止调头、逆行、超速和违停。入校车辆饱和时，建议停放在龙山北路、万家坝路、盘新路、盘城新街等周边道路，再从就近校门步行入校。"
+        },
+        check: {
+          eyebrow: "到校后流程",
+          title: "按顺序完成四步报到",
+          subtitle: "流程尽量保持线性处理，先到宿舍报到点，再进入企业微信迎新模块，最后完成身份验证与材料领取。",
+          steps: [
+            { title: "到宿舍报到点", desc: "先到宿舍楼下对应学院的报到点，按现场指引确认学院与楼栋信息。" },
+            { title: "企业微信 → 我的迎新", desc: "打开学校企业微信中的“我的迎新”，进入线上迎新流程。" },
+            { title: "验证与领取材料", desc: "完成身份验证、查验录取通知书，并按要求领取材料；具体安排以班级群和辅导员通知为准。" },
+            { title: "完成报到", desc: "所有环节确认完成后，即可正式结束报到流程，进入宿舍安顿与后续安排。" }
+          ]
+        },
+        support: {
+          eyebrow: "现场支持",
+          title: "到场后可直接使用的支持信息",
+          subtitle: "把常见支持信息集中在同一处，避免到场后再反复找群消息和零散通知。",
+          shuttleTitle: "接驳服务",
+          shuttleItems: [
+            "本部校区：信息工程大学地铁站（公交站）与毓园社区之间提供循环接驳。",
+            "浦口经开区创新港：双垅地铁站与经开区千贤居之间提供循环接驳。",
+            "报到日 8:30-18:30 运行，具体结束时间以现场报到情况为准。"
+          ],
+          ticketTitle: "地铁票说明",
+          ticketItems: [
+            "新生可凭录取通知书原件到现场负责老师处领取地铁票支持。",
+            "每位新生最多可领取 3 张，建议到站后优先咨询志愿者服务站。"
+          ],
+          packageTitle: "快递地址",
+          packages: [
+            { name: "东苑（晖园、硕园）", lines: ["江苏省南京市浦口区盘城街道南京信息工程大学东苑文德楼快递点"] },
+            { name: "中苑（沁园）", lines: ["江苏省南京市浦口区盘城街道南京信息工程大学中苑中国邮政快递点", "江苏省南京市浦口区龙山北路 18 号-1 号中国气象谷菜鸟驿站"] },
+            { name: "西苑（文园）", lines: ["江苏省南京市浦口区盘城街道南京信息工程大学西苑滨江楼快递点"] },
+            { name: "南苑（毓园）", lines: ["江苏省南京市浦口区永锦路 41 号南京信息工程大学南苑校区"] }
+          ],
+          paymentTitle: "现场缴费 / 绿色通道",
+          paymentItems: [
+            "东苑：晖园社区红十字急救培训中心附近收费点。",
+            "中苑：大学生活动中心一楼门厅收费点。",
+            "西苑：文园社区红十字急救培训站收费点。",
+            "家庭经济困难可在西苑文园社区红十字急救培训站的“绿色通道”咨询资助政策。"
+          ],
+          counselTitle: "咨询与心理支持",
+          counselItems: [
+            "招生政策咨询：东苑行政楼 202，电话 025-58181818。",
+            "大学生心理健康教育中心：风云剧场 N201、N202，电话 025-58731377。",
+            "如需更多学院层面的信息，优先查看班级群和辅导员通知。"
+          ]
+        },
+        safety: {
+          eyebrow: "安全提醒",
+          title: "到场当天保持这些底线意识",
+          subtitle: "这些提醒不复杂，但最容易在现场忙乱时被忽视，建议出发前先看一遍。",
+          alerts: [
+            { title: "防诈骗", desc: "不要轻信陌生收费链接、群聊通知或以老师、学长学姐名义发来的转账要求。" },
+            { title: "贵重物品", desc: "手机、证件、现金等贵重物品尽量随身携带，不要交给陌生人代管。" },
+            { title: "手续本人办理", desc: "入学手续尽量由本人直接办理，不要委托他人代办，避免钱财和信息风险。" },
+            { title: "家校联系", desc: "及时把辅导员联系方式告诉家长，保持家校联系畅通，外出也要按要求请假报备。" }
+          ]
+        }
+      },
       pitfallsPage: {
         hero: {
           eyebrow: "新生提示",
@@ -745,6 +954,215 @@
         title: "Still have unresolved questions?",
         desc: "You can reach the responsible contacts for additional help.",
         button: "Add Contact"
+      },
+      checklistPage: {
+        hero: {
+          eyebrow: "Pre-Departure",
+          title: "Pre-Departure Checklist",
+          subtitle: "Finish the key preparation before leaving so the first week on campus has fewer gaps, redo loops, and last-minute queues.",
+          tags: ["Documents", "Living", "Electronics", "Advice"]
+        },
+        materials: {
+          eyebrow: "Documents & Records",
+          title: "Top priority: get your enrollment materials complete first",
+          subtitle: "This decides whether you can finish enrollment and check-in smoothly. The student record file especially should not be left to the day of departure.",
+          mustTitle: "Must bring",
+          mustItems: [
+            "Original admission letter.",
+            "Original ID card.",
+            "Four recent 1-inch and four 2-inch colour ID photos on matching backgrounds.",
+            "Your personal student file or transfer certificate. Keep the file sealed with intact stamps.",
+            "Communist Youth League members: bring your league membership card for follow-up transfer."
+          ],
+          conditionalTitle: "Bring if applicable",
+          conditionalItems: [
+            "If you took a hometown student loan: bring the loan acceptance certificate.",
+            "If your name, hometown, or hukou information changed: bring the supporting documents.",
+            "If you come from outside Nanjing and may need medical care in Nanjing before year-end: complete the cross-region medical insurance registration in advance.",
+            "If WeCom face capture did not complete, you will need to redo it on arrival."
+          ],
+          noteLabel: "Important",
+          noteText: "The student file is a hard requirement for enrolment. If you have neither the file nor the transfer certificate, enrolment may fail. Keep digital backups of the admission letter, ID card, and ID photos in your phone gallery or cloud."
+        },
+        living: {
+          eyebrow: "Dorm Life",
+          title: "Plan the dorm basics ahead of time",
+          subtitle: "Bedding, toiletries, cleaning, and basic medicine are the four sets most often missed. Pack group by group instead of relying on memory.",
+          mustLabel: "Essentials",
+          missLabel: "Easy to miss",
+          cards: [
+            { title: "Bedding", must: "Bed sheets, duvet cover, pillow case. Confirm the dorm bed size first.", miss: "Mattress, quilt, pillow, mosquito net, blackout bed curtain." },
+            { title: "Toiletries", must: "Toothbrush cup, towels, shower gel, shampoo, face wash, laundry detergent.", miss: "Wash basin, water bucket, bathroom anti-slip slippers, indoor slippers." },
+            { title: "Cleaning", must: "Broom, dustpan, cleaning cloths.", miss: "Drying rack, clothes pegs, adhesive hooks. A few extras of each are useful." },
+            { title: "Medicine", must: "Band-aids, cold medicine, fever medicine.", miss: "Stomach medicine, iodine, mosquito repellent or floral water." }
+          ],
+          bridgeEyebrow: "UniDock Entry",
+          bridgeTitle: "Dorm essentials in one place",
+          bridgeDesc: "If you want to handle dorm basics together, return to the homepage and use the dorm essentials entry.",
+          bridgeButton: "Open Entry"
+        },
+        electronics: {
+          eyebrow: "Electronics & Study",
+          title: "It's not just the devices — plan the accessories and network too",
+          subtitle: "Phone and laptop are the baseline. What usually slows you down are charging, sockets, headphones, storage, and the campus network setup.",
+          mainTitle: "Main devices",
+          mainItems: [
+            "Phone and laptop are the baseline tools for study and communication in university.",
+            "If you need campus network or broadband, look up the school's network options ahead of time.",
+            "A USB stick or portable SSD is useful for backing up class notes, assignments, and files."
+          ],
+          accessoriesTitle: "Accessories",
+          accessoriesItems: [
+            "Chargers, power banks, and cables: bring at least one set matching your daily routine.",
+            "Use a power strip with independent switches and at least 4 sockets.",
+            "Mouse, keyboard, headphones, pen case, highlighters, 2B pencils, and a ruler are common study accessories that get left behind."
+          ],
+          noteLabel: "Network Tip",
+          noteText: "Sort out your mobile data plan and network options early. Connectivity is infrastructure — the earlier you decide, the fewer queues and information gaps after arrival."
+        },
+        avoid: {
+          eyebrow: "Avoid Bringing",
+          title: "Lighter luggage means a smoother arrival",
+          subtitle: "Packing more is not safer. What hurts most are large items, heavy items, and things you can only decide on after arriving.",
+          dontTitle: "Don't bring",
+          dontItems: [
+            "Large high-power appliances like rice cookers or pots.",
+            "Too many seasonal heavy clothes. Dorm storage is limited — mail winter wear later.",
+            "Random clutter and things you won't use soon. They add real cleanup cost."
+          ],
+          laterTitle: "Buy later",
+          laterItems: [
+            "Non-essentials can be bought online or at nearby supermarkets after arrival.",
+            "This reduces luggage stress and lets you buy based on the actual dorm setup.",
+            "Dorms usually have shared hair dryers. If you bring your own, check the management rules first."
+          ]
+        },
+        advice: {
+          eyebrow: "UniDock Advice",
+          title: "Front-load preparation before departure, not after arrival",
+          subtitle: "The real time saver is not packing more — it's deciding the order and planning the basics in advance.",
+          bridgeTitle: "Three priorities before leaving",
+          bridgeItems: [
+            "Sort out the SIM card and network setup first; do not leave baseline communication to check-in day.",
+            "Pack ID, files, and basic life supplies in priority layers.",
+            "Pre-plan the dorm area, route, and on-site flow to avoid first-day queues and info gaps."
+          ],
+          bridgeButton: "View Arrival Process"
+        }
+      },
+      arrivalPage: {
+        hero: {
+          eyebrow: "Arrival Process",
+          title: "Arrival Process",
+          subtitle: "From departure to completing check-in, finish the key steps stage by stage.",
+          stages: [
+            { title: "Before Departure", desc: "Confirm documents, dorm area, and entry route first." },
+            { title: "Arrive in Nanjing", desc: "Enter campus by metro, high-speed rail, airport, or driving." },
+            { title: "Check In", desc: "After reaching the dorm check-in point, complete verification via the welcome process." },
+            { title: "On-site Support", desc: "Shuttles, packages, payment, and consultations are all available on site." }
+          ]
+        },
+        before: {
+          eyebrow: "Before Departure",
+          title: "Get these three things done before leaving",
+          subtitle: "Organize documents and supplies first, then confirm dorm area and entry route. Things will go far smoother on the day.",
+          items: [
+            { title: "Pack everything", desc: "Confirm you have all required documents and supplies — especially the admission letter, ID card, ID photos, and student file." },
+            { title: "Confirm dorm area", desc: "Determine in advance whether you are in East / Central / West / South Garden. Choosing campus gate and parking depends on this." },
+            { title: "Review campus map", desc: "Get familiar with the gates, dorm areas, and check-in points so you don't take detours after arrival." }
+          ],
+          button: "View Pre-Departure Checklist"
+        },
+        arrive: {
+          eyebrow: "Arrive in Nanjing",
+          title: "Pick a route based on how you arrive",
+          subtitle: "Confirm your arrival point first, then enter campus by route. If you drive, prioritise the dorm-area to gate mapping.",
+          routes: [
+            { badge: "Route 01", title: "Metro / High-speed rail", note: "Best for arrivals at Nanjing Station, Nanjing South Station, or Xiaohongshan Station who continue by transfer." },
+            { badge: "Route 02", title: "Airport", note: "Airport arrivals have more transfers. Allow extra time and check the metro operating hours." },
+            { badge: "Route 03", title: "Self-driving", note: "Students within a 3-4 hour drive can consider driving — confirm the dorm area to gate mapping first." }
+          ]
+        },
+        drive: {
+          eyebrow: "Driving In",
+          title: "Check your dorm area, then expand the detailed route",
+          subtitle: "Confirm your dorm area and recommended gate first, then expand the collapsed routes below for detailed driving paths. Everything is collapsed by default to avoid information overload.",
+          mappings: [
+            { title: "Huiyuan / Shuoyuan", desc: "Recommended gate: East Garden East Gate / East Garden South Gate" },
+            { title: "Qinyuan", desc: "Recommended gate: Meteorology Valley East Gate / Central Garden South Gate" },
+            { title: "Wenyuan", desc: "Recommended gate: West Garden South Gate, West Garden North Gate" },
+            { title: "Yuyuan", desc: "Recommended gate: South Garden East Gate" }
+          ],
+          accordions: [
+            { title: "Enter via East Garden East Gate", subtitle: "Serves Huiyuan and Shuoyuan", exit: "Recommend exiting via Central Garden South Gate or West Garden South Gate." },
+            { title: "Enter via East Garden South Gate", subtitle: "Best for areas around Qinyuan", exit: "Recommend exiting via Central Garden South Gate or West Garden South Gate." },
+            { title: "Enter via Central Garden South Gate", subtitle: "Directly serves Qinyuan", exit: "Recommend exiting via West Garden South Gate." },
+            { title: "Enter via West Garden South Gate", subtitle: "Serves Wenyuan", exit: "Recommend exiting along the south section of the West Garden wall or the road east of Lanjianglou." },
+            { title: "Enter via West Garden North Gate", subtitle: "Best when approaching from Wanjiaba Road", exit: "Recommend exiting via West Garden South Gate." },
+            { title: "Enter via Meteorology Valley", subtitle: "Best for Qinyuan, includes two route options", exit: "Recommend exiting via Meteorology Valley East Gate or Southwest Gate." },
+            { title: "Enter via South Garden East Gate", subtitle: "Serves Yuyuan", exit: "" }
+          ],
+          noteLabel: "Driving Note",
+          noteText: "All campus roads are one-way with a 30 km/h limit. No U-turns, wrong-way driving, speeding, or illegal parking. If campus is at capacity, park along Longshan North Road, Wanjiaba Road, Panxin Road, or Pancheng New Street, then enter on foot via the nearest gate."
+        },
+        check: {
+          eyebrow: "On Arrival",
+          title: "Finish check-in in four steps",
+          subtitle: "Keep the process linear: dorm check-in point first, then WeCom welcome module, then identity verification and material pickup.",
+          steps: [
+            { title: "Go to the dorm check-in point", desc: "Head to the dorm building's college check-in point and confirm your college and building info per on-site guidance." },
+            { title: "WeCom → My Welcome", desc: "Open the school WeCom \"My Welcome\" entry to start the online welcome flow." },
+            { title: "Verify and collect materials", desc: "Complete identity verification, present your admission letter, and collect the materials. Details follow the class group and counsellor notice." },
+            { title: "Complete check-in", desc: "Once all steps are confirmed, check-in is officially complete and you can settle into the dorm." }
+          ]
+        },
+        support: {
+          eyebrow: "On-site Support",
+          title: "Information you can use directly after arriving",
+          subtitle: "Common support info is kept together so you don't have to dig through chat history once on site.",
+          shuttleTitle: "Shuttle Service",
+          shuttleItems: [
+            "Main campus: a loop shuttle runs between NUIST Metro Station (bus stop) and Yuyuan community.",
+            "Pukou New Port Innovation Hub: a loop shuttle runs between Shuanglong Metro Station and Qianxianju.",
+            "Operates from 8:30-18:30 on check-in day. End time follows on-site conditions."
+          ],
+          ticketTitle: "Metro Ticket Note",
+          ticketItems: [
+            "Freshmen can present the original admission letter to the on-site staff to get metro ticket support.",
+            "Each freshman may receive up to 3 tickets. Ask the volunteer service desk first after arrival."
+          ],
+          packageTitle: "Package Addresses",
+          packages: [
+            { name: "East Garden (Huiyuan, Shuoyuan)", lines: ["江苏省南京市浦口区盘城街道南京信息工程大学东苑文德楼快递点"] },
+            { name: "Central Garden (Qinyuan)", lines: ["江苏省南京市浦口区盘城街道南京信息工程大学中苑中国邮政快递点", "江苏省南京市浦口区龙山北路 18 号-1 号中国气象谷菜鸟驿站"] },
+            { name: "West Garden (Wenyuan)", lines: ["江苏省南京市浦口区盘城街道南京信息工程大学西苑滨江楼快递点"] },
+            { name: "South Garden (Yuyuan)", lines: ["江苏省南京市浦口区永锦路 41 号南京信息工程大学南苑校区"] }
+          ],
+          paymentTitle: "On-site Payment / Green Channel",
+          paymentItems: [
+            "East Garden: payment point near the Huiyuan community Red Cross first-aid training centre.",
+            "Central Garden: payment point in the lobby of the Student Activity Centre, first floor.",
+            "West Garden: payment point at the Wenyuan community Red Cross first-aid training station.",
+            "Families with financial difficulties can ask about aid policies at the \"Green Channel\" of the Wenyuan Red Cross station."
+          ],
+          counselTitle: "Consult & Mental Health",
+          counselItems: [
+            "Admissions consultation: East Garden Admin Building Room 202, phone 025-58181818.",
+            "Student Mental Health Centre: Fengyun Theatre N201, N202, phone 025-58731377.",
+            "For school-level information, check the class group and counsellor notices first."
+          ]
+        },
+        safety: {
+          eyebrow: "Safety",
+          title: "Keep these baseline reminders on arrival day",
+          subtitle: "These reminders are simple but easily ignored during a busy arrival day. Read them once before leaving.",
+          alerts: [
+            { title: "Anti-fraud", desc: "Do not trust unfamiliar payment links, group notices, or transfer requests claiming to be from teachers or seniors." },
+            { title: "Valuables", desc: "Keep phone, ID, and cash with you. Do not let strangers hold them." },
+            { title: "Handle it yourself", desc: "Complete enrolment in person. Avoid delegating to others to reduce financial and information risk." },
+            { title: "Family contact", desc: "Share your counsellor's contact with your family and keep the family-school channel open. Apply for leave when going off campus per the rules." }
+          ]
+        }
       },
       pitfallsPage: {
         hero: {
