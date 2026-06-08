@@ -1,26 +1,34 @@
 {
   "name": "UniDock",
   "short_name": "UniDock",
-  "start_url": "/",
+  "description": "UniDock campus service platform",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#f6f7fb",
   "icons": [
     {
-      "src": "./icons/unidock-144.png",
-      "sizes": "144x144",
+      "src": "./icons/unidock-icon-192x192.png",
+      "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "./icons/unidock-256.png",
-      "sizes": "256x256",
+      "src": "./icons/unidock-icon-512x512.png",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "./icons/unidock-256.png",
-      "sizes": "256x256",
+      "src": "./icons/unidock-maskable-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./icons/unidock-maskable-512x512.png",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
     }

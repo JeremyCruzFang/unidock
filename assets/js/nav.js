@@ -10,7 +10,7 @@
   function createBrandMarkup() {
     return (
       '<a class="brand" href="./index.html" aria-label="UniDock">' +
-        '<img class="brand__mark" src="./icons/unidock-144.png" alt="UniDock" width="30" height="30">' +
+        '<img class="brand__mark" src="./icons/unidock-icon-144x144.png" alt="UniDock" width="30" height="30">' +
         '<span class="brand__text">' +
           "<strong>UniDock</strong>" +
           '<span data-i18n="header.subline">NUIST Freshman Hub</span>' +
