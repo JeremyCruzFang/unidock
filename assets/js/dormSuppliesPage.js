@@ -52,7 +52,7 @@
     return t("dormSuppliesPage.card.photoCountTpl", { count: count }) || (count + "");
   }
 
-  function buildStack(product) {
+  function buildStack(product, opts) {
     const stack = createEl("div", "dorm-card__stack");
     const images = product.images || [];
     if (images.length === 0) {
@@ -71,11 +71,13 @@
       stack.appendChild(layer);
     }
 
-    // Cover image — uses the tiny thumbnail, not the full WebP. Full images are
-    // only fetched when the lightbox opens.
+    // Cover image — uses the tiny thumbnail, not the full WebP. Loading is
+    // routed through UniDockImageLoader so requests are staged: the first cards
+    // in a grid get eager + fetchpriority=high, the rest defer until they near
+    // the viewport.
     const cover = createEl("div", "dorm-card__cover");
     const coverImg = createEl("img", "dorm-card__cover-img");
-    coverImg.src = product.coverThumb || images[0];
+    const coverUrl = product.coverThumb || images[0];
     coverImg.alt = t("dormSuppliesPage.card.imageAlt", { name: product.displayName, index: 1 }) || product.displayName;
     coverImg.loading = "lazy";
     coverImg.decoding = "async";
@@ -83,6 +85,17 @@
       cover.classList.add("is-broken");
       cover.appendChild(createEl("span", "dorm-card__broken-hint", t("dormSuppliesPage.card.fallback") || "No image"));
     });
+    const loader = window.UniDockImageLoader;
+    const eagerCover = !!(opts && opts.eager);
+    if (loader) {
+      if (eagerCover) {
+        loader.loadInto(coverImg, coverUrl, { priority: loader.PRIORITY.CRITICAL, eager: true });
+      } else {
+        loader.observe(coverImg, coverUrl, { priority: loader.PRIORITY.CRITICAL });
+      }
+    } else {
+      coverImg.src = coverUrl;
+    }
     cover.appendChild(coverImg);
 
     // count badge
@@ -93,7 +106,7 @@
     return stack;
   }
 
-  function buildCard(product) {
+  function buildCard(product, opts) {
     const card = createEl("article", "dorm-card");
     card.setAttribute("data-product-key", product.productKey);
     card.setAttribute("data-section-key", product.sectionKey);
@@ -102,7 +115,7 @@
     trigger.type = "button";
     const ariaName = product.displayName;
     trigger.setAttribute("aria-label", ariaName);
-    trigger.appendChild(buildStack(product));
+    trigger.appendChild(buildStack(product, opts));
     card.appendChild(trigger);
 
     const body = createEl("div", "dorm-card__body");
@@ -148,10 +161,46 @@
     const grid = document.querySelector('[data-dorm-grid="' + key + '"]');
     if (!grid) return;
     grid.innerHTML = "";
-    data.bySection(key).forEach(function (p) {
-      grid.appendChild(buildCard(p));
+    const products = data.bySection(key);
+    products.forEach(function (p, i) {
+      // First couple of cards in a freshly-expanded section land above the fold
+      // and should fetch eagerly; the rest defer via IntersectionObserver.
+      grid.appendChild(buildCard(p, { eager: i < 2 }));
     });
     renderedSections.add(key);
+    // Once the section is open, queue this section's first full image per
+    // product onto the idle lane so future lightbox opens feel instant.
+    scheduleIdlePreloadForSection(key);
+  }
+
+  // Idle preload: enqueue images[0] of each product at IDLE priority. The
+  // scheduler holds these until the network is quiet and the user isn't
+  // interacting; opening a lightbox later finds the first frame cached.
+  function scheduleIdlePreloadForSection(key) {
+    const loader = window.UniDockImageLoader;
+    const data = window.UniDockDormSupplies;
+    if (!loader || !data) return;
+    if (loader.saveData) return;
+    data.bySection(key).forEach(function (p) {
+      const first = p.images && p.images[0];
+      if (first) loader.preload(first, loader.PRIORITY.IDLE);
+    });
+  }
+
+  // Idle preload only the tiny cover thumbs of as-yet-unrendered sections.
+  // Cover thumbs are small and let the next section expansion feel instant
+  // without flooding the network with full-resolution images.
+  function scheduleIdlePreloadCovers() {
+    const loader = window.UniDockImageLoader;
+    const data = window.UniDockDormSupplies;
+    if (!loader || !data) return;
+    if (loader.saveData) return;
+    (data.sectionOrder || []).forEach(function (key) {
+      if (renderedSections.has(key)) return;
+      data.bySection(key).forEach(function (p) {
+        if (p.coverThumb) loader.preload(p.coverThumb, loader.PRIORITY.IDLE);
+      });
+    });
   }
 
   // Re-render any already-expanded section so card alt text / hint translate.
@@ -250,15 +299,17 @@
     closeBtn.setAttribute("aria-label", t("dormSuppliesPage.modal.close"));
 
     grid.innerHTML = "";
+    const loader = window.UniDockImageLoader;
+    // P1: clicking a card promotes that product's full images onto the
+    // INTERACTION lane. The first couple are sent through eagerly (browser
+    // fetches immediately at high priority); the rest queue through the
+    // scheduler so concurrency stays bounded instead of dumping 10–22
+    // simultaneous WebP requests on the network.
     product.images.forEach(function (src, i) {
       const fig = createEl("figure", "dorm-lightbox__figure dorm-lightbox__figure--loading");
       const img = createEl("img", "dorm-lightbox__img");
-      img.src = src;
       img.alt = t("dormSuppliesPage.card.imageAlt", { name: product.displayName, index: i + 1 });
-      // First image loads eagerly (above-the-fold), rest are lazy.
-      img.loading = i === 0 ? "eager" : "lazy";
       img.decoding = "async";
-      img.fetchPriority = i === 0 ? "high" : "auto";
       img.addEventListener("load", function () {
         fig.classList.remove("dorm-lightbox__figure--loading");
       });
@@ -266,6 +317,17 @@
         fig.classList.remove("dorm-lightbox__figure--loading");
         fig.classList.add("is-broken");
       });
+      if (loader) {
+        if (i < 2) {
+          loader.loadInto(img, src, { priority: loader.PRIORITY.CRITICAL, eager: true });
+        } else {
+          loader.loadInto(img, src, { priority: loader.PRIORITY.INTERACTION });
+        }
+      } else {
+        img.src = src;
+        img.loading = i === 0 ? "eager" : "lazy";
+        img.fetchPriority = i === 0 ? "high" : "auto";
+      }
       fig.appendChild(img);
       grid.appendChild(fig);
     });
@@ -554,6 +616,13 @@
   document.addEventListener("DOMContentLoaded", function () {
     renderSections();
     initInteractions();
+    // Idle preload of cover thumbs only fires after a real quiet window
+    // (~2.5s) and only via the IDLE lane — any scroll / click / keydown pauses
+    // the scheduler before flooding the network.
+    setTimeout(function () {
+      const ric = window.requestIdleCallback || function (cb) { return setTimeout(cb, 500); };
+      ric(function () { scheduleIdlePreloadCovers(); }, { timeout: 5000 });
+    }, 2500);
   });
   window.addEventListener("unidock:language-change", onLanguageChange);
 })();
